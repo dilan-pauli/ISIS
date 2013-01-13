@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sample HTML Page</title>
+<script type="text/javascript">
+function WebSocketTest()
+{
+  if ("WebSocket" in window)
+  {
+     alert("WebSocket is supported by your Browser!");
+     // Let us open a web socket
+     var ws = new WebSocket("ws://localhost:8080/ServerProcessISIS/ISISServlet");
+     ws.onopen = function()
+     {
+        // Web Socket is connected, send data using send()
+        ws.send("Message to send");
+        alert("Message is sent...");
+     };
+     ws.onmessage = function (evt) 
+     { 
+        var received_msg = evt.data;
+        alert("Message is received...");
+     };
+     ws.onclose = function()
+     { 
+        // websocket is closed.
+        alert("Connection is closed..."); 
+     };
+  }
+  else
+  {
+     // The browser doesn't support WebSocket
+     alert("WebSocket NOT supported by your Browser!");
+  }
+}
+</script>
+</head>
+<body>
+<h1>Hello ISIS World!</h1>
+<br />
+	<br />
+	<button
+		onclick='<%// This scriptlet connects the client to the server by opening a new websocket
+						//
+						%>'>Connect</button>
+	<br />
+	<button
+		onclick='<%// This scriptlet sends a message to the server
+						//
+						%>'>Send</button>
+	<br />
+	<button
+		onclick='<%// This scriptlet disconnects the client from the server by terminating the websocket
+					// connection
+						//
+						%>'>Disconnect</button>
+</body>
+</html>
