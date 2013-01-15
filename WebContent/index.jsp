@@ -32,6 +32,7 @@
 	<button
 		onclick='<%// This scriptlet connects the client to the server by opening a new websocket
 						myServlet = new ISISServlet();
+						myServlet.init();
 						%>'>Connect</button>
 	<br />
 	<button

@@ -1,7 +1,7 @@
 package ServletPrograms;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.util.logging.Level;
 
 import javax.servlet.ServletException;
@@ -9,9 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 
 import com.sun.grizzly.websockets.WebSocketEngine;
+//import com.sun.xml.ws.transport.http.servlet.WSServlet;
 
 import WebSocketClasses.ISISServerApplication;
 
@@ -22,21 +23,23 @@ public class ISISServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The application (WebSocketListener) registered with this servlet
 	 */
-	private ISISServerApplication app;
+	private ISISServerApplication app = new ISISServerApplication();
 
 	/**
 	 * Method to initialize the servlet
 	 */
 	public void init() {
-		// TODO LEAVE AS IS FOR NOW
-		app = new ISISServerApplication();
+		// Resister the ISIS application with the WebSocket Engine
 		WebSocketEngine.getEngine().register(app);
+		
+		// Create log message
 		java.util.logging.Logger.getAnonymousLogger().log(
-    			Level.INFO, this.getServletName() + ": initialised");
+				Level.INFO, this.getServletName() + "Time: " + new java.util.Date() + ", " + 
+				"initialised servlet and registered ISIS application");
 	}
 
 	/**
@@ -45,22 +48,32 @@ public class ISISServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		HttpSession session = request.getSession(true);
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+		// Create log message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + "Servlet doGet() event fired");
 
-		String heading;
+		//HttpSession session = request.getSession(true);
+		//SCRAP request.getContentType().endsWith(arg0)
+
+		// Set the response type
+		//response.setContentType("text/html");
+
+		//PrintWriter out = response.getWriter();
+
+		/*String heading;
 		if (session.isNew()) {
 			heading = "Welcome";
 		} 
 		else {
 			heading = "Welcome Back";
 		}
-
 		out.println("\n" + heading + "\n" + 
 				"<br />" +
 				"<button onclick='<% ; %>'>Send WebSocket Server A Message</button>" + 
-				"\n");
+				"\n");*/
+
+		/*out.println("\n" + "SERVER RECEIVED YOUR MESSAGE:" + "\n" +
+				"<br />" + "\n");*/
 	}
 
 	/**
@@ -68,6 +81,10 @@ public class ISISServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// Create log message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + "Servlet doPost() event fired");
+
 		doGet(request, response);
 	}
 
@@ -75,9 +92,12 @@ public class ISISServlet extends HttpServlet {
 	 * Method to destroy the servlet
 	 */
 	public void destroy() {
-		// TODO LEAVE AS IS FOR NOW
+		// Unregister the application from the WebSocket Engine
 		WebSocketEngine.getEngine().unregister(app);
+		
+		// Create log message
 		java.util.logging.Logger.getAnonymousLogger().log(
-    			Level.INFO, this.getServletName() + ": destroyed");
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						this.getServletName() + "servlet: destroyed");
 	}
 }

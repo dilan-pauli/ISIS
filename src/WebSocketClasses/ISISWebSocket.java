@@ -2,12 +2,21 @@ package WebSocketClasses;
 
 //import com.sun.grizzly.tcp.Request;
 //import com.sun.grizzly.tcp.Response;
-import com.sun.grizzly.websockets.BaseServerWebSocket;
+//import com.sun.grizzly.websockets.BaseServerWebSocket;
 //import com.sun.grizzly.websockets.DataFrame;
 
-public class ISISWebSocket extends BaseServerWebSocket {
-	
+//import java.util.logging.Level;
+
+import com.sun.grizzly.websockets.DataFrame;
+import com.sun.grizzly.websockets.DefaultWebSocket;
+import com.sun.grizzly.websockets.ProtocolHandler;
+import com.sun.grizzly.websockets.WebSocketListener;
+
+public class ISISWebSocket extends DefaultWebSocket implements Runnable {
+
 	/*
+	 * IGNORE THIS COMMENT NOW: NO LONGER RELEVANT!!!!!!!!!!!!!!!!!!!!!!!
+	 * 
 	 * Note: ISISWebSocket extends BaseServerWebSocket which in turn extends BaseWebSocket which
 	 * implements the WebSocket interface
 	 * 
@@ -27,33 +36,79 @@ public class ISISWebSocket extends BaseServerWebSocket {
 	 * The WebSocket interface defines the aforementioned methods implemented by BaseWebSocket as
 	 * listed above
 	 */
-	
+
 	/**
 	 * The application this WebSocket is registered with
 	 * (Actually interested in the WebSocketListener)
 	 */
-    @SuppressWarnings("unused")
-	private final ISISServerApplication app;
-    
-    /**
-     * Class constructor
-     * @param listener
-     */
-    public ISISWebSocket(ISISServerApplication listener) {
-    	/*
-    	 * Note: ISISServerApplication extends WebSocketApplication which in turn extends WebSocketAdapter
-    	 * which in turn implements WebSocketListener.
-    	 * Therefore, ISISServerApplication is also of type WebSocketListener through inheritance
-    	 * and therefore the listener is passed to the new ISISWebSocket
-    	 */
-    	
-    	// Invoke the constructor of the super class (BaseServerWebSocket)
-    	super(listener);
-    	// Store the listener for the new ISISWebSocket
-    	app = listener;
-    }
-    
-    /*public void onMessage(String text) { //DataFrame frame
-    	//super.
-    }*/
+	// SCRAP THIS!
+	//private final ISISServerApplication app;
+
+	/**
+	 * Class constructor
+	 * @param listeners
+	 */
+	public ISISWebSocket(ProtocolHandler handler, WebSocketListener... listeners) {
+		/*
+		 * Note: ISISServerApplication extends WebSocketApplication which in turn extends WebSocketAdapter
+		 * which in turn implements WebSocketListener.
+		 * Therefore, ISISServerApplication is also of type WebSocketListener through inheritance
+		 * and therefore the listener is passed to the new ISISWebSocket
+		 */
+
+		// Invoke the constructor of the super class (BaseServerWebSocket)
+		super(handler, listeners);
+
+		// SCRAP THIS!
+		// Store the listener for the new ISISWebSocket
+		//app = listener;
+	}
+
+	@Override
+	public void onConnect() {
+		super.onConnect();
+		
+		// Create a new thread to run on this WebSocket connection
+		Thread thread = new Thread(this);
+		// Start running the thread
+		thread.run();
+	}
+
+	@Override
+	public void onClose(DataFrame frame) {
+		super.onClose(frame);
+	}
+
+	@Override
+	public void send(String data) {
+		super.send(data);
+
+		// Create log message
+		/*java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+				"Message sent over WebSocket connection");*/
+	}
+
+	/**
+	 * Routine to be run by this runnable object (WebSocket connection)
+	 */
+	@Override
+	public synchronized void run() {
+		// Run this thread as long as the connection is maintained
+		
+		int n = 0;
+		
+		// TODO: LET THIS DO A USELESS TASK FOR NOW
+		while(this.isConnected()) {
+			// Wait for 10 seconds
+			try {
+				this.wait(10*1000);
+			} 
+			catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			// Push data out to the client
+			this.send("Test push message from server " + n++);
+		}
+	}
 }
