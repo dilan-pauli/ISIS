@@ -7,5 +7,7 @@
 			<attribute name="javadoc_location" value="http://xbee-api.googlecode.com/svn/trunk/docs/api/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/noquarter/JavaWorkSpace/XbeeAPI/lib/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/noquarter/JavaWorkSpace/XbeeAPI/lib/RXTXcomm.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
