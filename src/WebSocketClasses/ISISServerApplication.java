@@ -3,7 +3,7 @@ package WebSocketClasses;
 import java.util.logging.Level;
 
 import com.sun.grizzly.tcp.Request;
-import com.sun.grizzly.websockets.DataFrame;
+//import com.sun.grizzly.websockets.DataFrame;
 import com.sun.grizzly.websockets.ProtocolHandler;
 import com.sun.grizzly.websockets.WebSocket;
 import com.sun.grizzly.websockets.WebSocketApplication;
@@ -29,13 +29,21 @@ public class ISISServerApplication extends WebSocketApplication {
 	 */
 	@Override
 	public boolean isApplicationRequest(Request request) {
-		/*if(request.requestURI().toString().endsWith("/ISIS")) {
+		/*
+		 * Decide whether the request that's received is one that the application is interested in.
+		 * Grizzly essentially iterates through all registered applications and asks then whether
+		 * the incoming request in one that they are interested in (Grizzly calls this)
+		 */
+
+		if(request.requestURI().toString().endsWith("/ISIS")) {
 			return true;
 		}
-		return false;*/
+		else {
+			return false;
+		}
 
 		//TODO FOR NOW
-		return true;
+		//return true;
 	}
 
 	/**
@@ -45,45 +53,66 @@ public class ISISServerApplication extends WebSocketApplication {
 	public void onMessage(WebSocket socket, String text) {
 		super.onMessage(socket, text);
 
+		// Send the received message back to the client from which it originated
+		socket.send("<br />Hello Client " + socket.toString() + ". <br/>I received the " +
+				"following messgae from you:<br />" + text);
+
 		// Log the received message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-						"Received request from client " + socket.toString() + " : " + text);
+						"Application received request from client " + socket.toString() + 
+						". Msg: " + text);
 
 		// Broadcast message to all connected clients
 		//broadcast("Message was just received by the ISISWebSocket Server");
-		
-		String responseMsg;
-		
-		try {
-			// Compose the response message
-			// Echo back the received message to the client that sent the message
-			responseMsg = "Hello, this is the ISIS server, " +
-					"I have received the following message from you: " + text;
-			// TODO: Need to figure out how this push should work
-			socket.send(responseMsg);
-			
+
+		//String responseMsg;
+		//try {
+		// Compose the response message
+		// Echo back the received message to the client that sent the message
+		/*responseMsg = "Hello, this is the ISIS server, " +
+					"I have received the following message from you: " + text;*/
+		// TODO: Need to figure out how this push should work
+
+		/*socket.onMessage(text);
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", " + 
-							"Sent back response and client's original message: " + responseMsg);
-		}
+							"Passed on the received message to the required client connectionm" +
+							socket.toString());*/
+
+		//socket.send(responseMsg);
+		/*java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", " + 
+							"Sent back response and client's original message: " + responseMsg);*/
+		/*}
 		catch(Exception e) {
 			e.printStackTrace();
 			socket.close();
-		}
-		
-		java.util.logging.Logger.getAnonymousLogger().log(
+		}*/
+
+		/*java.util.logging.Logger.getAnonymousLogger().log(
 				Level.WARNING, "Time: " + new java.util.Date() + ", " + 
-						"THIS MSG IS JUST TO INDICATE THAT EXECUTION GOT PAST THE socket.send(...) CODE " +
-						"IN ISISServerApplication.onMessage(...)");
+						"THIS MSG IS JUST TO INDICATE THAT EXECUTION GOT PAST THE TRY-CATCH CODE " +
+				"IN ISISServerApplication.onMessage(...)");*/
 
 		// TODO Process server request to do some action based on the received request
 	}
 
+
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * 
 	 */
-	@Override
+	/*@Override
 	public void onConnect(WebSocket socket) {
 		super.onConnect(socket);
 
@@ -91,17 +120,17 @@ public class ISISServerApplication extends WebSocketApplication {
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
 						"Connection established with new WebSocket client: ", socket.toString());
-	}
+	}*/
 
 	/**
 	 * Event handler to handle when a WebSocket connection has been closed
 	 * @param socket
 	 * @param frame
 	 */
-	@Override
+	/*@Override
 	public void onClose(WebSocket socket, DataFrame frame) {
 		super.onClose(socket, frame);
-		
+
 		// Close the connection
 		//socket.close();
 		// Remove the connection from the list of maintained connections
@@ -113,7 +142,10 @@ public class ISISServerApplication extends WebSocketApplication {
 						"Received closing msg: " + frame.getTextPayload() +
 						"Connection between WebSocket client and the server " +
 						"has been closed: ", socket.toString());
-	}
+	}*/
+
+
+
 
 	/**
 	 * Send text over a WebSocket connection to a single client

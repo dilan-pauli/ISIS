@@ -1,19 +1,14 @@
 package WebSocketClasses;
 
-//import com.sun.grizzly.tcp.Request;
-//import com.sun.grizzly.tcp.Response;
-//import com.sun.grizzly.websockets.BaseServerWebSocket;
-//import com.sun.grizzly.websockets.DataFrame;
-
 //import java.util.logging.Level;
 
-import com.sun.grizzly.websockets.DataFrame;
+//import com.sun.grizzly.websockets.DataFrame;
 import com.sun.grizzly.websockets.DefaultWebSocket;
 import com.sun.grizzly.websockets.ProtocolHandler;
 import com.sun.grizzly.websockets.WebSocketListener;
 
-public class ISISWebSocket extends DefaultWebSocket implements Runnable {
-
+public class ISISWebSocket extends DefaultWebSocket {
+	//implements Runnable
 	/*
 	 * IGNORE THIS COMMENT NOW: NO LONGER RELEVANT!!!!!!!!!!!!!!!!!!!!!!!
 	 * 
@@ -36,6 +31,11 @@ public class ISISWebSocket extends DefaultWebSocket implements Runnable {
 	 * The WebSocket interface defines the aforementioned methods implemented by BaseWebSocket as
 	 * listed above
 	 */
+
+	/**
+	 * Temp data holder (for sending)
+	 */
+	//private String dataToSend;
 
 	/**
 	 * The application this WebSocket is registered with
@@ -64,19 +64,56 @@ public class ISISWebSocket extends DefaultWebSocket implements Runnable {
 		//app = listener;
 	}
 
-	@Override
+	
+	
+	
+	
+	
+	
+	
+	/*@Override
 	public void onConnect() {
 		super.onConnect();
+
+		// Create a log message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						"onConnect() called for WebSocket: ", this.toString());
+
+		// Create a new thread to run on this WebSocket connection
+		//Thread thread = new Thread(this);
+		// Start running the thread
+		//thread.run();
+	}
+
+	@Override
+	public void onMessage(String data) {
+		super.onMessage(data);
+
+		// Create a log message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						"onMessage() called for WebSocket: ", this.toString());
+		
+		// Set the data to send
+		//this.dataToSend = data;
+		//this.send(this.dataToSend);
 		
 		// Create a new thread to run on this WebSocket connection
-		Thread thread = new Thread(this);
+		///Thread thread = new Thread(this);
 		// Start running the thread
-		thread.run();
+		///thread.run();
 	}
 
 	@Override
 	public void onClose(DataFrame frame) {
 		super.onClose(frame);
+		
+		// Create a log message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						"onClose() called for WebSocket: ", this.toString() + 
+						". Data frame: " + frame.toString());
 	}
 
 	@Override
@@ -84,22 +121,23 @@ public class ISISWebSocket extends DefaultWebSocket implements Runnable {
 		super.send(data);
 
 		// Create log message
-		/*java.util.logging.Logger.getAnonymousLogger().log(
+		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-				"Message sent over WebSocket connection");*/
-	}
+						"send() called for WebSocket: " + this.toString() + ". Msg: " + data);
+	}*/
 
+	
+	
+	
 	/**
 	 * Routine to be run by this runnable object (WebSocket connection)
 	 */
-	@Override
-	public synchronized void run() {
+	/**@Override
+	public synchronized void run() {*/
 		// Run this thread as long as the connection is maintained
-		
-		int n = 0;
-		
+		//int n = 0;
 		// TODO: LET THIS DO A USELESS TASK FOR NOW
-		while(this.isConnected()) {
+		/*while(this.isConnected()) {
 			// Wait for 10 seconds
 			try {
 				this.wait(10*1000);
@@ -109,6 +147,21 @@ public class ISISWebSocket extends DefaultWebSocket implements Runnable {
 			}
 			// Push data out to the client
 			this.send("Test push message from server " + n++);
-		}
-	}
+		}*/
+
+		// Create a log message
+		/**java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						"run() called for WebSocket: ", this.toString());
+
+		// Push data out to the client
+		this.send(this.dataToSend);
+		// Clean the stored data
+		this.dataToSend = "";
+		
+		// Create a log message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						"run() call ended for WebSocket: ", this.toString());
+	}*/
 }
