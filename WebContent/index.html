@@ -13,63 +13,56 @@
 	function webSocketSupported() {
 		return "WebSocket" in window;
 	}
-	
-	// Function: connect to the server
-	function connToServer() {
-		if(webSocketSupported() === false) {
-			var $textarea = $('#messages');
-			$textarea.val("Sorry, WebSocket is not supported in your browser");
-		}
-		else{
-			// Create new WebSocket connection to the ISIS server
-			// Use 8081 to allow TCP/IP monitoring (normal => 8080)
-			ws = new WebSocket("ws://localhost:8081/ServerProcessISIS/ISISServlet");
-			// Response to event that occurs when WebSocket connection is opened
-			ws.onopen = function() {
-				var $textarea = $('#messages');
-				$textarea.val("Opened client-server connection: " + "\n");
-			};
-			// Response to event that occurs when the server sends the client a message
-			ws.onmessage = function(event) {
-				// Print out the received message
-				var $textarea = $('#messages');
-				$textarea.val($textarea.val() + event.data + "\n");
-				alert("Message received from server: " + event.data);
-				//console.log(event.data);
-				/*$textarea.animate({
-					scrollTop : $textarea.height()
-				}, 1000);*/
-				// Close the connection with the server
-				//ws.close();
-			};
-			// Response to event that occurs when WebSocket connection is closed
-			ws.onclose = function(event) {
-				var $textarea = $('#messages');
-				$textarea.val("Closed client-server connection: " + "\n");
-				//event.code event.reason event.wasClean
-			};
-			// Response to event that occurs when WebSocket connection error occurs
-			ws.onerror = function(event) {
-				var $textarea = $('#messages');
-				$textarea.val("Error with WebSocket connection: " + event.data + "\n");
-				// Close the connection with the server
-				ws.close();
-				$textarea.val($textarea.val() + "Closed client-server connection: " + 
-						event.data + "\n");
-			};
-		}// else
-	}// connToServer()
+
+	// Register ready listener: When the document is ready, open a WebSocket connection
+	$(document)
+			.ready(
+					function() {
+						if(webSocketSupported() === false) {
+							var $textarea = $('#messages');
+							$textarea.val("Sorry, WebSocket is not supported in your browser");
+						}
+						else{
+							// Create new WebSocket connection to the ISIS server
+							// Use 8081 to allow TCP/IP monitoring (normal => 8080)
+							ws = new WebSocket(
+									"ws://localhost:8081/ServerProcessISIS/ISISServlet");
+							// Response to event that occurs when WebSocket connection is opened
+							ws.onopen = function(event) {
+								var $textarea = $('#messages');
+								$textarea.val("Opened client-server connection: " + event.data + "\n");
+							}
+							// Response to event that occurs when the server sends the client a message
+							ws.onmessage = function(event) {
+								var $textarea = $('#messages');
+								// "Message received from server: "
+								$textarea.val($textarea.val() + event.data + "\n");
+								/*$textarea.animate({
+									scrollTop : $textarea.height()
+								}, 1000);*/
+								// Close the connection with the server
+								//ws.close();
+							}
+							// Response to event that occurs when WebSocket connection is closed
+							ws.onclose = function(event) {
+								var $textarea = $('#messages');
+								$textarea.val("Closed client-server connection: " + event.data + "\n");
+								//event.code event.reason event.wasClean
+							}
+							// Response to event that occurs when WebSocket connection error occurs
+							ws.onerror = function(event) {
+								var $textarea = $('#messages');
+								$textarea.val("Error with WebSocket connection: " + event.data + "\n");
+								// Close the connection with the server
+								ws.close();
+								$textarea.val($textarea.val() + "Closed client-server connection: " + 
+										event.data + "\n");
+							}
+						}
+					});
 					
 	// Function: send message to the server
 	function sendMessage() {
-		/*if(ws === null) {
-			$('#messages').val("Cannot send message without connecting to the server first\n");
-			return;
-		}*/
-		/*if(ws.readyState !== OPEN) {
-			$('#messages').val($('#messages').val() + "Sorry, cannot send message without connecting first\n");
-			return;
-		}*/
 		// Read the text entered by the user and send to server via WebSocket connection
 		var message = $('#message').val();
 		ws.send(message);
@@ -77,20 +70,15 @@
 		$('#message').val('');
 		// Notify the user that their message has been sent
 		var $textarea = $('#messages');
-		$textarea.val($textarea.val() + "Your message: " + message + " has been sent to the server\n");
-	}// sendMessage()
-		
-	// Function: disconnect from the server
-	function disconnFromServer() {
-		ws.close();
-	}// disconnFromServer()
+		$textarea.val("Your message has been sent to the server\n");
+	}
 </script>
 </head>
 <body>
 	<h1>Hello ISIS World!</h1>
-	<h5>- Hit Connect to connect to the ISIS server</h5>
-	<h5>- Enter text into the message box and hit Send to send messages to the ISIS server</h5>
-	<h5>- Hit Disconnect to disconnect from the ISIS server</h5>
+	<br />
+	<h4>Enter text into the message box to send messages to the ISIS server</h4>
+	<br />
 	<br />
 	<div id="chatboxbody">
 		<div id="chatbox">
@@ -98,10 +86,9 @@
 		</div>
 
 		<form name="message" action="">
-			<input name="usermsg" type="text" id="message" size="63" />
-			<input type="button" name="submitmsg" value="Send..." onclick="sendMessage();" />
-			<input type="button" name="connect" value="Connect..." onclick="connToServer();" />
-			<input type="button" name="disconnect" value="Disconnect..." onclick="disconnFromServer();" />
+			<input name="usermsg" type="text" id="message" size="63" /> <input
+				type="button" name="submitmsg" value="Send..."
+				onclick="sendMessage();" />
 		</form>
 	</div>
 </body>
