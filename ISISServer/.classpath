@@ -9,5 +9,7 @@
 			<attribute name="javadoc_location" value="http://xbee-api.googlecode.com/svn/trunk/docs/api"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="libs/com.sun.grizzly.util.jar"/>
+	<classpathentry kind="lib" path="libs/glassfish-embedded-all-3.1.1-b11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
