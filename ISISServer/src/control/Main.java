@@ -9,9 +9,10 @@ public class Main {
 
 	public static void main(String args[]) throws IOException
 	{
-		Controller newController = new Controller();
+		
 		XBeeHandler handler = new XBeeHandler();
 		WebSocketServer server = new WebSocketServer();
+		Controller newController = new Controller(server, handler);
 		
 		while(true)
 		{
