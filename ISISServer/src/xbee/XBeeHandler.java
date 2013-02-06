@@ -61,6 +61,8 @@ public class XBeeHandler {
 				if (response.getApiId() == ApiId.ZNET_IO_SAMPLE_RESPONSE) 
 				{
 			        ZNetRxIoSampleResponse ioSample = (ZNetRxIoSampleResponse) response;
+			        //Send a IO packet back to the device to turn the LED on ???
+			        
 			        //Convert to XBeePacket
 			        
 			        //Place on the Queue

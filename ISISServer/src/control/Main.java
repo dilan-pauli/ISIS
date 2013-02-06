@@ -12,7 +12,7 @@ public class Main {
 		
 		XBeeHandler handler = new XBeeHandler();
 		WebSocketServer server = new WebSocketServer();
-		Controller newController = new Controller(server, handler);
+		Controller newController = new Controller(handler, server);
 		
 		while(true)
 		{
