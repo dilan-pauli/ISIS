@@ -74,3 +74,1886 @@
 [2013-01-21 15:40:17,380] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
 [2013-01-21 15:40:17,396] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
 [2013-01-21 15:40:17,397] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x89,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0xb6,0x15,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:36:29,897] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:36:29,905] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:36:29,946] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:36:29,948] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:36:29,952] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:36:29,952] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:36:29,952] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:36:29,980] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:36:29,981] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:36:29,981] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:36:29,981] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:36:29,981] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:36:30,012] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:36:30,012] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:36:30,013] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:40:15,207] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:40:15,212] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:40:15,245] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:40:15,247] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:40:15,249] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:40:15,249] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:40:15,249] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:40:15,265] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:40:15,282] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:40:15,284] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:40:15,284] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:40:15,285] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:40:15,313] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:40:15,314] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:40:15,315] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:45:31,107] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,155] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,198] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,297] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,340] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,383] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,431] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,475] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,520] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,564] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,616] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,662] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,706] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,749] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,794] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,838] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,882] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,928] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:31,978] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,021] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,080] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,123] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,166] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,216] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,259] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,314] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,358] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,402] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,446] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,517] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,560] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,604] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,650] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,693] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,736] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,799] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,842] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,886] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,930] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:32,973] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,017] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,060] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,103] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,146] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,189] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,247] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,291] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,335] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,380] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,423] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,469] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,512] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,558] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,601] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,645] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,688] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,732] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,778] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,835] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,879] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,922] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:33,967] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,010] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,053] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,136] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,180] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,223] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,266] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,309] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,353] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,396] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,440] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,484] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,531] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,576] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,619] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,663] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,710] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,759] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,802] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,869] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,912] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:34,955] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,002] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,046] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,089] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,132] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,176] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,219] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,301] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,344] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,388] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,432] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,477] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,520] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,563] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,606] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,650] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,693] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,736] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,794] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,837] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,887] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,931] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:35,974] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,018] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,062] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,109] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,152] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,198] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,244] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,287] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,337] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,380] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,431] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,474] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,518] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,562] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,605] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,656] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,699] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,749] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,792] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,837] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,882] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,926] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:36,971] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,014] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,057] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,102] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,145] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,190] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,234] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,277] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,329] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,372] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,425] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,468] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,522] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,570] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,613] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,661] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,704] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,753] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,796] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,839] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,883] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,926] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:45:37,970] [Thread-2] [ERROR] [com.rapplogic.xbee.RxTxSerialComm] RXTX error in serialEvent method 
+java.io.IOException: No error in nativeavailable
+	at gnu.io.RXTXPort.nativeavailable(Native Method)
+	at gnu.io.RXTXPort$SerialInputStream.available(RXTXPort.java:1596)
+	at com.rapplogic.xbee.RxTxSerialComm.serialEvent(RxTxSerialComm.java:152)
+	at gnu.io.RXTXPort.sendEvent(RXTXPort.java:772)
+	at gnu.io.RXTXPort.eventLoop(Native Method)
+	at gnu.io.RXTXPort$MonitorThread.run(RXTXPort.java:1641)
+[2013-02-06 17:48:18,964] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:48:18,969] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:48:19,001] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:48:19,005] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:48:19,007] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:48:19,007] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:48:19,007] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:48:19,037] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:48:19,037] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:48:19,038] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:48:19,038] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:48:19,038] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:48:19,053] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:48:19,070] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:48:19,071] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:53:12,993] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:53:12,998] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:53:13,033] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:53:13,035] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:53:13,037] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:53:13,037] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:53:13,037] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:53:13,053] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:53:13,069] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:53:13,070] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:53:13,070] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:53:13,070] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:53:13,101] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:53:13,104] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:53:13,106] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:53:59,469] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:53:59,474] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:53:59,509] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:53:59,510] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:53:59,512] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:53:59,512] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:53:59,513] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:53:59,528] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:53:59,544] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:53:59,545] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:53:59,545] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:53:59,545] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:53:59,561] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:53:59,577] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:53:59,580] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:54:25,899] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:54:25,931] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:54:25,931] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x4a,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x91,0x7d,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:54:26,171] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:54:26,187] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:54:26,203] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x46,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x91,0x7d,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:54:53,326] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:54:53,342] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:54:53,358] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x47,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x91,0x7d,option=null,digital[0]=low,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:54:53,598] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:54:53,614] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:54:53,630] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x46,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x91,0x7d,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:55:58,277] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:55:58,282] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:55:58,315] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:55:58,317] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:55:58,319] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:55:58,319] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:55:58,319] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:55:58,336] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:55:58,351] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:55:58,352] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:55:58,352] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:55:58,352] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:55:58,369] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:55:58,384] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:55:58,385] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:56:01,102] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:56:01,119] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:56:01,120] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x47,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x91,0x7d,option=null,digital[0]=low,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:56:01,374] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:56:01,390] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:56:01,391] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x46,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x91,0x7d,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:57:22,155] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:57:22,167] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:57:22,195] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:57:22,197] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:57:22,199] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:57:22,199] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:57:22,199] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:57:22,227] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:57:22,227] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:57:22,228] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:57:22,228] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:57:22,228] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:57:22,269] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:57:22,271] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:57:22,272] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:57:55,075] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:57:55,092] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:57:55,093] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x80,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=low,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:57:55,347] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:57:55,363] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:57:55,363] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x78,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 17:59:22,539] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 17:59:22,546] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 17:59:22,577] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:59:22,580] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 17:59:22,583] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 17:59:22,583] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 17:59:22,584] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 17:59:22,608] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:59:22,609] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 17:59:22,609] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 17:59:22,609] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 17:59:22,609] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 17:59:22,624] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 17:59:22,640] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 17:59:22,640] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 17:59:25,262] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 17:59:25,280] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 17:59:25,281] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x79,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=low,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:00:44,731] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:00:44,735] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:00:44,771] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:00:44,772] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:00:44,774] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:00:44,774] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:00:44,775] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:00:44,790] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:00:44,806] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:00:44,807] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:00:44,807] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:00:44,807] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:00:44,822] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:00:44,840] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:00:44,841] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:00:47,525] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:00:47,543] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:00:47,557] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x7c,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:00:54,385] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:00:54,401] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:00:54,417] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x78,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:06:50,332] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:06:50,338] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:06:50,372] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:06:50,374] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:06:50,376] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:06:50,376] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:06:50,376] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:06:50,392] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:06:50,409] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:06:50,411] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:06:50,411] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:06:50,412] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:06:50,440] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:06:50,442] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:06:50,442] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:06:54,054] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:06:54,072] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:06:54,086] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x7c,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:06:56,965] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:06:56,981] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:06:56,982] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x78,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:08:50,539] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:08:50,543] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:08:50,577] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:08:50,579] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:08:50,581] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:08:50,581] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:08:50,581] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:08:50,597] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:08:50,613] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:08:50,613] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:08:50,614] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:08:50,614] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:08:50,629] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:08:50,647] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:08:50,647] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:08:52,997] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:08:53,013] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:08:53,014] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x7c,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:09:01,696] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:09:01,712] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:09:01,713] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x78,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x57,0x85,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:26:27,700] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:26:27,705] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:26:27,740] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:26:27,742] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:26:27,744] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:26:27,744] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:26:27,744] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:26:27,775] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:26:27,775] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:26:27,776] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:26:27,776] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:26:27,776] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:26:27,807] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:26:27,807] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:26:27,808] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:26:30,205] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:26:30,223] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:26:30,237] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xdb,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0xb5,0xe8,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:26:30,239] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.NullPointerException
+	at test.XBeeTest$XBeeListener.processResponse(XBeeTest.java:90)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2013-02-06 18:26:34,699] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:26:34,715] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:26:34,715] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xd7,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0xb5,0xe8,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:26:34,716] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.NullPointerException
+	at test.XBeeTest$XBeeListener.processResponse(XBeeTest.java:90)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2013-02-06 18:33:45,160] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:33:45,164] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:33:45,199] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:33:45,202] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:33:45,204] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:33:45,205] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:33:45,205] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:33:45,234] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:33:45,235] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:33:45,235] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:33:45,235] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:33:45,236] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:33:45,266] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:33:45,266] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:33:45,267] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:34:06,152] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:34:06,169] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:34:06,170] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x91,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x09,0xbe,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:34:13,013] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:34:13,029] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:34:13,030] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x09,0xbe,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:34:13,031] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.IllegalStateException: Timer already cancelled.
+	at java.util.Timer.sched(Unknown Source)
+	at java.util.Timer.schedule(Unknown Source)
+	at test.XBeeTest$XBeeListener.processResponse(XBeeTest.java:86)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2013-02-06 18:34:32,433] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:34:32,438] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:34:32,473] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:34:32,474] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:34:32,476] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:34:32,476] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:34:32,477] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:34:32,492] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:34:32,508] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:34:32,509] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:34:32,509] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:34:32,509] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:34:32,524] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:34:32,541] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:34:32,543] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:34:34,107] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:34:34,124] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:34:34,124] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x91,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x09,0xbe,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:34:40,440] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:34:40,456] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:34:40,456] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x09,0xbe,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:34:40,458] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.IllegalStateException: Timer already cancelled.
+	at java.util.Timer.sched(Unknown Source)
+	at java.util.Timer.schedule(Unknown Source)
+	at test.XBeeTest$XBeeListener.processResponse(XBeeTest.java:86)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2013-02-06 18:35:48,216] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:35:48,223] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:35:48,254] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:35:48,257] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:35:48,259] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:35:48,259] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:35:48,259] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:35:48,288] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:35:48,288] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:35:48,289] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:35:48,289] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:35:48,289] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:35:48,304] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:35:48,321] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:35:48,323] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:35:50,831] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:35:50,848] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:35:50,863] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8e,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x09,0xbe,option=null,digital[0]=low,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:35:50,865] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.NullPointerException
+	at test.XBeeTest.sendAckLight(XBeeTest.java:56)
+	at test.XBeeTest$XBeeListener.processResponse(XBeeTest.java:86)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2013-02-06 18:35:55,580] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:35:55,596] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:35:55,597] [Thread-2] [WARN] [com.rapplogic.xbee.RxTxSerialComm] We were notified of new data but available() is returning 0 
+[2013-02-06 18:35:55,612] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x09,0xbe,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 18:35:55,612] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.NullPointerException
+	at test.XBeeTest.sendAckLight(XBeeTest.java:56)
+	at test.XBeeTest$XBeeListener.processResponse(XBeeTest.java:86)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2013-02-06 18:37:53,195] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:37:53,199] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:37:53,235] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:37:53,236] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:37:53,238] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:37:53,239] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:37:53,239] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:37:53,254] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:37:53,270] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:37:53,271] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:37:53,271] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:37:53,271] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:37:53,286] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:37:53,304] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:37:53,305] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:38:20,632] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:38:20,636] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:38:20,671] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:38:20,673] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:38:20,675] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:38:20,675] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:38:20,675] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:38:20,706] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:38:20,706] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:38:20,707] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:38:20,707] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:38:20,707] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:38:20,747] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:38:20,749] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:38:20,750] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:41:05,998] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:41:06,009] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:41:06,037] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:41:06,042] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:41:06,044] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:41:06,044] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:41:06,044] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:41:06,073] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:41:06,073] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:41:06,074] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:41:06,074] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:41:06,074] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:41:06,089] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:41:06,106] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:41:06,107] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:46:41,788] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:46:41,793] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:46:41,825] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:46:41,829] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:46:41,831] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:46:41,832] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:46:41,832] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:46:41,861] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:46:41,863] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:46:41,864] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:46:41,864] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:46:41,865] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:46:41,893] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:46:41,894] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:46:41,895] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:46:41,898] [main] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] unexpected error 
+java.lang.NullPointerException
+	at test.XBeeTest.sendAckLight(XBeeTest.java:62)
+	at test.XBeeTest.main(XBeeTest.java:126)
+[2013-02-06 18:48:04,151] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:48:04,160] [main] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] unexpected error 
+java.lang.RuntimeException: XBee is not connected
+	at com.rapplogic.xbee.api.XBee.sendPacket(XBee.java:232)
+	at com.rapplogic.xbee.api.XBee.sendPacket(XBee.java:216)
+	at com.rapplogic.xbee.api.XBee.sendRequest(XBee.java:201)
+	at com.rapplogic.xbee.api.XBee.sendSynchronous(XBee.java:317)
+	at test.XBeeTest.sendAckLight(XBeeTest.java:62)
+	at test.XBeeTest.main(XBeeTest.java:126)
+[2013-02-06 18:49:24,879] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:49:24,884] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:49:24,916] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:49:24,920] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:49:24,922] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:49:24,922] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:49:24,922] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:49:24,952] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:49:24,952] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:49:24,953] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:49:24,953] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:49:24,953] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:49:24,984] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:49:24,984] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:49:24,985] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:49:24,986] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:49:24,986] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 18:49:25,255] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:49:25,273] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:49:25,275] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Packet parser thread was interrupted.  This occurs when close() is called 
+[2013-02-06 18:49:25,884] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] InputStreamThread is exiting 
+[2013-02-06 18:49:30,275] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:49:30,281] [main] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] unexpected error 
+java.lang.RuntimeException: XBee is not connected
+	at com.rapplogic.xbee.api.XBee.sendPacket(XBee.java:232)
+	at com.rapplogic.xbee.api.XBee.sendPacket(XBee.java:216)
+	at com.rapplogic.xbee.api.XBee.sendRequest(XBee.java:201)
+	at com.rapplogic.xbee.api.XBee.sendSynchronous(XBee.java:317)
+	at test.XBeeTest.sendAckLight(XBeeTest.java:62)
+	at test.XBeeTest.main(XBeeTest.java:133)
+[2013-02-06 18:50:50,795] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:50:50,799] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:50:50,834] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:50:50,835] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:50:50,837] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:50:50,837] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:50:50,838] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:50:50,854] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:50:50,870] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:50:50,871] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:50:50,871] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:50:50,871] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:50:50,886] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:50:50,904] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:50:50,905] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:50:50,909] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:50:50,910] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 18:50:51,094] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:50:51,111] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:50:56,112] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:50:56,113] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 18:50:56,241] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:50:56,257] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:50:56,258] [Thread-0] [INFO] [com.rapplogic.xbee.api.XBee] ShutdownHook is closing connection 
+[2013-02-06 18:50:56,258] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Packet parser thread was interrupted.  This occurs when close() is called 
+[2013-02-06 18:52:15,749] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:52:15,753] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:52:15,788] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:52:15,790] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:52:15,792] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:52:15,792] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:52:15,792] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:52:15,808] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:52:15,824] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:52:15,825] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:52:15,825] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:52:15,825] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:52:15,840] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:52:15,857] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:52:15,858] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:52:18,894] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:52:18,910] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:52:18,911] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x34,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:52:18,911] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:52:18,912] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 18:52:19,166] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:52:19,182] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:52:28,913] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 18:52:30,913] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:52:30,913] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 18:52:31,171] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:52:31,187] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:52:34,176] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:52:34,192] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:52:34,192] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x30,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:52:34,192] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:52:34,193] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 18:52:34,272] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:52:34,288] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:52:44,195] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 18:52:46,195] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:52:46,195] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 18:52:46,278] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:52:46,294] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:57:55,087] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 18:57:55,092] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 18:57:55,126] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:57:55,127] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 18:57:55,129] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 18:57:55,129] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 18:57:55,130] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 18:57:55,146] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:57:55,162] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 18:57:55,162] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 18:57:55,163] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 18:57:55,163] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 18:57:55,178] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 18:57:55,196] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 18:57:55,197] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 18:58:05,696] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:58:05,713] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:58:05,714] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x34,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:58:05,715] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:58:05,715] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 18:58:05,984] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:58:06,000] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:58:06,112] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:58:06,128] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:58:06,129] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x10,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:58:15,718] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 18:58:15,718] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:58:15,719] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 18:58:15,864] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:58:15,881] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:58:24,961] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:58:24,977] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:58:24,978] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x34,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:58:25,233] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 18:58:25,249] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 18:58:25,249] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x30,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 18:58:25,722] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 18:58:25,723] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:58:25,724] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 18:58:26,032] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:58:26,048] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:58:35,726] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 18:58:35,726] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 18:58:35,726] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 18:58:35,927] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 18:58:35,943] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 18:58:45,728] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 19:00:20,382] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 19:00:20,387] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 19:00:20,420] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 19:00:20,424] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 19:00:20,426] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 19:00:20,426] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 19:00:20,426] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 19:00:20,456] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 19:00:20,456] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 19:00:20,457] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 19:00:20,457] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 19:00:20,457] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 19:00:20,472] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 19:00:20,490] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 19:00:20,492] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 19:00:25,476] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:00:25,492] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:00:25,492] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x34,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:00:25,493] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:00:25,494] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 19:00:25,763] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:00:25,779] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 19:00:35,496] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 19:00:52,780] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:00:52,796] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:00:52,796] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x10,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:00:52,797] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:00:52,797] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 19:00:53,068] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:00:53,084] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0x42,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x58,0xdc 
+[2013-02-06 19:01:02,800] [pool-1-thread-1] [ERROR] [com.rapplogic.xbee.examples.RemoteAtExample] request timed out. make sure you remote XBee is configured and powered on 
+[2013-02-06 19:06:18,793] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-02-06 19:06:18,797] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-02-06 19:06:18,830] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 19:06:18,833] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-02-06 19:06:18,835] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-02-06 19:06:18,835] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-02-06 19:06:18,835] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-02-06 19:06:18,865] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 19:06:18,865] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-02-06 19:06:18,866] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-02-06 19:06:18,866] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-02-06 19:06:18,866] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-02-06 19:06:18,881] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-02-06 19:06:18,910] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-02-06 19:06:18,911] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-02-06 19:06:26,746] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:26,763] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:26,764] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xa8,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=low,digital[3]=high,digital[4]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:26,765] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:26,765] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 19:06:27,034] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:27,050] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:30,311] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:30,327] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:30,328] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x94,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:30,328] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:30,329] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 19:06:30,423] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:30,440] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:34,404] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:34,420] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:34,420] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xc4,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[11]=high,digital[12]=low 
+[2013-02-06 19:06:34,420] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:34,421] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 19:06:34,500] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:34,516] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:35,491] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:35,507] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:35,507] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x94,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:35,508] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:35,508] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 19:06:35,635] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:35,651] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:38,688] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:38,704] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:38,720] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xb5,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=low,digital[1]=high,digital[2]=high,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:38,720] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:38,720] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 19:06:38,816] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:38,832] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:39,983] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:39,999] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:39,999] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x94,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:40,000] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:40,000] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 19:06:40,079] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:40,095] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:41,070] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:41,086] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:41,086] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xb6,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=low,digital[2]=high,digital[3]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:41,086] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:41,087] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 19:06:41,198] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:41,230] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:42,013] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:42,029] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:42,029] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x94,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:42,029] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:42,029] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 19:06:42,157] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:42,173] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:42,908] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:42,924] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:42,940] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0xbc,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=low,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:42,940] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:42,940] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x05,0xf2 
+[2013-02-06 19:06:43,020] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:43,036] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 
+[2013-02-06 19:06:43,692] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-02-06 19:06:43,708] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-02-06 19:06:43,708] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x94,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f,option=null,digital[0]=high,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[11]=high,digital[12]=high 
+[2013-02-06 19:06:43,708] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-02-06 19:06:43,709] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x79,0xb4,0x57,0xff,0xfe,0x02,0x44,0x34,0x00,0xf7 
+[2013-02-06 19:06:43,852] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-02-06 19:06:43,868] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xc6,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x21,0x8f 

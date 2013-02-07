@@ -14,7 +14,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="libs/com.sun.grizzly.util.jar"/>
-	<classpathentry kind="lib" path="/Users/Dwight/Documents/495_mac/Rough_ISIS_Proj/ISISServer/ISISServer/libs/glassfish-embedded-all-3.1.1-b11.jar"/>
-	<classpathentry kind="lib" path="/Users/Dwight/Documents/495_mac/Rough_ISIS_Proj/ISISServer/ISISServer/libs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/glassfish-embedded-all-3.1.1-b11.jar"/>
+	<classpathentry kind="lib" path="libs/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
