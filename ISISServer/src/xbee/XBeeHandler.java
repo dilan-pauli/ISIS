@@ -23,8 +23,8 @@ import datastucts.XBeePacket;
  */
 public class XBeeHandler {
 	
-	private Queue<XBeePacket> toNetwork;
-	private Queue<XBeePacket> fromNetwork;
+	private ToNetworkQ toNetwork;
+	private FromNetworkQ fromNetwork;
 	private XBee coordinator;
 	
 	/**
@@ -34,8 +34,8 @@ public class XBeeHandler {
 	 */
 	public XBeeHandler()
 	{
-		toNetwork = new LinkedList<XBeePacket>();
-		fromNetwork = new LinkedList<XBeePacket>();
+		toNetwork = new ToNetworkQ();
+		fromNetwork = new FromNetworkQ();
 		coordinator = new XBee();
 		
 		/*TODO - Add a user user editable com port.
@@ -53,56 +53,41 @@ public class XBeeHandler {
 		}
 		
 		//Add the custom Listener to the XBee
-		coordinator.addPacketListener(new PacketListener() {
-			public void processResponse(XBeeResponse response) {
-				/*
-				 * This will be rather long.
-				 */
-				if (response.getApiId() == ApiId.ZNET_IO_SAMPLE_RESPONSE) 
-				{
-			        ZNetRxIoSampleResponse ioSample = (ZNetRxIoSampleResponse) response;
-			        //Send a IO packet back to the device to turn the LED on ???
-			        
-			        //Convert to XBeePacket
-			        
-			        //Place on the Queue
-				}
+		coordinator.addPacketListener(new XBeeListener());
+	}
+	
+	/**
+	 * Method that will be used to turn on or turn off the GREEN Ack led.
+	 * THis will be called when a button is pressed and then it will be 
+	 * called again with a level of 0 after the button is released to turn
+	 * off the light.
+	 */
+	private void sendAckLight(int level)
+	{
+		//TODO
+	}
+	
+	public class XBeeListener implements PacketListener
+	{
+		@Override
+		public void processResponse(XBeeResponse response) {
+			
+			if (response.getApiId() == ApiId.ZNET_IO_SAMPLE_RESPONSE) 
+			{
+		        ZNetRxIoSampleResponse ioSample = (ZNetRxIoSampleResponse) response;
+		        //Send a IO packet back to the device to turn the LED on ???
+		        
+		        //Convert to XBeePacket
+		        
+		        //Place on the Queue
 			}
-		});
-	}
-	
-	/**
-	 * This function will be used by the threads that are polling the for data that is received
-	 * from the xbee network. If there is data it is returned else the return in null.
-	 * 
-	 * @return XBeePacket
-	 */
-	public XBeePacket getXBeePacket()
-	{
-		if(fromNetwork.isEmpty())
-			return null;
-		else
-			return fromNetwork.remove();
-	}
-	
-	/**
-	 * This function will place a Xbeepacket on to the outgoing queue so that it 
-	 * can be sent to the xbee network. It return -1 on failure.
-	 * 
-	 * @param msg
-	 */
-	public int sendToXbeeNetwork(XBeePacket msg)
-	{
-		//Need error checking here?
-		try {
-			toNetwork.add(msg);
-		} catch (Exception e) {
-			//Catch any exception and try to continue execution.
-			System.out.println(e.toString());
-			return -1;
+			
 		}
+	}
+	
+	public class sendingThread extends Thread
+	{
 		
-		return 0;
 	}
 
 }
