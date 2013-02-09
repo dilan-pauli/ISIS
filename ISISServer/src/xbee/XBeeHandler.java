@@ -3,12 +3,19 @@ package xbee;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import org.apache.log4j.Logger;
+
+import remoteInterface.RemoteData;
+import remoteInterface.RemoteInterface;
+
 import com.rapplogic.xbee.api.ApiId;
 import com.rapplogic.xbee.api.PacketListener;
+import com.rapplogic.xbee.api.RemoteAtRequest;
 import com.rapplogic.xbee.api.XBee;
 import com.rapplogic.xbee.api.XBeeException;
 import com.rapplogic.xbee.api.XBeeResponse;
 import com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse;
+import com.rapplogic.xbee.examples.RemoteAtExample;
 
 import datastucts.XBeePacket;
 
@@ -21,11 +28,14 @@ import datastucts.XBeePacket;
  * @author noquarter
  *
  */
-public class XBeeHandler {
+public class XBeeHandler implements RemoteInterface
+{
+	private final static Logger log = Logger.getLogger(RemoteAtExample.class);
 	
-	private ToNetworkQ toNetwork;
-	private FromNetworkQ fromNetwork;
+	private Queue<XBeePacket> toNetwork;
+	private Queue<XBeePacket> fromNetwork;
 	private XBee coordinator;
+	private Thread sendingThread;
 	
 	/**
 	 *	This is the constructor class for the XBEE communication system.
@@ -34,15 +44,11 @@ public class XBeeHandler {
 	 */
 	public XBeeHandler()
 	{
-		toNetwork = new ToNetworkQ();
-		fromNetwork = new FromNetworkQ();
+		toNetwork = new LinkedList<XBeePacket>();
+		fromNetwork = new LinkedList<XBeePacket>();
 		coordinator = new XBee();
 		
-		/*TODO - Add a user user editable com port.
-		//Need to define the sender thread here too?
-		//Ask the console
-		System.out.println("Please specify the com port to poll for the coordinator:");
-		*/
+		//TODO - User editable COM part?
 		
 		//Open the connection to the XBee device.
 		try {
@@ -54,6 +60,10 @@ public class XBeeHandler {
 		
 		//Add the custom Listener to the XBee
 		coordinator.addPacketListener(new XBeeListener());
+		
+		//Create and start the sending Thread
+		sendingThread = new Thread(new sendingThread());
+		sendingThread.start();
 	}
 	
 	/**
@@ -64,10 +74,16 @@ public class XBeeHandler {
 	 */
 	private void sendAckLight(int level)
 	{
-		//TODO
+		try {
+			RemoteAtRequest request = new RemoteAtRequest(addr, "D4", new int[] {level});
+			coordinator.sendAsynchronous(request);
+
+		} catch (Exception e) {
+			log.error("unexpected error", e);	
+		}
 	}
 	
-	public class XBeeListener implements PacketListener
+	private class XBeeListener implements PacketListener
 	{
 		@Override
 		public void processResponse(XBeeResponse response) {
@@ -81,13 +97,33 @@ public class XBeeHandler {
 		        
 		        //Place on the Queue
 			}
-			
 		}
 	}
 	
-	public class sendingThread extends Thread
+	private class sendingThread implements Runnable
 	{
-		
+		@Override
+		public void run() {
+			// TODO Create the run order for the sending Thread.
+		}
 	}
 
+	@Override
+	public RemoteData getRemoteMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void sendDataToRemote(RemoteData msg) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private XBeePacket createXBeePacket(ZNetRxIoSampleResponse packet)
+	{
+		//TODO - Create XBeePacket.
+		return null;
+
+	}
 }
