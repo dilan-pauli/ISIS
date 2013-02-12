@@ -6,7 +6,6 @@ import java.util.logging.Level;
 
 import org.glassfish.embeddable.CommandResult;
 import org.glassfish.embeddable.CommandRunner;
-import org.glassfish.embeddable.Deployer;
 import org.glassfish.embeddable.GlassFish;
 import org.glassfish.embeddable.GlassFishException;
 import org.glassfish.embeddable.GlassFishProperties;
@@ -33,7 +32,7 @@ public class WebSocketServer {
 	/**
 	 * Deployer for the embedded server
 	 */
-	private Deployer deployer;
+	//private Deployer deployer;
 
 	/**
 	 * Name of the deployed app on the embedded server
@@ -77,7 +76,7 @@ public class WebSocketServer {
 
 		/*
 		 * Create and configure GlassFish server (Has Sender/Receiver within the
-		 * application it deploys to handle sending and receiving messages
+		 * application it deploys to handle sending and receiving messages)
 		 * Call initialization function
 		 */
 		if(!this.initEmbeddedServer()) {
@@ -114,8 +113,10 @@ public class WebSocketServer {
 
 			// Current working directory
 			String cwdStr = "";
-			// Deploy a web application at the given URI with /ISISServer as the context root TODO: UPDATE COMMENT
-			this.deployer = this.embeddedServer.getDeployer();
+
+			// Deploy a web application at the given URI with /ISISServer as the context root
+			//TODO: GET RID OF THIS this.deployer = this.embeddedServer.getDeployer();
+
 			// Print the path of the current working directory (Check)
 			try {
 				cwdStr = new File(".").getCanonicalPath();
@@ -127,46 +128,97 @@ public class WebSocketServer {
 				ex.printStackTrace();
 			}
 
+
 			///////////////////////////
 			try {
-				// Create a scattered web application.
+				// Create a scattered archive web application
 				ScatteredArchive archive = new ScatteredArchive("ISISServer", ScatteredArchive.Type.WAR);
-				
-				// Add directories and files to scattered archive
-				
-				//Print the path for the servlet and WebSocket classes (CHECKING)
+				// Print the created archive (CHECKING)
+				System.out.println("Created scattered archive: " + archive.toString());
+
+				// Add directories and files to the scattered archive
+
+				// Print the path for the servlet and WebSocket classes (CHECKING)
 				System.out.println("Path of class files: " + new File("bin", "webSock").toURI());
 				// webSock directory contains the compiled servlets and code
 				archive.addClassPath(new File("bin", "webSock"));
-				
-				//Print the path for the deployment descriptor file (CHECKING)
-				System.out.println("Path of deployment descriptor: " + new File("WebContent" + File.separator + 
-						"WEB-INF" + File.separator + "sun-web.xml").toURI());
+
+				// Print the path for the Web app .jsp file(s)
+				System.out.println("Path of web app .jsp files: " + new File("index.jsp").toURI());
+				archive.addClassPath(new File("index.jsp"));
+
+				// Print the path for the deployment descriptor file (CHECKING)
+				//System.out.println("Path of deployment descriptor: " + new File("WebContent" + File.separator + 
+				//		"WEB-INF" + File.separator + "sun-web.xml").toURI());
 				// WebContent/WEB-INF/sun-web.xml is the WEB-INF/sun-web.xml
-				archive.addMetadata(new File("WebContent" + File.separator + 
-						"WEB-INF" + File.separator + "sun-web.xml"));
-				
+				//archive.addMetadata(new File("WebContent" + File.separator + 
+				//		"WEB-INF" + File.separator + "sun-web.xml"));
+				////////
+				//System.out.println("Path of deployment descriptor: " + new File("WEB-INF", "sun-web.xml").toURI());
+				//archive.addMetadata(new File("WEB-INF", "sun-web.xml"));
+				System.out.println("Path of deployment descriptor: " + new File("WEB-INF", "glassfish-web.xml").toURI());
+				archive.addMetadata(new File("WEB-INF", "glassfish-web.xml"));
+
+				// Print the path for the manifest file
+				System.out.println("Path of manifest file: " + new File("META-INF", "MANIFEST.MF").toURI());
+				archive.addMetadata(new File("META-INF", "MANIFEST.MF"));
+
 				// resources/MyLogFactory is my META-INF/services/org.apache.commons.logging.LogFactory
 				//archive.addMetadata(new File("resources", "MyLogFactory"), "META-INF/services/org.apache.commons.logging.LogFactory");
-				
+
 				// Print the path for the scattered archive URI passed to the deploy method
-				System.out.println("Scattered archive URI (passed to deploy method): " + archive.toURI().toString());
-				
+				System.out.println("Scattered archive URI (passed to deploy method): " + archive.toURI());
+
 				// Print the name of the deployed app
-				this.deployedApp = this.deployer.deploy(archive.toURI(), "--force", "true",
-														"--contextroot", "ISISServer");	//TODO: WHY NULL??
+				this.deployedApp = "";
+				this.deployedApp = this.embeddedServer.getDeployer().deploy(
+						archive.toURI(), "--name=ISISServer", "--force=true", "--contextroot=ISISServer");//TODO: WHY DOES THIS END UP NULL??
 				System.out.println("Deployed app name created from passed in scattered archive URI: " + 
-									this.deployedApp + "\n");
+						this.deployedApp + "\n");
+
+				// Log the name of the web app that an attempt was made to deploy
+				java.util.logging.Logger.getAnonymousLogger().log(
+						Level.INFO, "Time: " + new java.util.Date() + ", " + 
+								"Attempted to deploy App: \"" + this.deployedApp +"\"");
+			}
+			catch(GlassFishException exc) {
+				exc.printStackTrace();
+				java.util.logging.Logger.getAnonymousLogger().log(
+						Level.INFO, "Time: " + new java.util.Date() + ", Failed to deploy web application on server");
 			}
 			catch(Exception exception) {
 				exception.printStackTrace();
 				java.util.logging.Logger.getAnonymousLogger().log(
 						Level.INFO, "Time: " + new java.util.Date() + ", Failed to create scattered archive");
 			}
+			///////////////////////////
+
+
+			/*//Remember to add ServerProcessISIS.war to the current folder to test this
+			try {
+			// Web archive file
+			File war = new File("ServerProcessISIS.war");
+
+			// Print the path for the web archive file URI passed to the deploy method
+			System.out.println("Web archive URI (passed to deploy method): " + war.toURI().toString());
+
+			// Print the name of the deployed app
+			this.deployedApp = "";
+			this.deployedApp = this.embeddedServer.getDeployer().deploy(
+					war, "--name=ServerProcessISIS", "--force=true", "--contextroot=ISISServer");//TODO: WHY DOES THIS END UP NULL??
+			System.out.println("Deployed app name created from passed in scattered archive URI: " + 
+					this.deployedApp + "\n");
+
+			// Log the name of the web app that an attempt was made to deploy
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", " + 
 							"Attempted to deploy App: \"" + this.deployedApp +"\"");
-			///////////////////////////
+			}
+			catch(Exception excpt) {
+			System.out.println("Exception occured when an attempt was made to deploy the war file");
+				excpt.printStackTrace();
+			}*/
+
 
 			// Set the path to the directory containing the files for the Web application
 			//xx/this.fileName = cwdStr + File.separator + "bin" + File.separator + "webSock";
@@ -179,6 +231,7 @@ public class WebSocketServer {
 			//java.util.logging.Logger.getAnonymousLogger().log(
 			//		Level.INFO, "Time: " + new java.util.Date() + ", " + 
 			//				"Attempted to deploy App \"" + this.deployedApp + "\" at: " + new File(fileName).toURI());
+
 
 			/*
 			 * Run commands as required (to configure embedded GlassFish server)
@@ -253,7 +306,7 @@ public class WebSocketServer {
 	public void shutDownEmbeddedServer() {
 		try {
 			// Undeploy the ISIS Server Application from the embedded server
-			this.deployer.undeploy(this.deployedApp);
+			this.embeddedServer.getDeployer().undeploy(this.deployedApp);
 			// Stop the embedded server
 			this.embeddedServer.stop();
 			// Dispose of the embedded server
@@ -266,8 +319,11 @@ public class WebSocketServer {
 					"Exception: thrown when attempting to shut down the embedded server");
 			e.printStackTrace();
 		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	/**
 	 * Get the status of the embedded server
 	 */
@@ -277,20 +333,20 @@ public class WebSocketServer {
 		} catch (GlassFishException e) {
 			e.printStackTrace();
 		}
-		
+
 		return "";
 	}
-	
+
 	/**
 	 * Get the applications deployed on the embedded server
 	 */
 	public String getDeployedApplications() {
 		try {
-			return this.deployer.getDeployedApplications().toString();
+			return this.embeddedServer.getDeployer().getDeployedApplications().toString();
 		} catch (GlassFishException e) {
 			e.printStackTrace();
 		}
-		
+
 		return "";
 	}
 

@@ -11,8 +11,7 @@ public class WebSocketServerTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
 		// Create a WebSocketServer
 		WebSocketServer server = new WebSocketServer();
 
@@ -32,8 +31,7 @@ public class WebSocketServerTest {
 		System.out.println("Deployed applications on the embedded WebSocket server: " + 
 							server.getDeployedApplications());
 
-		while(true)
-		{
+		while(true) {
 			System.out.println("Press any key and hit enter to exit the WebSocketServer Test...");
 			try {
 				if(System.in.read() > 0) {

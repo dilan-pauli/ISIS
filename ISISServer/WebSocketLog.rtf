@@ -1,0 +1,146 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red0\green0\blue128;}
+\margl1440\margr1440\vieww17440\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs22 \cf2 Feb 07, 2013 3:45:14 AM webSock.WebSocketServer <init>\cf0 \
+\cf2 INFO: Time: Thu Feb 07 03:45:14 CST 2013, Created incoming queue for the WebSocket server component\cf0 \
+\cf2 Feb 07, 2013 3:45:14 AM webSock.WebSocketServer <init>\cf0 \
+\cf2 INFO: Time: Thu Feb 07 03:45:14 CST 2013, Created outgoing queue for the WebSocket server component\cf0 \
+\cf2 Feb 07, 2013 3:45:39 AM org.hibernate.validator.util.Version <clinit>\cf0 \
+\cf2 INFO: Hibernate Validator 4.2.0.Final\cf0 \
+\cf2 Feb 07, 2013 3:45:40 AM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy\cf0 \
+\cf2 INFO: Network listener http-listener on port 0 disabled per domain.xml\cf0 \
+\cf2 Feb 07, 2013 3:45:40 AM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy\cf0 \
+\cf2 INFO: Network listener https-listener on port 0 disabled per domain.xml\cf0 \
+\cf2 Feb 07, 2013 3:45:40 AM com.sun.enterprise.v3.server.AppServerStartup run\cf0 \
+\cf2 INFO: GlassFish Server Open Source Edition 3.1.2 (java_re-private) startup time : Embedded (773ms), startup services(788ms), total(1,561ms)\cf0 \
+\cf2 Feb 07, 2013 3:45:40 AM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run\cf0 \
+\cf2 INFO: JMX006: JMXStartupService had disabled JMXConnector system\cf0 \
+\cf2 Feb 07, 2013 3:45:40 AM webSock.WebSocketServer initEmbeddedServer\cf0 \
+\cf2 INFO: Time: Thu Feb 07 03:45:40 CST 2013, Current working directory: /Users/Dwight/Documents/495_mac/Rough_ISIS_Proj/ISISServer/ISISServer\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM org.glassfish.api.ActionReport failure\cf0 \
+\cf2 SEVERE: Module type not recognized for module /Users/Dwight/Documents/495_mac/Rough_ISIS_Proj/ISISServer/ISISServer/src/webSock\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM org.glassfish.api.ActionReport failure\cf0 \
+\cf2 SEVERE: There is no installed container capable of handling this application webSock\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM webSock.WebSocketServer initEmbeddedServer\cf0 \
+\cf2 INFO: Time: Thu Feb 07 03:46:04 CST 2013, null at: file:/Users/Dwight/Documents/495_mac/Rough_ISIS_Proj/ISISServer/ISISServer/src/webSock/ was attempted to be deployed\cf0 \
+Press any key to exit the WebSocketServer Test...\
+\cf2 Feb 07, 2013 3:46:04 AM org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1 call\cf0 \
+\cf2 SEVERE: Config Listener notification got interrupted\cf0 \
+\pard\pardeftab720
+\cf3 \ul \ulc3 java.util.concurrent.ExecutionException\cf2 \ulnone : java.lang.NoSuchMethodError: com.sun.grizzly.util.res.StringManager.getManager(Ljava/lang/String;Ljava/lang/ClassLoader;)Lcom/sun/grizzly/util/res/StringManager;\cf0 \
+\pard\pardeftab720
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerGet(\cf3 \ul \ulc3 FutureTask.java:262\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.get(\cf3 \ul \ulc3 FutureTask.java:119\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1.call(\cf3 \ul \ulc3 Transactions.java:290\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1.call(\cf3 \ul \ulc3 Transactions.java:269\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerRun(\cf3 \ul \ulc3 FutureTask.java:334\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.run(\cf3 \ul \ulc3 FutureTask.java:166\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$Notifier$1$1.run(\cf3 \ul \ulc3 Transactions.java:168\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.Executors$RunnableAdapter.call(\cf3 \ul \ulc3 Executors.java:471\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerRun(\cf3 \ul \ulc3 FutureTask.java:334\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.run(\cf3 \ul \ulc3 FutureTask.java:166\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.ThreadPoolExecutor.runWorker(\cf3 \ul \ulc3 ThreadPoolExecutor.java:1145\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(\cf3 \ul \ulc3 ThreadPoolExecutor.java:615\cf2 \ulnone )\cf0 \
+\cf2 	at java.lang.Thread.run(\cf3 \ul \ulc3 Thread.java:722\cf2 \ulnone )\cf0 \
+\cf2 Caused by: java.lang.NoSuchMethodError: com.sun.grizzly.util.res.StringManager.getManager(Ljava/lang/String;Ljava/lang/ClassLoader;)Lcom/sun/grizzly/util/res/StringManager;\cf0 \
+\cf2 	at com.sun.grizzly.http.SelectorThread.<clinit>(\cf3 \ul \ulc3 SelectorThread.java:443\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.ContainerMapper.<init>(\cf3 \ul \ulc3 ContainerMapper.java:120\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyProxy.configureGrizzly(\cf3 \ul \ulc3 GrizzlyProxy.java:150\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyProxy.<init>(\cf3 \ul \ulc3 GrizzlyProxy.java:121\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyService.createNetworkProxy(\cf3 \ul \ulc3 GrizzlyService.java:494\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.processNetworkListener(\cf3 \ul \ulc3 DynamicConfigListener.java:155\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.access$100(\cf3 \ul \ulc3 DynamicConfigListener.java:79\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener$1.changed(\cf3 \ul \ulc3 DynamicConfigListener.java:104\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.ConfigSupport.sortAndDispatch(\cf3 \ul \ulc3 ConfigSupport.java:289\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.changed(\cf3 \ul \ulc3 DynamicConfigListener.java:94\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerJob.process(\cf3 \ul \ulc3 Transactions.java:401\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerJob.process(\cf3 \ul \ulc3 Transactions.java:391\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1$1.call(\cf3 \ul \ulc3 Transactions.java:281\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1$1.call(\cf3 \ul \ulc3 Transactions.java:279\cf2 \ulnone )\cf0 \
+\cf2 	... 5 more\cf0 \
+\
+\cf2 Feb 07, 2013 3:46:04 AM com.sun.enterprise.v3.services.impl.GrizzlyService createNetworkProxy\cf0 \
+\cf2 INFO: Network listener http-listener on port 0 disabled per domain.xml\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1 call\cf0 \
+\cf2 SEVERE: Config Listener notification got interrupted\cf0 \
+\pard\pardeftab720
+\cf3 \ul \ulc3 java.util.concurrent.ExecutionException\cf2 \ulnone : java.lang.NoClassDefFoundError: Could not initialize class com.sun.grizzly.http.SelectorThread\cf0 \
+\pard\pardeftab720
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerGet(\cf3 \ul \ulc3 FutureTask.java:262\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.get(\cf3 \ul \ulc3 FutureTask.java:119\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1.call(\cf3 \ul \ulc3 Transactions.java:290\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1.call(\cf3 \ul \ulc3 Transactions.java:269\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerRun(\cf3 \ul \ulc3 FutureTask.java:334\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.run(\cf3 \ul \ulc3 FutureTask.java:166\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$Notifier$1$1.run(\cf3 \ul \ulc3 Transactions.java:168\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.Executors$RunnableAdapter.call(\cf3 \ul \ulc3 Executors.java:471\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerRun(\cf3 \ul \ulc3 FutureTask.java:334\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.run(\cf3 \ul \ulc3 FutureTask.java:166\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.ThreadPoolExecutor.runWorker(\cf3 \ul \ulc3 ThreadPoolExecutor.java:1145\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(\cf3 \ul \ulc3 ThreadPoolExecutor.java:615\cf2 \ulnone )\cf0 \
+\cf2 	at java.lang.Thread.run(\cf3 \ul \ulc3 Thread.java:722\cf2 \ulnone )\cf0 \
+\cf2 Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.sun.grizzly.http.SelectorThread\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.ContainerMapper.<init>(\cf3 \ul \ulc3 ContainerMapper.java:120\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyProxy.configureGrizzly(\cf3 \ul \ulc3 GrizzlyProxy.java:150\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyProxy.<init>(\cf3 \ul \ulc3 GrizzlyProxy.java:121\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyService.createNetworkProxy(\cf3 \ul \ulc3 GrizzlyService.java:494\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.processNetworkListener(\cf3 \ul \ulc3 DynamicConfigListener.java:187\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.processVirtualServer(\cf3 \ul \ulc3 DynamicConfigListener.java:243\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.access$400(\cf3 \ul \ulc3 DynamicConfigListener.java:79\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener$1.changed(\cf3 \ul \ulc3 DynamicConfigListener.java:126\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.ConfigSupport.sortAndDispatch(\cf3 \ul \ulc3 ConfigSupport.java:332\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.changed(\cf3 \ul \ulc3 DynamicConfigListener.java:94\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerJob.process(\cf3 \ul \ulc3 Transactions.java:401\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerJob.process(\cf3 \ul \ulc3 Transactions.java:391\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1$1.call(\cf3 \ul \ulc3 Transactions.java:281\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1$1.call(\cf3 \ul \ulc3 Transactions.java:279\cf2 \ulnone )\cf0 \
+\cf2 	... 5 more\cf0 \
+\
+\cf2 Feb 07, 2013 3:46:04 AM webSock.WebSocketServer initEmbeddedServer\cf0 \
+\cf2 SEVERE: Time: Thu Feb 07 03:46:04 CST 2013, Failed to create thread pool for the primary http listener on the embedded server\cf0 \
+\cf2 Command Result: com.sun.enterprise.admin.cli.embeddable.CommandExecutorImpl$1@1a1fc11\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1 call\cf0 \
+\cf2 SEVERE: Config Listener notification got interrupted\cf0 \
+\pard\pardeftab720
+\cf3 \ul \ulc3 java.util.concurrent.ExecutionException\cf2 \ulnone : java.lang.NoClassDefFoundError: Could not initialize class com.sun.grizzly.http.SelectorThread\cf0 \
+\pard\pardeftab720
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerGet(\cf3 \ul \ulc3 FutureTask.java:262\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.get(\cf3 \ul \ulc3 FutureTask.java:119\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1.call(\cf3 \ul \ulc3 Transactions.java:290\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1.call(\cf3 \ul \ulc3 Transactions.java:269\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerRun(\cf3 \ul \ulc3 FutureTask.java:334\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.run(\cf3 \ul \ulc3 FutureTask.java:166\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$Notifier$1$1.run(\cf3 \ul \ulc3 Transactions.java:168\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.Executors$RunnableAdapter.call(\cf3 \ul \ulc3 Executors.java:471\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask$Sync.innerRun(\cf3 \ul \ulc3 FutureTask.java:334\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.FutureTask.run(\cf3 \ul \ulc3 FutureTask.java:166\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.ThreadPoolExecutor.runWorker(\cf3 \ul \ulc3 ThreadPoolExecutor.java:1145\cf2 \ulnone )\cf0 \
+\cf2 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(\cf3 \ul \ulc3 ThreadPoolExecutor.java:615\cf2 \ulnone )\cf0 \
+\cf2 	at java.lang.Thread.run(\cf3 \ul \ulc3 Thread.java:722\cf2 \ulnone )\cf0 \
+\cf2 Caused by: java.lang.NoClassDefFoundError: Could not initialize class com.sun.grizzly.http.SelectorThread\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.ContainerMapper.<init>(\cf3 \ul \ulc3 ContainerMapper.java:120\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyProxy.configureGrizzly(\cf3 \ul \ulc3 GrizzlyProxy.java:150\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyProxy.<init>(\cf3 \ul \ulc3 GrizzlyProxy.java:121\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.GrizzlyService.createNetworkProxy(\cf3 \ul \ulc3 GrizzlyService.java:494\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.processNetworkListener(\cf3 \ul \ulc3 DynamicConfigListener.java:187\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.access$100(\cf3 \ul \ulc3 DynamicConfigListener.java:79\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener$1.changed(\cf3 \ul \ulc3 DynamicConfigListener.java:104\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.ConfigSupport.sortAndDispatch(\cf3 \ul \ulc3 ConfigSupport.java:332\cf2 \ulnone )\cf0 \
+\cf2 	at com.sun.enterprise.v3.services.impl.DynamicConfigListener.changed(\cf3 \ul \ulc3 DynamicConfigListener.java:94\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerJob.process(\cf3 \ul \ulc3 Transactions.java:401\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerJob.process(\cf3 \ul \ulc3 Transactions.java:391\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1$1.call(\cf3 \ul \ulc3 Transactions.java:281\cf2 \ulnone )\cf0 \
+\cf2 	at org.jvnet.hk2.config.Transactions$ConfigListenerNotifier$1$1.call(\cf3 \ul \ulc3 Transactions.java:279\cf2 \ulnone )\cf0 \
+\cf2 	... 5 more\cf0 \
+\
+\cf2 Feb 07, 2013 3:46:04 AM com.sun.enterprise.admin.util.InstanceStateService init\cf0 \
+\cf2 INFO: unable to read instance state file /var/folders/pk/j1bgvr2j1jgcrgvmv_73mwqw0000gn/T/gfembed6951106048056873313tmp/config/.instancestate, recreating\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM webSock.WebSocketServer <init>\cf0 \
+\cf2 INFO: Time: Thu Feb 07 03:46:04 CST 2013, Created and started the embedded server\cf0 \
+\cf2 Feb 07, 2013 3:46:04 AM test.WebSocketServerTest main\cf0 \
+\cf2 INFO: Time: Thu Feb 07 03:46:04 CST 2013, Created new embedded WebSocket server\cf0 \
+}
