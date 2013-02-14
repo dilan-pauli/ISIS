@@ -12,6 +12,7 @@ import com.rapplogic.xbee.api.ApiId;
 import com.rapplogic.xbee.api.PacketListener;
 import com.rapplogic.xbee.api.RemoteAtRequest;
 import com.rapplogic.xbee.api.XBee;
+import com.rapplogic.xbee.api.XBeeAddress64;
 import com.rapplogic.xbee.api.XBeeException;
 import com.rapplogic.xbee.api.XBeeResponse;
 import com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse;
@@ -75,6 +76,7 @@ public class XBeeHandler implements RemoteInterface
 	private void sendAckLight(int level)
 	{
 		try {
+			XBeeAddress64 addr = null;	//TODO: DILAN, I PUT THIS HERE FOR NOW TO REMOVE ERRORS WHENEVER PROJECT RUN OCCURS
 			RemoteAtRequest request = new RemoteAtRequest(addr, "D4", new int[] {level});
 			coordinator.sendAsynchronous(request);
 

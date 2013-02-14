@@ -275,6 +275,7 @@ public class WebSocketServer {
 			}
 			// Run a command to enable WebSocket support the http listener
 			commandResult = null;
+			//asadmin set configs.config.server-config.network-config.protocols.protocol.http-listener-1.http.websockets-support-enabled=true
 			commandResult = commandRunner.run("set", "configs.config.server-config.network-config." +
 					"protocols.protocol.http-listener-1.http.websockets-support-enabled=true");
 			if(commandResult.getExitStatus() != CommandResult.ExitStatus.SUCCESS) {
