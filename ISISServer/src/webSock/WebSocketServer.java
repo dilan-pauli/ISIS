@@ -47,12 +47,12 @@ public class WebSocketServer {
 	/**
 	 * HTTP port number for the embedded server
 	 */
-	private int httpPortNum = 8000;	//8080
+	private int httpPortNum = 2000;	//8080
 
 	/**
 	 * HTTPS port number for the embedded server
 	 */
-	private int httpsPortNum = 8001;	//8081
+	private int httpsPortNum = 4000;	//8081
 
 	/**
 	 * Constructor
@@ -104,10 +104,11 @@ public class WebSocketServer {
 			// (If the ports are not set, the application fails to start and throws an exception)
 			glassfishProperties.setPort("http-listener", this.httpPortNum);
 			glassfishProperties.setPort("https-listener", this.httpsPortNum);
+			//glassfishProperties.setPort(arg0, arg1);
 
 			// Create new server instance
-			//this.embeddedServer = GlassFishRuntime.bootstrap().newGlassFish(glassfishProperties);
-			this.embeddedServer = GlassFishRuntime.bootstrap().newGlassFish();
+			this.embeddedServer = GlassFishRuntime.bootstrap().newGlassFish(glassfishProperties);
+			//this.embeddedServer = GlassFishRuntime.bootstrap().newGlassFish();
 			// Start the new server
 			this.embeddedServer.start();
 
@@ -134,46 +135,74 @@ public class WebSocketServer {
 				// Create a scattered archive web application
 				ScatteredArchive archive = new ScatteredArchive("ISISServer", ScatteredArchive.Type.WAR);
 				// Print the created archive (CHECKING)
-				System.out.println("Created scattered archive: " + archive.toString());
+				System.out.println("Time: " + new java.util.Date() + 
+						", Created scattered archive: " + archive.toString());
 
+				
 				// Add directories and files to the scattered archive
-
+				
 				// Print the path for the servlet and WebSocket classes (CHECKING)
-				System.out.println("Path of class files: " + new File("bin", "webSock").toURI());
+				System.out.println("Time: " + new java.util.Date() + ", Path of class files: " + 
+						new File("bin", "webSock").toURI());
 				// webSock directory contains the compiled servlets and code
 				archive.addClassPath(new File("bin", "webSock"));
-
+				////////
+				/*// Print the path for the servlet classes (CHECKING)
+				System.out.println("Time: " + new java.util.Date() + 
+						", Path of servlet source file: " + new File("src" + File.separator + "webSock" + 
+				File.separator + "ISISServlet.java").toURI());
+				// webSock directory contains the compiled servlets and code
+				archive.addClassPath(new File("src" + File.separator + "webSock" + File.separator + 
+					"ISISServlet.java"));*/
+				
+				
 				// Print the path for the Web app .jsp file(s)
-				System.out.println("Path of web app .jsp files: " + new File("index.jsp").toURI());
-				archive.addClassPath(new File("index.jsp"));
+				System.out.println("Time: " + new java.util.Date() + 
+						", Path of web app .jsp files: " + new File("WebContent" + File.separator + 
+								"index.jsp").toURI());
+				archive.addClassPath(new File("WebContent" + File.separator + "index.jsp"));
 
 				// Print the path for the deployment descriptor file (CHECKING)
-				//System.out.println("Path of deployment descriptor: " + new File("WebContent" + File.separator + 
-				//		"WEB-INF" + File.separator + "sun-web.xml").toURI());
-				// WebContent/WEB-INF/sun-web.xml is the WEB-INF/sun-web.xml
-				//archive.addMetadata(new File("WebContent" + File.separator + 
-				//		"WEB-INF" + File.separator + "sun-web.xml"));
+				System.out.println("Path of deployment descriptor: " + new File("WebContent" + File.separator + 
+						"WEB-INF" + File.separator + "glassfish-web.xml").toURI());
+				// WebContent/WEB-INF/glassfish-web.xml is the WEB-INF/glassfish-web.xml
+				archive.addMetadata(new File("WebContent" + File.separator + 
+						"WEB-INF" + File.separator + "glassfish-web.xml"));
 				////////
 				//System.out.println("Path of deployment descriptor: " + new File("WEB-INF", "sun-web.xml").toURI());
 				//archive.addMetadata(new File("WEB-INF", "sun-web.xml"));
-				System.out.println("Path of deployment descriptor: " + new File("WEB-INF", "glassfish-web.xml").toURI());
-				archive.addMetadata(new File("WEB-INF", "glassfish-web.xml"));
+				/*System.out.println("Time: " + new java.util.Date() + 
+						", Path of deployment descriptor: " + new File("WEB-INF", "glassfish-web.xml").toURI());
+				archive.addMetadata(new File("WEB-INF", "glassfish-web.xml"));*/
 
+				
 				// Print the path for the manifest file
-				System.out.println("Path of manifest file: " + new File("META-INF", "MANIFEST.MF").toURI());
-				archive.addMetadata(new File("META-INF", "MANIFEST.MF"));
+				System.out.println("Time: " + new java.util.Date() + 
+						", Path of manifest file: " + new File("WebContent" + File.separator + "META-INF" + 
+								File.separator + "MANIFEST.MF").toURI());
+				archive.addMetadata(new File("WebContent" + File.separator + "META-INF" + File.separator + 
+						"MANIFEST.MF"));
+				////////
+				/*// Print the path for the manifest file
+				System.out.println("Time: " + new java.util.Date() + 
+						", Path of manifest file: " + new File("META-INF", "MANIFEST.MF").toURI());
+				archive.addMetadata(new File("META-INF", "MANIFEST.MF"));*/
 
+				
 				// resources/MyLogFactory is my META-INF/services/org.apache.commons.logging.LogFactory
 				//archive.addMetadata(new File("resources", "MyLogFactory"), "META-INF/services/org.apache.commons.logging.LogFactory");
 
+				
 				// Print the path for the scattered archive URI passed to the deploy method
-				System.out.println("Scattered archive URI (passed to deploy method): " + archive.toURI());
-
+				System.out.println("Time: " + new java.util.Date() + 
+						", Scattered archive URI (passed to deploy method): " + archive.toURI());
+				
 				// Print the name of the deployed app
 				this.deployedApp = "";
 				this.deployedApp = this.embeddedServer.getDeployer().deploy(
-						archive.toURI(), "--name=ISISServer", "--force=true", "--contextroot=ISISServer");//TODO: WHY DOES THIS END UP NULL??
-				System.out.println("Deployed app name created from passed in scattered archive URI: " + 
+						archive.toURI(), "--name=ISISServer", "--force=true", "--contextroot=ISISServer");
+				System.out.println("Time: " + new java.util.Date() + 
+						", Deployed app name created from passed in scattered archive URI: " + 
 						this.deployedApp + "\n");
 
 				// Log the name of the web app that an attempt was made to deploy
@@ -205,7 +234,7 @@ public class WebSocketServer {
 			// Print the name of the deployed app
 			this.deployedApp = "";
 			this.deployedApp = this.embeddedServer.getDeployer().deploy(
-					war, "--name=ServerProcessISIS", "--force=true", "--contextroot=ISISServer");//TODO: WHY DOES THIS END UP NULL??
+					war, "--name=ServerProcessISIS", "--force=true", "--contextroot=ISISServer");
 			System.out.println("Deployed app name created from passed in scattered archive URI: " + 
 					this.deployedApp + "\n");
 
@@ -233,12 +262,13 @@ public class WebSocketServer {
 			//				"Attempted to deploy App \"" + this.deployedApp + "\" at: " + new File(fileName).toURI());
 
 
-			/*
-			 * Run commands as required (to configure embedded GlassFish server)
-			 */
+			////
+			// Run commands as required (to configure embedded GlassFish server)
+			////
 			CommandRunner commandRunner = this.embeddedServer.getService(CommandRunner.class);
-			// Run a command to create a http listener (8080??)
 			CommandResult commandResult;
+			
+			// Run a command to create a http listener (8080??)	 TODO PORT NUMBER???
 			commandResult = commandRunner.run("create-http-listener",
 					"--listenerport=8000", "--listeneraddress=0.0.0.0",
 					"--default-virtual-server=server", "http-listener-1");
@@ -251,8 +281,8 @@ public class WebSocketServer {
 			}
 			// Run a command to create a thread pool
 			commandResult = null;
-			commandResult = commandRunner.run("create-threadpool", "--maxthreadpoolsize=20",
-					"--minthreadpoolsize=20", "thread-pool-1");
+			commandResult = commandRunner.run("create-threadpool", "--maxthreadpoolsize=5",
+					"--minthreadpoolsize=2", "thread-pool-1");
 			if(commandResult.getExitStatus() != CommandResult.ExitStatus.SUCCESS) {
 				// Log the problem
 				java.util.logging.Logger.getAnonymousLogger().log(
@@ -273,7 +303,7 @@ public class WebSocketServer {
 								"the embedded server\n" +
 								"Command Result: " + commandResult.toString());
 			}
-			// Run a command to enable WebSocket support the http listener
+			// Run a command to enable WebSocket support the new http listener
 			commandResult = null;
 			//asadmin set configs.config.server-config.network-config.protocols.protocol.http-listener-1.http.websockets-support-enabled=true
 			commandResult = commandRunner.run("set", "configs.config.server-config.network-config." +
@@ -282,7 +312,20 @@ public class WebSocketServer {
 				// Log the problem
 				java.util.logging.Logger.getAnonymousLogger().log(
 						Level.SEVERE, "Time: " + new java.util.Date() + ", " + 
-								"Failed to enable WebSocket support for the primary http listener on " +
+								"Failed to enable WebSocket support for the new http listener on " +
+								"the embedded server\n" +
+								"Command Result: " + commandResult.toString());
+			}
+			
+			// Run a command to enable WebSocket support the default http listener 
+			commandResult = null;
+			commandResult = commandRunner.run("set", "configs.config.server-config.network-config." +
+					"protocols.protocol.http-listener.http.websockets-support-enabled=true");
+			if(commandResult.getExitStatus() != CommandResult.ExitStatus.SUCCESS) {
+				// Log the problem
+				java.util.logging.Logger.getAnonymousLogger().log(
+						Level.SEVERE, "Time: " + new java.util.Date() + ", " + 
+								"Failed to enable WebSocket support for the default http listener on " +
 								"the embedded server\n" +
 								"Command Result: " + commandResult.toString());
 			}

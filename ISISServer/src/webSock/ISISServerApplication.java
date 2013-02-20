@@ -2,6 +2,9 @@ package webSock;
 
 import java.util.logging.Level;
 
+import webSock.WebSocketIncomingQueueInterface;
+import webSock.WebSocketOutgoingQueueInterface;
+
 import com.sun.grizzly.tcp.Request;
 import com.sun.grizzly.websockets.DataFrame;
 import com.sun.grizzly.websockets.ProtocolHandler;
@@ -11,6 +14,13 @@ import com.sun.grizzly.websockets.WebSocketListener;
 
 public class ISISServerApplication extends WebSocketApplication {
 
+	/**
+	 * 
+	 */
+	/*public ISISServerApplication(WebSocketIncomingQueueInterface a, WebSocketOutgoingQueueInterface b) {
+		super();
+	}*/
+	
 	/**
 	 * 
 	 */
