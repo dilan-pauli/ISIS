@@ -7,17 +7,20 @@ public class XBeeState {
 	// Controller device ID
 	private String deviceID;
 	
+	// Controller device ID (physical)
+	//private String physDeviceID;
+	
 	// Number of controller buttons
-	private int NUM_IO_PINS = 5;
+	private final int NUM_IO_PINS = 5;
 	
 	// (UP,DOWN,LEFT,RIGHT,CENTER) => true means pressed
-	private boolean buttonData[] = {false, false, false, false, false};
+	private boolean buttonData[];
 	
 	// True if the device with the deviceID is on
 	private boolean deviceIsOn;
 	
 	// (UP,DOWN,LEFT,RIGHT,CENTER) => 0 volts (low) to 3.3 volts (high)
-	private int buttonPinVoltages[] = {0, 0, 0, 0, 0};
+	private int buttonPinVoltages[];
 	
 	// TODO: COULD ADD MORE STORED INFO HERE (int powerRemaining, int wirelessStrength, int errorRate)
 
@@ -26,7 +29,17 @@ public class XBeeState {
 	 * Class constructor
 	 */
 	public XBeeState() {
-		;
+		
+		// Initalize private fields
+		this.deviceID = "";
+		this.deviceIsOn = false;
+		
+		this.buttonData = new boolean[this.NUM_IO_PINS];
+		this.buttonPinVoltages = new int[this.NUM_IO_PINS];
+		for(int i = 0; i < this.NUM_IO_PINS; i++) {
+			this.buttonData[i] = false;
+			this.buttonPinVoltages[i] = 0;
+		}
 	}
 
 	
