@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String args[]) throws IOException
 	{
-		
+
 		XBeeHandler handler = new XBeeHandler();
 		WebSocketServer server = new WebSocketServer();
 		Controller newController = new Controller(handler, server);
@@ -20,6 +20,5 @@ public class Main {
 			if(System.in.read() > 0)
 				System.exit(0);
 		}
-		
-		}
+	}
 }

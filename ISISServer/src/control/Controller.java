@@ -45,7 +45,7 @@ public class Controller {
 	private String jsonArgumentFieldStr = "Argument";
 	private enum RequestCommand { IO_CODE, DIAG_CODE, INIT_CODE };
 
-	
+
 	/**
 	 * Controller Threads
 	 */
@@ -53,7 +53,7 @@ public class Controller {
 	/* 
 	 * Thread1 monitors the incoming queue of the XbeeHandler, translate items present on this queue 
 	 * from XBee packets to JSON Objects which are understood by browser clients (as specified by the Browser 
-	 * Response API), and then place these translated items on the Outgoing queue of the WebSocket Object 
+	 * Response API), and then places these translated items on the Outgoing queue of the WebSocket Object 
 	 */
 	private Thread1 xbeeInMonitor;
 
@@ -70,14 +70,14 @@ public class Controller {
 	 * accordingly
 	 */
 	private Timer timer;
-	
+
 
 	/**
 	 * Constructor
 	 * @param handler
 	 * @param server
 	 */
-	
+
 	public Controller(XBeeHandler handler, WebSocketServer server)
 	{
 		/*
@@ -103,16 +103,17 @@ public class Controller {
 		/* 
 		 * Create the Controller threads
 		 */
-		this.xbeeInMonitor = new Thread1();
-		this.webSocketInMonitor = new Thread2();
+		this.xbeeInMonitor = new Thread1();	//TODO: XBeeHandler needs accessor methods to get at the queues
+		this.webSocketInMonitor = new Thread2(this.server.getIncomingMsgQueue(), 
+				this.server.getOutgoingMsgQueue(), this);
 		this.timer = new Timer();
 
 		/*
 		 * Run the Controller threads
-		 */
+		 */ //TODO COMMENT THESE BACK IN LATER TO START RUNNING THE THREADS
 		this.xbeeInMonitor.run();
 		this.webSocketInMonitor.run();
-		this.timer.run();
+		//this.timer.run();
 	}
 
 
@@ -121,10 +122,10 @@ public class Controller {
 	 */
 
 	// Convert XBee Packet to JSON
-	private JSONObject convertXbeePacketToJSON(XBeePacket xbeePkt) {
+	JSONObject convertXbeePacketToJSON(XBeePacket xbeePkt) {
 		// TODO MAKE THIS LEGIT	
 		JSONObject obj = new JSONObject();
-		
+
 		// Figure out what kind of xbee response (packet) it is first
 		/*switch(xbeePkt.) {
 		case 1:
@@ -143,15 +144,15 @@ public class Controller {
 	}
 
 	// Convert JSON to XBee Packet
-	private XBeePacket convertJSONToXbeePacket(JSONObject jsonObj) {
+	XBeePacket convertJSONToXbeePacket(JSONObject jsonObj) {
 		// TODO MAKE THIS LEGIT
-		XBeePacket pkt;
-		
+		XBeePacket pkt = null;
+
 		// Figure out what kind of client request (json) it is
-		switch((RequestCommand) jsonObj.get(this.jsonCommandFieldStr)) {
+		/*switch((RequestCommand) jsonObj.get(this.jsonCommandFieldStr)) {
 		case IO_CODE:
-			//Read the value at => this.jsonArgumentFieldStr;
-			//pkt = new XBeePacket(XBeeAddress64 address);
+			//Read the value at => this.jsonArgumentFieldStr: Controller logical address
+			pkt = new XBeePacket(XBeeAddress64 address);
 			break;
 		case DIAG_CODE:
 			//Read the value at => this.jsonArgumentFieldStr;
@@ -163,11 +164,11 @@ public class Controller {
 			break;
 		default:
 			break;
-		}
+		}*/
 
 		//XBeePacket pkt = new XBeePacket(XBeeAddress64 address);
 
-		return null;
+		return pkt;
 	}
 
 	// Accessor functions for XBee States list
@@ -176,7 +177,7 @@ public class Controller {
 	 * @param id
 	 * @return The state of the Xbee controller with the given logical ID
 	 */
-	private XBeeState getXBeeStateForController(String id) {
+	XBeeState getXBeeStateForController(String id) {
 		return this.xbeeStateList.get(id);
 	}
 
@@ -186,23 +187,24 @@ public class Controller {
 	 * Add an XBee state to the list of XBee states
 	 * @param state
 	 */
-	private void addXBeeState(XBeeState state) {
+	synchronized void addXBeeState(XBeeState state) {
 		this.xbeeStateList.put(state.getControllerID(), state);
 	}
 	/**
 	 * Remove the XBee state for the controller with the given logical id from the list of XBee states
 	 * @param id
 	 */
-	private void removeXBeeState(String id) {
+	synchronized void removeXBeeState(String id) {
 		this.xbeeStateList.remove(id);
 	}
 
-	// Translator functions for Xbee devices
+	// Translator functions for XBee devices
 
 	/**
 	 * Translate a logical controller address id to a physical XBee device address
+	 * @return the corresponding physical address for a logical controller address
 	 */
-	private String logicalToPhysicalXBeeAddress(String logicalAddr) {
+	String logicalToPhysicalXBeeAddress(String logicalAddr) {
 		//TODO
 		return this.controllerAddressMap.get(logicalAddr);
 	}
@@ -213,7 +215,7 @@ public class Controller {
 	 * @param clientId
 	 * @return The WebSocket object for the client with the given ID
 	 */
-	private ISISWebSocket getWebSocketForClient(String clientId) {
+	ISISWebSocket getWebSocketForClient(String clientId) {
 		return this.webSocketClientList.get(clientId);
 	}
 
@@ -223,16 +225,14 @@ public class Controller {
 	 * Add a new WebSocket client to the list of WebSocket clients
 	 * @param client
 	 */
-	private void addWebSocketClient(ISISWebSocket client) {
+	synchronized void addWebSocketClient(ISISWebSocket client) {
 		this.webSocketClientList.put(client.toString(), client);
 	}
 	/**
 	 * Remove the WebSocket client with the given client id from the list of WebSocket clients
 	 * @param clientId
 	 */
-	private void removeWebSocketClient(String clientId) {
+	synchronized void removeWebSocketClient(String clientId) {
 		this.webSocketClientList.remove(clientId);
-	}
-
-	// TODO: CONSIDER MOVING Thread1, Thread2, and Timer INSIDE THIS CLASS AS INNER CLASSES FOR EASIER ACCESS TO CONTROLLER METHODS 
+	} 
 }
