@@ -31,9 +31,20 @@ public class Thread2 implements Runnable {
 	public void run() {
 		while(true) {
 			// TODO WRITE THE TASK RUN BY THE THREAD (LOOP AS LONG AS THE PROGRAM HAS NOT EXITED)
-			System.out.println("THREAD 2");
+			/*
+			 * If WebSocket incoming queue is not empty, remove the front item, extract the JSON, figure out
+			 * what the request is, access the XBee states list to serve this request, package up the response
+			 * to be sent via WebSocket, place this JSON response on the WebSocket outgoing queue
+			 * 
+			 * Useful methods:
+			 */
+			//this.wsInQueue.removeNextIncomingWebSocketMsg();
+			//this.controller.
+			//this.wsOutQueue.putItemOnOutgoingQueue(item);
+			
+			System.out.println("Time: " + new java.util.Date() + ", THREAD 2");
 			try {
-				this.wait(15*1000);
+				this.wait(14*1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

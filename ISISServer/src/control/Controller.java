@@ -26,11 +26,9 @@ public class Controller {
 	 */
 
 	// List to store the states of all XBee devices
-	//private LinkedList<XBeeState> xbeeStateList;
 	private HashMap<String, XBeeState> xbeeStateList; // Key, Value => String(ControllerID),XbeeState
 
 	// List to store the WebSocket clients that are currently connected to the ISIS server
-	//private LinkedList<ISISWebSocket> webSocketClientList;
 	private HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
 
 	// List to store logical address / physical address pairs
@@ -41,34 +39,32 @@ public class Controller {
 	 * WebSocket client request strings and codes
 	 */
 
-	private String jsonCommandFieldStr = "CommandCode";
-	private String jsonArgumentFieldStr = "Argument";
-	private enum RequestCommand { IO_CODE, DIAG_CODE, INIT_CODE };
+	// Keys that should appear in JSON requests (in order)
+	String jsonCommandFieldStr = "CommandCode";
+	String jsonRequestArgumentFieldStr = "Argument";
+
+	// Possible values for request types
+	enum RequestCommand { IO_CODE, DIAG_CODE, INIT_CODE };
+
+
+	/**
+	 * WebSocket client response strings and codes
+	 */
+
+	// Keys that should appear in JSON responses (in order)
+	String jsonResponseFieldStr = "ResponseCode";
+	String jsonResponseArgumentFieldStr = "Object";
+
+	// Possible values for response types
+	enum ResponseCode { BUTTON_EVENT, IO_RESPONSE, DIAG_RESPONSE, INIT_RESPONSE, ERROR_RESPONSE }
 
 
 	/**
 	 * Controller Threads
 	 */
 
-	/* 
-	 * Thread1 monitors the incoming queue of the XbeeHandler, translate items present on this queue 
-	 * from XBee packets to JSON Objects which are understood by browser clients (as specified by the Browser 
-	 * Response API), and then places these translated items on the Outgoing queue of the WebSocket Object 
-	 */
 	private Thread1 xbeeInMonitor;
-
-	/*
-	 * Thread2 monitors the Incoming queue of the WebSocket Object. It will translate items present 
-	 * on this queue from JSON Objects (as specified by the Browser Request API) and query the XBee state 
-	 * list for the specific information that the client is after.
-	 */
 	private Thread2 webSocketInMonitor;
-
-	/*
-	 * Timer thread sleeps and periodically wakes up to put XBee packet commands on the XBee 
-	 * Object’s Outgoing queue to check whether controllers are present and updates the XBee state list 
-	 * accordingly
-	 */
 	private Timer timer;
 
 
@@ -85,6 +81,7 @@ public class Controller {
 		 */
 		this.handler = handler;
 		this.server = server;
+		System.out.println("Time: " + new java.util.Date() + ", Initialized the XBee and WebSocket Handlers");
 
 		/*
 		 * Create the Controller lists
@@ -92,6 +89,8 @@ public class Controller {
 		this.xbeeStateList = new HashMap<String, XBeeState>();
 		this.webSocketClientList = new HashMap<String, ISISWebSocket>();
 		this.controllerAddressMap = new HashMap<String, String>();
+		System.out.println("Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
+				"and Controller address mapping list");
 
 		/*
 		 * Fill the controller address map with the Logical / Physical address mappings
@@ -99,21 +98,24 @@ public class Controller {
 		// TODO Maybe read from file?? or just hardcode key-value pairs for now??
 		// Could we use XBee handler to get all physical addresses then assign logical addresses
 		//this.controllerAddressMap.put(key, value);
+		//System.out.println("Time: " + new java.util.Date() + ", Filled the logical->physical address map");
 
 		/* 
 		 * Create the Controller threads
 		 */
-		this.xbeeInMonitor = new Thread1();	//TODO: XBeeHandler needs accessor methods to get at the queues
+		this.xbeeInMonitor = new Thread1();	//TODO: Add parameters
 		this.webSocketInMonitor = new Thread2(this.server.getIncomingMsgQueue(), 
 				this.server.getOutgoingMsgQueue(), this);
-		this.timer = new Timer();
+		this.timer = new Timer(); //TODO: Add parameters
+		System.out.println("Time: " + new java.util.Date() + ", Created Controller Threads");
 
 		/*
 		 * Run the Controller threads
-		 */ //TODO COMMENT THESE BACK IN LATER TO START RUNNING THE THREADS
+		 */
 		this.xbeeInMonitor.run();
 		this.webSocketInMonitor.run();
-		//this.timer.run();
+		this.timer.run();
+		System.out.println("Time: " + new java.util.Date() + ", Started Controller Threads");
 	}
 
 
@@ -205,7 +207,6 @@ public class Controller {
 	 * @return the corresponding physical address for a logical controller address
 	 */
 	String logicalToPhysicalXBeeAddress(String logicalAddr) {
-		//TODO
 		return this.controllerAddressMap.get(logicalAddr);
 	}
 
