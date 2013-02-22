@@ -7,8 +7,8 @@ import org.json.simple.JSONObject;
 import com.rapplogic.xbee.api.XBeeAddress64;
 
 import datastucts.XBeePacket;
+import webSock.ISISServerApplication;
 import webSock.ISISWebSocket;
-import webSock.WebSocketServer;
 import xbee.XBeeHandler;
 
 public class Controller {
@@ -18,7 +18,7 @@ public class Controller {
 	 */
 
 	private XBeeHandler handler;
-	private WebSocketServer server;
+	private ISISServerApplication isisServerApp;
 
 
 	/**
@@ -71,16 +71,16 @@ public class Controller {
 	/**
 	 * Constructor
 	 * @param handler
-	 * @param server
+	 * @param serverApp
 	 */
 
-	public Controller(XBeeHandler handler, WebSocketServer server)
+	public Controller(XBeeHandler handler, ISISServerApplication serverApp)
 	{
 		/*
 		 * Set the handlers for Xbee and WebSocket
 		 */
 		this.handler = handler;
-		this.server = server;
+		this.isisServerApp = serverApp;
 		System.out.println("Time: " + new java.util.Date() + ", Initialized the XBee and WebSocket Handlers");
 
 		/*
@@ -104,8 +104,8 @@ public class Controller {
 		 * Create the Controller threads
 		 */
 		this.xbeeInMonitor = new Thread1();	//TODO: Add parameters
-		this.webSocketInMonitor = new Thread2(this.server.getIncomingMsgQueue(), 
-				this.server.getOutgoingMsgQueue(), this);
+		this.webSocketInMonitor = new Thread2(this.isisServerApp.getIncomingMsgQueue(), 
+				this.isisServerApp.getOutgoingMsgQueue(), this);
 		this.timer = new Timer(); //TODO: Add parameters
 		System.out.println("Time: " + new java.util.Date() + ", Created Controller Threads");
 

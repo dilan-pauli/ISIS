@@ -12,6 +12,7 @@ import org.glassfish.embeddable.GlassFishProperties;
 import org.glassfish.embeddable.GlassFishRuntime;
 import org.glassfish.embeddable.archive.ScatteredArchive;
 
+// TODO: WILL NOT NEED THIS ANYMORE AFTER RESTRUCTURING SINCE THE ISISServerApplication BASICALLY TAKES CARE OF THIS
 public class WebSocketServer {
 	/**
 	 * Queue for placing incoming WebSocket items (from Internet clients)

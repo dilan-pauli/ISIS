@@ -6,7 +6,7 @@ import webSock.WebSocketServer;
 import xbee.XBeeHandler;
 
 public class Main {
-
+	//TODO: NO LONGER NEED THIS. THIS IS NOW ESSENTIALLY DONE BY ISISServerApplication UPON DEPLOYMENT
 	public static void main(String args[]) throws IOException
 	{
 		System.out.println("Time: " + new java.util.Date() + ", Starting ISIS Program");
@@ -17,9 +17,9 @@ public class Main {
 		WebSocketServer server = new WebSocketServer();
 		System.out.println("Time: " + new java.util.Date() + ", Created WebSocket Handler");
 
-		@SuppressWarnings("unused")
-		Controller newController = new Controller(handler, server);
-		System.out.println("Time: " + new java.util.Date() + ", Created Controller");
+		//@SuppressWarnings("unused")
+		//Controller newController = new Controller(handler, server);
+		//System.out.println("Time: " + new java.util.Date() + ", Created Controller");
 
 		while(true)
 		{

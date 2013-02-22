@@ -5,6 +5,7 @@ import java.util.logging.Level;
 
 import webSock.WebSocketServer;
 
+//TODO: WILL NOT NEED THIS ANYMORE AFTER RESTRUCTURING CODE FOR NON-EMBEDDED GLASSFISH SERVER
 public class WebSocketServerTest {
 
 	/**

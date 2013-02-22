@@ -19,7 +19,7 @@ public class WebSocketOutgoingQueue implements WebSocketOutgoingQueueInterface {
 		this.items = new LinkedList<JSONObject>();
 	}
 	
-	public void putItemOnOutgoingQueue(JSONObject item) {
+	public synchronized void putItemOnOutgoingQueue(JSONObject item) {
 		try {
 			this.items.add(item);
 		}
@@ -30,5 +30,18 @@ public class WebSocketOutgoingQueue implements WebSocketOutgoingQueueInterface {
 					"Exception: failed to add item to Outgoing WebSocket queue");
 		}
 		return;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return this.items.isEmpty();
+	}
+
+	@Override
+	public synchronized JSONObject removeNextItemFromOutgoingQueue() {
+		if(!this.items.isEmpty()) {
+			return this.items.remove();
+		}
+		return null;
 	}
 }
