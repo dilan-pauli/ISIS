@@ -18,7 +18,7 @@ import control.Thread1;
 public class Controller {
 
 	/**
-	 * Handlers (Xbee network and WebSocket network)
+	 * Handlers (XBee network and WebSocket network)
 	 */
 	
 	@SuppressWarnings("unused")
@@ -31,7 +31,7 @@ public class Controller {
 	 */
 
 	// List to store the states of all XBee devices
-	protected HashMap<String, RemoteData> xbeeStateList; // Key, Value => String(ControllerID),XbeeState
+	protected HashMap<String, RemoteData> remoteStateList; // Key, Value => String(ControllerID),XbeeState
 
 	// List to store the WebSocket clients that are currently connected to the ISIS server
 	protected HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
@@ -82,7 +82,7 @@ public class Controller {
 	public Controller(XBeeHandler handler, ISISServerApplication serverApp)
 	{
 		/*
-		 * Set the handlers for Xbee and WebSocket
+		 * Set the handlers for XBee and WebSocket
 		 */
 		this.handler = handler;
 		this.isisServerApp = serverApp;
@@ -91,7 +91,7 @@ public class Controller {
 		/*
 		 * Create the Controller lists
 		 */
-		this.xbeeStateList = new HashMap<String, RemoteData>();
+		this.remoteStateList = new HashMap<String, RemoteData>();
 		this.webSocketClientList = new HashMap<String, ISISWebSocket>();
 		this.controllerAddressMap = new HashMap<String, String>();
 		System.out.println("Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
@@ -100,7 +100,8 @@ public class Controller {
 		/*
 		 * Fill the controller address map with the Logical / Physical address mappings
 		 */
-		// TODO Maybe read from file?? or just hardcode key-value pairs for now??
+		
+		// TODO Maybe read from file?? or just hard code key-value pairs for now??
 		// Could we use XBee handler to get all physical addresses then assign logical addresses
 		//this.controllerAddressMap.put(key, value);
 		//System.out.println("Time: " + new java.util.Date() + ", Filled the logical->physical address map");
@@ -135,12 +136,12 @@ public class Controller {
 	 */
 
 	// Convert XBee Packet to JSON
-	JSONObject convertXbeePacketToJSON(RemoteData xbeePkt) {
+	JSONObject convertPacketToJSON(RemoteData pkt) {
 		// TODO MAKE THIS LEGIT	
 		//JSONObject obj = new JSONObject();
 
 		// Figure out what kind of xbee response (packet) it is first
-		/*switch(xbeePkt.) {
+		/*switch(pkt.) {
 		case 1:
 			break;
 		default:
@@ -156,8 +157,13 @@ public class Controller {
 		return null;
 	}
 
-	// Convert JSON to XBee Packet
-	RemoteData convertJSONToXbeePacket(JSONObject jsonObj) {
+	/**
+	 * THis method will convert the JSON string into a command class. 
+	 * 
+	 * @param jsonObj
+	 * @return
+	 */
+	RemoteData convertJSONToPacket(JSONObject jsonObj) {
 		// TODO MAKE THIS LEGIT
 		RemoteData pkt = null;
 
@@ -188,10 +194,10 @@ public class Controller {
 
 	/**
 	 * @param id
-	 * @return The state of the Xbee controller with the given logical ID
+	 * @return The state of the XBee controller with the given logical ID
 	 */
 	RemoteData getXBeeStateForController(String id) {
-		return this.xbeeStateList.get(id);
+		return this.remoteStateList.get(id);
 	}
 
 	// Mutator functions for XBee States list
@@ -203,14 +209,17 @@ public class Controller {
 	 * @param state
 	 */
 	synchronized void addXBeeState(RemoteData state) {
-		this.xbeeStateList.put(state.getControllerID(), state);
+		
+		//TODO update if not exist.
+		
+		this.remoteStateList.put(state.getControllerID(), state);
 	}
 	/**
 	 * Remove the XBee state for the controller with the given logical id from the list of XBee states
 	 * @param id
 	 */
 	synchronized void removeXBeeState(String id) {
-		this.xbeeStateList.remove(id);
+		this.remoteStateList.remove(id);
 	}
 
 	// Translator functions for XBee devices

@@ -241,6 +241,9 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	/**
 	 * Function to change the XBee packet into a very simple for for the controller.
 	 * All the controller needs is the IO information and the address.
+	 * 
+	 * TODO May need to add the voltage sense if implemented.
+	 * 
 	 * @param packet
 	 * @return
 	 */
@@ -248,8 +251,8 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	{
 		boolean[] DIO = new boolean[5];
 		//Fill the packet.
-		// TODO - MAY CHANGE IF WE IMPLEMENT VOLTAGE SENSE
-		DIO[0] = !packet.isD0On();
+		// UP
+		DIO[0] = !packet.isD11On();
 		//LEFT
 		DIO[1] = !packet.isD1On();
 		//RIGHT
