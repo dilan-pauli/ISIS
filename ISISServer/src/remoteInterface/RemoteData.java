@@ -1,6 +1,4 @@
 package remoteInterface;
-
-import org.json.simple.JSONObject;
 /**
  *  This is the interface that will be used to handle data on the controller and thread side.
  *  It is set up so that even though the XBee network maybe swapped out or a new network added 
@@ -12,12 +10,22 @@ import org.json.simple.JSONObject;
  */
 public interface RemoteData {
 	
-	public int[] getAddress();
+	public int[] getButtonPinVoltages();
 	
-	public boolean getDigital(int index);
-	 
-	public int getAnalog(int index);
+	public boolean[] getButtonIOStates();
 	
-	public JSONObject toJSONString(int level);
+	public boolean isOn();
+	
+	public String getControllerID();
+	
+	public void setControllerID(String id);
+	
+	public void setOnState(boolean newOnState);
+	
+	public boolean setButtonIOStates(boolean[] newIOStates);
+	
+	public boolean setButtonPinVoltages(int[] newPinVoltages);
+	
+	
 
 }

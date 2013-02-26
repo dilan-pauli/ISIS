@@ -32,7 +32,7 @@ public class Thread1 implements Runnable {
 	
 	public void updateState(RemoteData dataPacket)
 	{
-		
+		//controller.addXBeeState()
 	}
 	
 	public void sendToClients(RemoteData dataPacket)
@@ -56,7 +56,7 @@ public class Thread1 implements Runnable {
 			{
 				//Remove the packet
 				RemoteData packet = this.FromXBeeNetworkQ.getRemoteMessage();
-				System.out.println("Thread1: Received a message from a remote:" + packet.getAddress());
+				System.out.println("Thread1: Received a message from a remote:" + packet.getControllerID());
 				//update the state list and broadcast to all clients.
 				updateState(packet);
 				sendToClients(packet);				

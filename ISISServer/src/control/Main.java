@@ -7,6 +7,7 @@ import xbee.XBeeHandler;
 
 public class Main {
 	//TODO: NO LONGER NEED THIS. THIS IS NOW ESSENTIALLY DONE BY ISISServerApplication UPON DEPLOYMENT
+	@SuppressWarnings("unused")
 	public static void main(String args[]) throws IOException
 	{
 		System.out.println("Time: " + new java.util.Date() + ", Starting ISIS Program");

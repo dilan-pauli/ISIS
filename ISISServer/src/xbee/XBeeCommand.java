@@ -13,8 +13,11 @@ import remoteInterface.RemoteCommand;
  * @author noquarter
  *
  */
-public class XBeeCommand extends XBeePacket implements RemoteCommand
+public class XBeeCommand implements RemoteCommand
 {
+	protected XBeeAddress64 address;
+	private boolean DIO[];
+	private int analog[];
 	private int commandCode;
 	
 	/**
@@ -24,7 +27,7 @@ public class XBeeCommand extends XBeePacket implements RemoteCommand
 	 */
 	public XBeeCommand(XBeeAddress64 address, int code) 
 	{
-		super(address);
+		this.address = address;
 		if (code < 0 || code > 3 )
 			throw new InvalidParameterException("Code is out of bounds");
 		commandCode = code;
@@ -39,7 +42,8 @@ public class XBeeCommand extends XBeePacket implements RemoteCommand
 	 */
 	public XBeeCommand(XBeeAddress64 address, boolean[] io, int code)
 	{
-		super(address, io);
+		this.address = address;
+		this.DIO = io;
 		if (code < 0 || code > 3 )
 			throw new InvalidParameterException("Code is out of bounds");
 		commandCode = code;
@@ -54,7 +58,9 @@ public class XBeeCommand extends XBeePacket implements RemoteCommand
 	 */
 	public XBeeCommand(XBeeAddress64 address, boolean[] io, int[] analog, int code)
 	{
-		super(address, io, analog);
+		this.address = address;
+		this.DIO = io;
+		this.analog = analog;
 		commandCode = code;
 	}
 
@@ -87,6 +93,41 @@ public class XBeeCommand extends XBeePacket implements RemoteCommand
 		
 		this.commandCode = code;
 		
+	}
+	
+	/**
+	 * Allow the managing thread access to the address.
+	 * @return 8 spot array that contains the 64 bit address for the device.
+	 */
+	public int[] getAddress() {
+		return this.address.getAddress();
+	}
+	
+	/**
+	 * This method is used so that the digital io field will be accessible.
+	 * The max length that the index should be is 11 since there is only 11 DIO
+	 * spots on the XBee.
+	 * @param index number between 0-11 represents D0, D1, D2, etc.
+	 * @return The boolean state of that IO port
+	 */
+	public boolean getDigital(int index) {
+		if (index > DIO.length)
+			throw new InvalidParameterException("Provided index is larger then the array size...");
+		return DIO[index];
+	}
+	
+	/**
+	 * Method is used to access the analog fields of the structure.
+	 * Max index length should be 5.
+	 * @param index 0-5 that represents A0,A1, etc.
+	 * @return The ADC value for that port as an integer.
+	 */
+	public int getAnalog(int index) {
+		if (index > analog.length)
+			throw new InvalidParameterException("Provided index is larger then the array size...");
+		if(analog == null)
+			throw new InvalidParameterException("Analog not avil");
+		return analog[index];
 	}
 	
 	public int getCommandCode()

@@ -1,132 +1,132 @@
 package xbee;
 
-import java.security.InvalidParameterException;
-
-import org.json.simple.JSONObject;
-
 import remoteInterface.RemoteData;
 
-import com.rapplogic.xbee.api.XBeeAddress64;
-/**
- * This class will be a data structure that will be created when the system receives a 
- * data packet from the Xbee network. It uses the Remote Data interface to allow 
- * for the standard access of data if more different types of remote are used.
- * 
- * DIO corresponds with the following:
- * 0 = UP
- * 1 = LEFT
- * 2 = RIGHT
- * 3 = DOWN
- * 4 = CENTER
- * 
- * @author Dilan
- *
- */
-public class XBeePacket implements RemoteData
-{
+public class XBeePacket implements RemoteData{
+	/**
+	 * Private data fields
+	 */
+	// Controller device ID
+	private String deviceID;
 	
-	protected XBeeAddress64 address;
-	private boolean DIO[];
-	private int analog[];
+	// Controller device ID (physical)
+	//private String physDeviceID;
+	
+	// Number of controller buttons
+	private final int NUM_IO_PINS = 5;
+	
+	// (UP,DOWN,LEFT,RIGHT,CENTER) => true means pressed
+	private boolean buttonData[];
+	
+	// True if the device with the deviceID is on
+	private boolean deviceIsOn;
+	
+	// (UP,DOWN,LEFT,RIGHT,CENTER) => 0 volts (low) to 3.3 volts (high)
+	private int buttonPinVoltages[];
+	
+	// TODO: COULD ADD MORE STORED INFO HERE (int powerRemaining, int wirelessStrength, int errorRate)
+
 	
 	/**
-	 * Constructor to create a trivial class with just an address.
-	 * 
-	 * @param address
+	 * Class constructor
 	 */
-	public XBeePacket(XBeeAddress64 address)
-	{
-		this.address = address;
-		this.DIO = new boolean[11];
-		this.analog = new int[5];
+	public XBeePacket() {
+		
+		// Initalize private fields
+		this.deviceID = "";
+		this.deviceIsOn = false;
+		
+		this.buttonData = new boolean[this.NUM_IO_PINS];
+		this.buttonPinVoltages = new int[this.NUM_IO_PINS];
+		for(int i = 0; i < this.NUM_IO_PINS; i++) {
+			this.buttonData[i] = false;
+			this.buttonPinVoltages[i] = 0;
+		}
 	}
+
+	
+	// ACCESSOR FUNCTIONS
 	
 	/**
-	 * Constructor to create a data set with a address and a preset 
-	 * array of digital IO signals.
-	 * 
-	 * @param address
-	 * @param io
+	 * Obtain the device ID
 	 */
-	public XBeePacket(XBeeAddress64 address, boolean[] io)
-	{
-		this.address = address;
-		this.DIO = io;
-		this.analog = null;
-	}
-	
-	/**
-	 * Full constructor to set all of the data fields.
-	 * 
-	 * @param address
-	 * @param io
-	 * @param analog
-	 */
-	public XBeePacket(XBeeAddress64 address, boolean[] io, int[] analog)
-	{
-		this.address = address;
-		this.DIO = io;
-		this.analog = analog;
+	public String getControllerID() {
+		return this.deviceID;
 	}
 
 	/**
-	 * Allow the managing thread access to the address.
-	 * @return 8 spot array that contains the 64 bit address for the device.
+	 * Obtain the ON state of the device
 	 */
-	@Override
-	public int[] getAddress() {
-		return this.address.getAddress();
+	public boolean isOn() {
+		return this.deviceIsOn;
 	}
+
+	/**
+	 * Obtain the state of the button IO pins (UP,DOWN,LEFT,RIGHT,CENTER) => true means pressed
+	 */
+	public boolean[] getButtonIOStates() {
+		return this.buttonData;
+	}
+
+	/**
+	 * Obtain the button pin voltages
+	 */
+	public int[] getButtonPinVoltages() {
+		return this.buttonPinVoltages;
+	}
+
+	
+	// MUTATOR FUNCTIONS
 	
 	/**
-	 * This method is used so that the digital io field will be accessible.
-	 * The max length that the index should be is 11 since there is only 11 DIO
-	 * spots on the XBee.
-	 * @param index number between 0-11 represents D0, D1, D2, etc.
-	 * @return The boolean state of that IO port
+	 * Set the controller ID for the device whose state this is
+	 * DIO corresponds with the following:
+	 * 0 = UP
+	 * 1 = LEFT
+ 	 * 2 = RIGHT
+ 	 * 3 = DOWN
+ 	 * 4 = CENTER
 	 */
-	@Override
-	public boolean getDigital(int index) {
-		if (index > DIO.length)
-			throw new InvalidParameterException("Provided index is larger then the array size...");
-		return DIO[index];
+	public void setControllerID(String id) {
+		this.deviceID = id;
 	}
-	
+
 	/**
-	 * Method is used to access the analog fields of the structure.
-	 * Max index length should be 5.
-	 * @param index 0-5 that represents A0,A1, etc.
-	 * @return The ADC value for that port as an integer.
+	 * Set the on state of the device (true if the device is on)
 	 */
-	@Override
-	public int getAnalog(int index) {
-		if (index > analog.length)
-			throw new InvalidParameterException("Provided index is larger then the array size...");
-		if(analog == null)
-			throw new InvalidParameterException("Analog not avil");
-		return analog[index];
+	public void setOnState(boolean newOnState) {
+		this.deviceIsOn = newOnState;
 	}
-	
+
 	/**
-	 * This function will take the private data and package it up into a JSON
-	 * object so that it can be sent over the Internet.
-	 * @param level 0 is all of the data, 1 is the address, 2 is the DIO data and address, 3 is the address and the analog data.
-	 * @return JSON Object
+	 * Set the state of the button IO pins (pressed or not pressed?)
+	 * @return true if operation succeeded
 	 */
-	@Override
-	public JSONObject toJSONString(int level) {
-		if (level > 3 || level < 0)
-			throw new InvalidParameterException("Provided level is not between 0 and 3");
-		
-		//TODO - Add JSON creation.
-		switch(level)
-		{
-			case 0:
-			case 1:
-			case 2:
-			case 3:
+	public boolean setButtonIOStates(boolean[] newIOStates) {
+		if(newIOStates.length != 5) {
+			return false;
 		}
-		return null;
+		
+		for(int i = 0; i < this.NUM_IO_PINS; i++) {
+			this.buttonData[i] = newIOStates[i];
+		}
+		
+		return true;
 	}
-	
+
+	/**
+	 * Set the button pin voltages
+	 * @return true if operation succeeded
+	 */
+	public boolean setButtonPinVoltages(int[] newPinVoltages) {
+		if(newPinVoltages.length != 5) {
+			return false;
+		}
+		
+		for(int i = 0; i < this.NUM_IO_PINS; i++) {
+			this.buttonPinVoltages[i] = newPinVoltages[i];
+		}
+		
+		return true;
+	}
 }

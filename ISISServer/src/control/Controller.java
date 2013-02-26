@@ -5,9 +5,9 @@ import java.util.HashMap;
 import org.json.simple.JSONObject;
 
 import remoteInterface.FromRemoteInterface;
+import remoteInterface.RemoteData;
 import remoteInterface.ToRemoteInterface;
 
-import datastucts.XBeePacket;
 import webSock.ISISServerApplication;
 import webSock.ISISWebSocket;
 import webSock.WebSocketIncomingQueueInterface;
@@ -20,7 +20,8 @@ public class Controller {
 	/**
 	 * Handlers (Xbee network and WebSocket network)
 	 */
-
+	
+	@SuppressWarnings("unused")
 	private XBeeHandler handler;
 	private ISISServerApplication isisServerApp;
 
@@ -30,7 +31,7 @@ public class Controller {
 	 */
 
 	// List to store the states of all XBee devices
-	protected HashMap<String, XBeeState> xbeeStateList; // Key, Value => String(ControllerID),XbeeState
+	protected HashMap<String, RemoteData> xbeeStateList; // Key, Value => String(ControllerID),XbeeState
 
 	// List to store the WebSocket clients that are currently connected to the ISIS server
 	protected HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
@@ -90,7 +91,7 @@ public class Controller {
 		/*
 		 * Create the Controller lists
 		 */
-		this.xbeeStateList = new HashMap<String, XBeeState>();
+		this.xbeeStateList = new HashMap<String, RemoteData>();
 		this.webSocketClientList = new HashMap<String, ISISWebSocket>();
 		this.controllerAddressMap = new HashMap<String, String>();
 		System.out.println("Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
@@ -134,9 +135,9 @@ public class Controller {
 	 */
 
 	// Convert XBee Packet to JSON
-	JSONObject convertXbeePacketToJSON(XBeePacket xbeePkt) {
+	JSONObject convertXbeePacketToJSON(RemoteData xbeePkt) {
 		// TODO MAKE THIS LEGIT	
-		JSONObject obj = new JSONObject();
+		//JSONObject obj = new JSONObject();
 
 		// Figure out what kind of xbee response (packet) it is first
 		/*switch(xbeePkt.) {
@@ -156,9 +157,9 @@ public class Controller {
 	}
 
 	// Convert JSON to XBee Packet
-	XBeePacket convertJSONToXbeePacket(JSONObject jsonObj) {
+	RemoteData convertJSONToXbeePacket(JSONObject jsonObj) {
 		// TODO MAKE THIS LEGIT
-		XBeePacket pkt = null;
+		RemoteData pkt = null;
 
 		// Figure out what kind of client request (json) it is
 		/*switch((RequestCommand) jsonObj.get(this.jsonCommandFieldStr)) {
@@ -189,17 +190,19 @@ public class Controller {
 	 * @param id
 	 * @return The state of the Xbee controller with the given logical ID
 	 */
-	XBeeState getXBeeStateForController(String id) {
+	RemoteData getXBeeStateForController(String id) {
 		return this.xbeeStateList.get(id);
 	}
 
 	// Mutator functions for XBee States list
 
 	/**
-	 * Add an XBee state to the list of XBee states
+	 * Add an XBee state to the list of XBee states. If the Remote does not exsit yet
+	 * it will be created and added to the hash map. But if it is made already. The
+	 * Existing state's values will be updated.
 	 * @param state
 	 */
-	synchronized void addXBeeState(XBeeState state) {
+	synchronized void addXBeeState(RemoteData state) {
 		this.xbeeStateList.put(state.getControllerID(), state);
 	}
 	/**

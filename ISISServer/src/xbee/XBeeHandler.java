@@ -259,7 +259,11 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		//CENTER
 		DIO[4] = !packet.isD12On();
 		
-		return new XBeePacket(packet.getRemoteAddress64(),DIO);
+		XBeePacket pack = new XBeePacket();
+		
+		//TODO Fill the Packet
+		
+		return pack;
 	}
 
 	/**
@@ -329,12 +333,13 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 			{
 				System.out.println("--------------------Received a message-----------------");
 				XBeePacket msg = (XBeePacket) from.getRemoteMessage();
-				System.out.println("Package from: " + msg.getAddress().toString());
-				System.out.println("Sates UP:" + msg.getDigital(0));
-				System.out.println("Sates LEFT:" + msg.getDigital(1));
-				System.out.println("Sates RIGHT:" + msg.getDigital(2));
-				System.out.println("Sates DOWN:" + msg.getDigital(3));
-				System.out.println("Sates CENTER:" + msg.getDigital(4));
+				boolean[] states = msg.getButtonIOStates();
+				System.out.println("Package from: " + msg.getControllerID());
+				System.out.println("Sates UP:" + states[0]);
+				System.out.println("Sates LEFT:" + states[1]);
+				System.out.println("Sates RIGHT:" + states[2]);
+				System.out.println("Sates DOWN:" + states[3]);
+				System.out.println("Sates CENTER:" + states[4]);
 			}
 		}
 	}
