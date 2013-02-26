@@ -1,11 +1,9 @@
 package control;
 
-import java.util.Queue;
-
 import remoteInterface.FromRemoteInterface;
 import remoteInterface.RemoteData;
-
-import datastucts.XBeePacket;
+import webSock.WebSocketOutgoingQueueInterface;
+import control.Controller;
 
 /** 
  * Thread1 monitors the incoming queue of the XbeeHandler, translate items present on this queue 
@@ -18,25 +16,30 @@ import datastucts.XBeePacket;
  */
 public class Thread1 implements Runnable {
 	
-	private FromRemoteInterface toXBeeNetworkQ;
+	private FromRemoteInterface FromXBeeNetworkQ;
 	
-	//TODO This would be the WebSocket Interface to send out to the client
+	private WebSocketOutgoingQueueInterface toWebSocket;
+	
+	private Controller controller;
 	
 	
-	public Thread1(FromRemoteInterface xbee) {
-		
-		this.toXBeeNetworkQ = xbee;
-		// TODO Add the WebSocket interface.
+	public Thread1(FromRemoteInterface xbee, WebSocketOutgoingQueueInterface web, Controller ctrl) 
+	{
+		this.toWebSocket = web;
+		this.FromXBeeNetworkQ = xbee;
+		this.controller = ctrl;
 	}
 	
 	public void updateState(RemoteData dataPacket)
 	{
-			
+		
 	}
 	
-	public void sendToClients(RemoteData dataPaket)
+	public void sendToClients(RemoteData dataPacket)
 	{
+		//TODO Need to figure out how we wanna build the JSON string.
 		
+		//toWebSocket.putItemOnOutgoingQueue()
 	}
 
 	/**
@@ -49,10 +52,10 @@ public class Thread1 implements Runnable {
 		while(true) 
 		{
 			//If the queue has a message then get it
-			if(this.toXBeeNetworkQ.hasMessages())
+			if(this.FromXBeeNetworkQ.hasMessages())
 			{
 				//Remove the packet
-				RemoteData packet = this.toXBeeNetworkQ.getRemoteMessage();
+				RemoteData packet = this.FromXBeeNetworkQ.getRemoteMessage();
 				System.out.println("Thread1: Received a message from a remote:" + packet.getAddress());
 				//update the state list and broadcast to all clients.
 				updateState(packet);

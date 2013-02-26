@@ -4,12 +4,16 @@ import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 
-import com.rapplogic.xbee.api.XBeeAddress64;
+import remoteInterface.FromRemoteInterface;
+import remoteInterface.ToRemoteInterface;
 
 import datastucts.XBeePacket;
 import webSock.ISISServerApplication;
 import webSock.ISISWebSocket;
+import webSock.WebSocketIncomingQueueInterface;
+import webSock.WebSocketOutgoingQueueInterface;
 import xbee.XBeeHandler;
+import control.Thread1;
 
 public class Controller {
 
@@ -26,13 +30,13 @@ public class Controller {
 	 */
 
 	// List to store the states of all XBee devices
-	private HashMap<String, XBeeState> xbeeStateList; // Key, Value => String(ControllerID),XbeeState
+	protected HashMap<String, XBeeState> xbeeStateList; // Key, Value => String(ControllerID),XbeeState
 
 	// List to store the WebSocket clients that are currently connected to the ISIS server
-	private HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
+	protected HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
 
 	// List to store logical address / physical address pairs
-	private HashMap<String, String> controllerAddressMap; // Key, Value => String(Logical ID), String(Physical address)
+	protected HashMap<String, String> controllerAddressMap; // Key, Value => String(Logical ID), String(Physical address)
 
 
 	/**
@@ -63,8 +67,8 @@ public class Controller {
 	 * Controller Threads
 	 */
 
-	private Thread1 xbeeInMonitor;
-	private Thread2 webSocketInMonitor;
+	private Thread1 remoteToWeb;
+	private Thread2 webToRemote;
 	private Timer timer;
 
 
@@ -103,17 +107,23 @@ public class Controller {
 		/* 
 		 * Create the Controller threads
 		 */
-		this.xbeeInMonitor = new Thread1();	//TODO: Add parameters
-		this.webSocketInMonitor = new Thread2(this.isisServerApp.getIncomingMsgQueue(), 
-				this.isisServerApp.getOutgoingMsgQueue(), this);
+		this.remoteToWeb = new Thread1((FromRemoteInterface)handler,
+				(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
+				this);
+		
+		this.webToRemote = new Thread2((ToRemoteInterface) handler, 
+				(WebSocketIncomingQueueInterface)isisServerApp.getIncomingMsgQueue(),
+				this);
+		
 		this.timer = new Timer(); //TODO: Add parameters
+		
 		System.out.println("Time: " + new java.util.Date() + ", Created Controller Threads");
 
 		/*
 		 * Run the Controller threads
 		 */
-		this.xbeeInMonitor.run();
-		this.webSocketInMonitor.run();
+		this.remoteToWeb.run();
+		this.webToRemote.run();
 		this.timer.run();
 		System.out.println("Time: " + new java.util.Date() + ", Started Controller Threads");
 	}

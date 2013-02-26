@@ -1,9 +1,8 @@
 package control;
 
-import java.util.HashMap;
+import remoteInterface.ToRemoteInterface;
 
 import webSock.WebSocketIncomingQueueInterface;
-import webSock.WebSocketOutgoingQueueInterface;
 
 /**
  * Thread2 monitors the Incoming queue of the WebSocket Object. It will translate items present 
@@ -12,18 +11,18 @@ import webSock.WebSocketOutgoingQueueInterface;
  */
 public class Thread2 implements Runnable {
 	
-	private WebSocketIncomingQueueInterface wsInQueue;
+	private WebSocketIncomingQueueInterface fromWebSock;
 	
-	private WebSocketOutgoingQueueInterface wsOutQueue;
+	private ToRemoteInterface toRemoteNetwork;
 	
 	private Controller controller;
 	
-	public Thread2(WebSocketIncomingQueueInterface wsIncomingQueue, 
-			WebSocketOutgoingQueueInterface wsOutgoingQueue,
+	public Thread2(ToRemoteInterface handler, 
+			WebSocketIncomingQueueInterface web,
 			Controller controller) {
 		
-		this.wsInQueue = wsIncomingQueue;
-		this.wsOutQueue = wsOutgoingQueue;
+		this.toRemoteNetwork = handler;
+		this.fromWebSock = web;
 		this.controller = controller;
 	}
 
