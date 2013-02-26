@@ -19,6 +19,7 @@ public class WebSocketIncomingQueue implements WebSocketIncomingQueueInterface {
 		this.items = new LinkedList<JSONObject>();
 	}
 
+	@Override
 	public synchronized JSONObject removeNextIncomingWebSocketMsg() {
 		JSONObject itemRemoved = null;
 		try {
@@ -39,7 +40,6 @@ public class WebSocketIncomingQueue implements WebSocketIncomingQueueInterface {
 		return this.items.isEmpty();
 	}
 
-	@Override
 	public synchronized void putItemOnIncomingQueue(JSONObject item) {
 		try {
 			this.items.add(item);

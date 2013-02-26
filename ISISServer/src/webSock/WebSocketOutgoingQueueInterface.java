@@ -12,11 +12,11 @@ public interface WebSocketOutgoingQueueInterface {
 	/**
 	 * @return true if the WebSocket outgoing queue is empty
 	 */
-	public boolean isEmpty();
+	//public boolean isEmpty();
 	
 	/**
 	 * Remove the next (front) item from the WebSocket outgoing queue
 	 * @return The removed item
 	 */
-	public JSONObject removeNextItemFromOutgoingQueue();
+	//public JSONObject removeNextItemFromOutgoingQueue();
 }

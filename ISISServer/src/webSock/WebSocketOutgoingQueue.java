@@ -32,12 +32,10 @@ public class WebSocketOutgoingQueue implements WebSocketOutgoingQueueInterface {
 		return;
 	}
 
-	@Override
 	public boolean isEmpty() {
 		return this.items.isEmpty();
 	}
 
-	@Override
 	public synchronized JSONObject removeNextItemFromOutgoingQueue() {
 		if(!this.items.isEmpty()) {
 			return this.items.remove();

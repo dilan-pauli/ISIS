@@ -18,5 +18,5 @@ public interface WebSocketIncomingQueueInterface {
 	 * Insert an item onto the WebSocket incoming queue
 	 * @param item
 	 */
-	public void putItemOnIncomingQueue(JSONObject item);
+	//public void putItemOnIncomingQueue(JSONObject item);
 }

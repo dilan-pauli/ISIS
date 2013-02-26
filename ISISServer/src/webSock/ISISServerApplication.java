@@ -1,5 +1,6 @@
 package webSock;
 
+import java.io.IOException;
 import java.util.logging.Level;
 
 import org.json.simple.JSONObject;
@@ -77,7 +78,12 @@ public class ISISServerApplication extends WebSocketApplication {
 				"Created outgoing queue for the WebSocket server component");
 
 		// Create XBee Handler
-		this.handler = new XBeeHandler();
+		try {
+			this.handler = new XBeeHandler();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
@@ -234,7 +240,7 @@ public class ISISServerApplication extends WebSocketApplication {
 	/**
 	 * Obtain the WebSocket incoming message queue
 	 */
-	public WebSocketIncomingQueueInterface getIncomingMsgQueue() {
+	public WebSocketIncomingQueue getIncomingMsgQueue() {
 		/*
 		 * Note: the interface is returned to restrict access to select few methods
 		 * to manipulate the queue
@@ -245,7 +251,7 @@ public class ISISServerApplication extends WebSocketApplication {
 	/**
 	 * Obtain the WebSocket outgoing message queue
 	 */
-	public WebSocketOutgoingQueueInterface getOutgoingMsgQueue() {
+	public WebSocketOutgoingQueue getOutgoingMsgQueue() {
 		/*
 		 * Note: the interface is returned to restrict access to select few methods
 		 * to manipulate the queue

@@ -12,9 +12,9 @@ public class Receiver {
 	/**
 	 * The WebSocket incoming messages queue
 	 */
-	private WebSocketIncomingQueueInterface wsInQueue;
+	private WebSocketIncomingQueue wsInQueue;
 	
-	public Receiver(WebSocketIncomingQueueInterface wsInQ) {
+	public Receiver(WebSocketIncomingQueue wsInQ) {
 		this.wsInQueue = wsInQ;
 	}
 	
