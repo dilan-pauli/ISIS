@@ -47,6 +47,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	
 	private Queue<XBeeCommand> toNetwork;
 	private Queue<XBeePacket> fromNetwork;
+	
 	private XBee coordinator;
 	private Thread sendingThread;
 	private Timer feedBackTmr;
@@ -210,14 +211,16 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 							log.error("XBeeSendingThread: Error in sending the Force sample");
 						}
 						break;
-					
+						
+			// FUTURE STUF TO BE ADDED 
+						
 					//This means that we want to set states.
 					case 1:
 						 //TODO - Future add a way to manually change IO States.
 		
 					//THis means that we want to build a structure of nodes.
 					case 2:
-						//TODO Node discovery...
+						//TODO - Node discovery...
 					default:
 						throw new InvalidParameterException("Switch Error: code is out of range...");
 					}
@@ -245,7 +248,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	{
 		boolean[] DIO = new boolean[5];
 		//Fill the packet.
-		//UP - MAY CHANGE IF WE IMPLEMENT VOLTAGE SENSE
+		// TODO - MAY CHANGE IF WE IMPLEMENT VOLTAGE SENSE
 		DIO[0] = !packet.isD0On();
 		//LEFT
 		DIO[1] = !packet.isD1On();
@@ -285,9 +288,15 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 
 	/**
 	 * This method will place a command on the ToNetwork Queue.
+	 * @throws InvalidParameterException
 	 */
 	@Override
 	public void sendDataToRemote(RemoteCommand msg) {
+		//Need to do input checking.
+		XBeeCommand msgToAdd = (XBeeCommand) msg;
+		if(msgToAdd.address == null || msgToAdd.getCommandCode() < 0 || msgToAdd.getCommandCode() > 3)
+			throw new InvalidParameterException("RemoteCode parameters are invaild...");
+		
 		toNetwork.add((XBeeCommand) msg);
 	}
 	
@@ -318,8 +327,14 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		{
 			if(from.hasMessages())
 			{
-				System.out.println("-------Received a message-------");
-				//System.out.println(from.getRemoteMessage().toString());
+				System.out.println("--------------------Received a message-----------------");
+				XBeePacket msg = (XBeePacket) from.getRemoteMessage();
+				System.out.println("Package from: " + msg.getAddress().toString());
+				System.out.println("Sates UP:" + msg.getDigital(0));
+				System.out.println("Sates LEFT:" + msg.getDigital(1));
+				System.out.println("Sates RIGHT:" + msg.getDigital(2));
+				System.out.println("Sates DOWN:" + msg.getDigital(3));
+				System.out.println("Sates CENTER:" + msg.getDigital(4));
 			}
 		}
 	}

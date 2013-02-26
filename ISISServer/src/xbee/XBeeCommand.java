@@ -25,6 +25,8 @@ public class XBeeCommand extends XBeePacket implements RemoteCommand
 	public XBeeCommand(XBeeAddress64 address, int code) 
 	{
 		super(address);
+		if (code < 0 || code > 3 )
+			throw new InvalidParameterException("Code is out of bounds");
 		commandCode = code;
 	}
 	
@@ -38,6 +40,8 @@ public class XBeeCommand extends XBeePacket implements RemoteCommand
 	public XBeeCommand(XBeeAddress64 address, boolean[] io, int code)
 	{
 		super(address, io);
+		if (code < 0 || code > 3 )
+			throw new InvalidParameterException("Code is out of bounds");
 		commandCode = code;
 	}
 	
