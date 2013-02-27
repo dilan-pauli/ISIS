@@ -239,13 +239,11 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	}
 
 	/**
-	 * Function to change the XBee packet into a very simple for for the controller.
-	 * All the controller needs is the IO information and the address.
-	 * 
-	 * TODO May need to add the voltage sense if implemented.
+	 * Function to change the XBee packet into a very simple form for the controller.
+	 * All the controller needs is the IO and analog information and the address.
 	 * 
 	 * @param packet
-	 * @return
+	 * @return XBeePacket
 	 */
 	private XBeePacket createXBeePacket(ZNetRxIoSampleResponse packet)
 	{
@@ -262,9 +260,15 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		//CENTER
 		DIO[4] = !packet.isD12On();
 		
+		//Add the analog voltage info
+		int[] analog = new int[3];
+		analog[0] = packet.getAnalog0();
+		
 		XBeePacket pack = new XBeePacket();
 		
-		//TODO Fill the Packet
+		pack.setButtonIOStates(DIO);
+		pack.setButtonPinVoltages(analog);
+		pack.setControllerID(packet.getRemoteAddress64().toString());
 		
 		return pack;
 	}

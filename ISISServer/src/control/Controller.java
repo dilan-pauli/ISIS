@@ -136,8 +136,16 @@ public class Controller {
 	 * Controller Functions
 	 */
 
-	// Convert XBee Packet to JSON
-	JSONObject convertPacketToJSON(RemoteData pkt) {
+	/**
+	 *  Convert XBee Packet to JSON
+	 *  This function will also call the physical to logical method and use the 
+	 *  logical address for the client.
+	 *  
+	 * @param pkt
+	 * @param destination if this is null it is a broad cast to all connected clients
+	 * @return
+	 */
+	JSONObject convertPacketToJSON(RemoteData pkt, ISISWebSocket destination) {
 		// TODO MAKE THIS LEGIT	
 		//JSONObject obj = new JSONObject();
 
@@ -160,6 +168,8 @@ public class Controller {
 
 	/**
 	 * THis method will convert the JSON string into a command class. 
+	 * Will be calling the logical to physical to get the physical address from 
+	 * the logical one given from the browser client.
 	 * 
 	 * @param jsonObj
 	 * @return

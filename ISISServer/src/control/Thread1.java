@@ -1,5 +1,7 @@
 package control;
 
+import org.json.simple.JSONObject;
+
 import remoteInterface.FromRemoteInterface;
 import remoteInterface.RemoteData;
 import webSock.WebSocketOutgoingQueueInterface;
@@ -30,16 +32,14 @@ public class Thread1 implements Runnable {
 		this.controller = ctrl;
 	}
 	
-	public void updateState(RemoteData dataPacket)
-	{
-		//controller.addXBeeState()
-	}
-	
 	public void sendToClients(RemoteData dataPacket)
 	{
-		//TODO Need to figure out how we wanna build the JSON string.
+		//Convert the pkt to JSON and have the dst be 
+		//null so that it ends up being a broadcast.
+		JSONObject obj = controller.convertPacketToJSON(dataPacket, null);
 		
-		//toWebSocket.putItemOnOutgoingQueue()
+		//Send the packet out to the world.
+		toWebSocket.putItemOnOutgoingQueue(obj);
 	}
 
 	/**
@@ -56,9 +56,12 @@ public class Thread1 implements Runnable {
 			{
 				//Remove the packet
 				RemoteData packet = this.FromXBeeNetworkQ.getRemoteMessage();
-				System.out.println("Thread1: Received a message from a remote:" + packet.getControllerID());
-				//update the state list and broadcast to all clients.
-				updateState(packet);
+				System.out.println("Time: " + new java.util.Date() + ", Thread1: Received a message from a remote:" + packet.getControllerID());
+				
+				//update the state list with the packets information.
+				controller.addState(packet);
+				
+				//Send to all clients
 				sendToClients(packet);				
 			}
 			//Else sleep for a bit
