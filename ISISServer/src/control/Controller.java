@@ -37,8 +37,8 @@ public class Controller {
 	protected HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
 
 	// List to store logical address / physical address pairs
-	protected HashMap<String, String> controllerAddressMap; // Key, Value => String(Logical ID), String(Physical address)
-
+	protected HashMap<Integer, String> physicalIDMap;
+	protected HashMap<String, Integer> logicalIDMap;
 
 	/**
 	 * WebSocket client request strings and codes
@@ -93,15 +93,16 @@ public class Controller {
 		 */
 		this.remoteStateList = new HashMap<String, RemoteData>();
 		this.webSocketClientList = new HashMap<String, ISISWebSocket>();
-		this.controllerAddressMap = new HashMap<String, String>();
+		this.physicalIDMap = new HashMap<Integer, String>();
+		this.logicalIDMap = new HashMap<String, Integer>();
 		System.out.println("Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
-				"and Controller address mapping list");
+				"and Controller address mapping lists");
 
 		/*
 		 * Fill the controller address map with the Logical / Physical address mappings
 		 */
 		
-		// TODO Maybe read from file?? or just hard code key-value pairs for now??
+		// Thread 1 will fill the controller map as it receices packets from XBees
 		// Could we use XBee handler to get all physical addresses then assign logical addresses
 		//this.controllerAddressMap.put(key, value);
 		//System.out.println("Time: " + new java.util.Date() + ", Filled the logical->physical address map");
@@ -196,7 +197,7 @@ public class Controller {
 	 * @param id
 	 * @return The state of the XBee controller with the given logical ID
 	 */
-	RemoteData getXBeeStateForController(String id) {
+	RemoteData getStateForController(String id) {
 		return this.remoteStateList.get(id);
 	}
 
@@ -208,28 +209,63 @@ public class Controller {
 	 * Existing state's values will be updated.
 	 * @param state
 	 */
-	synchronized void addXBeeState(RemoteData state) {
-		
-		//TODO update if not exist.
-		
+	synchronized void addState(RemoteData state) {
 		this.remoteStateList.put(state.getControllerID(), state);
 	}
 	/**
 	 * Remove the XBee state for the controller with the given logical id from the list of XBee states
 	 * @param id
 	 */
-	synchronized void removeXBeeState(String id) {
+	synchronized void removeState(String id) {
 		this.remoteStateList.remove(id);
 	}
 
 	// Translator functions for XBee devices
+	
+	/**
+	 * This function will add a physical address to the maps if it is not already in
+	 * them Its logical address will the be 0 for the first one 1 for the second one and so on.
+	 * If the physical address is already in the map it will return the logical address.
+	 * 
+	 * This function is the function that inits the maps.
+	 */
+	synchronized int physicalToLogical(String physical)
+	{
+		//The physical is already in the system return the logical.
+		if(this.physicalIDMap.containsValue(physical) && this.logicalIDMap.containsKey(physical))
+		{
+			return this.logicalIDMap.get(physical);
+		}
+		//This is an init case if the physical address is not yet associated to a logical ID.
+		else
+		{
+			this.physicalIDMap.put(physicalIDMap.size(), physical);
+			this.logicalIDMap.put(physical, physicalIDMap.size());
+			return this.physicalIDMap.size();
+		}
+	}
 
 	/**
 	 * Translate a logical controller address id to a physical XBee device address
+	 * 
+	 * This function does NOT ADD TO THE MAPS.
+	 * 
 	 * @return the corresponding physical address for a logical controller address
+	 * @throws Exception 
 	 */
-	String logicalToPhysicalXBeeAddress(String logicalAddr) {
-		return this.controllerAddressMap.get(logicalAddr);
+	synchronized String logicalToPhysicalAddress(int logicalAddr) throws Exception 
+	{
+		//Make sure that both maps know about the logical address.
+		if(this.physicalIDMap.containsKey(logicalAddr) && 
+				this.logicalIDMap.containsValue(logicalAddr))
+		{
+			return this.physicalIDMap.get(logicalAddr);
+		}
+		//If one of them doesn't there is a problem.
+		else
+		{
+			throw new Exception("The logical address is not in the map system...");
+		}
 	}
 
 	// Accessor functions for WebSocket Client list
