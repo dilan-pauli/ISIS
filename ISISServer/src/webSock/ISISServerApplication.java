@@ -8,11 +8,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import control.Controller;
-import webSock.WebSocketIncomingQueueInterface;
-import webSock.WebSocketOutgoingQueueInterface;
 import xbee.XBeeHandler;
 
-import com.sun.grizzly.tcp.Request;
+import com.sun.grizzly.tcp.Request;////////
 import com.sun.grizzly.websockets.DataFrame;
 import com.sun.grizzly.websockets.ProtocolHandler;
 import com.sun.grizzly.websockets.WebSocket;
@@ -77,7 +75,7 @@ public class ISISServerApplication extends WebSocketApplication {
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
 				"Created outgoing queue for the WebSocket server component");
 
-		// Create XBee Handler
+		/*// Create XBee Handler
 		try {
 			this.handler = new XBeeHandler();
 		} catch (IOException e) {
@@ -94,7 +92,7 @@ public class ISISServerApplication extends WebSocketApplication {
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-				"Created controller for the ISIS Server Application");
+				"Created controller for the ISIS Server Application");*/
 
 		// Create message Receiver
 		this.msgReceiver = new Receiver(this.getIncomingMsgQueue());

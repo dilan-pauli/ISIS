@@ -30,6 +30,7 @@ public class XBeeTest {
 	private XBee xbee;
 	//private Boolean on;
 	private Timer t;
+	@SuppressWarnings("unused")
 	private XBeeAddress64 addr;
 	
 	public XBeeTest()

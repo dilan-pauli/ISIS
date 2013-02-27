@@ -15,7 +15,7 @@ import com.sun.grizzly.websockets.WebSocketEngine;
  * 
  * (Hook into Glassfish)
  */
-@WebServlet(name="ISISServlet", urlPatterns="/ISISServer", loadOnStartup=1)
+@WebServlet(name="ISISServlet", urlPatterns="/ISISServlet", loadOnStartup=1)
 public class ISISServlet extends HttpServlet {
 
 	/**

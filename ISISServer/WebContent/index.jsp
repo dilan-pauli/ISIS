@@ -18,7 +18,8 @@
 		//var wsURI = "ws://localhost:8081/ServerProcessISIS/ISISServlet";
 		// Requests need to be made to URL ending in /ISIS the way the server is currently set up
 		// for requests to be noticed by the ISIS Server Application
-		var wsURI = "ws://" + location.host + "${pageContext.request.contextPath}/ISISServer";
+		//var wsURI = "ws://" + location.host + "${pageContext.request.contextPath}/ISISServer";
+		var wsURI = "ws://" + location.host + "/ISISServer";
 		// WebSocket connection between this client and the server
 		var websocket = null;
 		// Output field of the page for client feedback messages

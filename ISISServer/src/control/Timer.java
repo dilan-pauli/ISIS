@@ -12,6 +12,7 @@ package control;
  */
 public class Timer implements Runnable {
 	
+	@SuppressWarnings("unused")
 	private Controller controller;
 	
 	public Timer() { // (Controller controller) {
