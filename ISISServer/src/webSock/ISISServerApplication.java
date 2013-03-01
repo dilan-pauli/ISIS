@@ -17,6 +17,12 @@ import com.sun.grizzly.websockets.WebSocket;
 import com.sun.grizzly.websockets.WebSocketApplication;
 import com.sun.grizzly.websockets.WebSocketListener;
 
+/**
+ * ISIS Application
+ * 
+ * @author Dwight
+ *
+ */
 public class ISISServerApplication extends WebSocketApplication {
 
 	/**
@@ -109,7 +115,7 @@ public class ISISServerApplication extends WebSocketApplication {
 				"Created ISISServerApplication Sender thread");
 
 		// Start Sender Thread
-		//this.senderThread.run();//TODO: START THIS THREAD (COMMENT BACK IN)
+		//this.senderThread.start();//TODO: START THIS THREAD (COMMENT BACK IN)
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 

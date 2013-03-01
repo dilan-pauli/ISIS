@@ -8,12 +8,17 @@ import javax.servlet.http.HttpServlet;
 
 import com.sun.grizzly.websockets.WebSocketEngine;
 
-/*
+/**
+ * Servlet for the ISIS application
+ * 
  * loadOnStartup=1 ensures that the servlet gets started as soon as the server gets deployed
  * And as soon as the server deploys, it will register the ISISServerApplication with the
  * WebSocketEngine of GlassFish
  * 
  * (Hook into Glassfish)
+ * 
+ * @author Dwight
+ * 
  */
 @WebServlet(name="ISISServlet", urlPatterns="/ISISServlet", loadOnStartup=1)
 public class ISISServlet extends HttpServlet {
@@ -64,5 +69,8 @@ public class ISISServlet extends HttpServlet {
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
 						this.getServletName() + " servlet: destroyed");
+		
+		// Terminate the current JVM to ensure threads get killed
+		//System.exit(0);
 	}
 }
