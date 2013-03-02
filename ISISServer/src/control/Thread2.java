@@ -6,6 +6,7 @@ import remoteInterface.RemoteCommand;
 import remoteInterface.ToRemoteInterface;
 
 import webSock.WebSocketIncomingQueueInterface;
+import webSock.WebSocketOutgoingQueueInterface;
 import xbee.XBeeCommand;
 
 /**
@@ -18,6 +19,8 @@ public class Thread2 implements Runnable {
 	@SuppressWarnings("unused")
 	private WebSocketIncomingQueueInterface fromWebSock;
 	
+	private WebSocketOutgoingQueueInterface toWebSock;
+	
 	private ToRemoteInterface toRemoteNetwork;
 	
 	@SuppressWarnings("unused")
@@ -25,10 +28,12 @@ public class Thread2 implements Runnable {
 	
 	public Thread2(ToRemoteInterface handler, 
 			WebSocketIncomingQueueInterface web,
+			WebSocketOutgoingQueueInterface webOut,
 			Controller controller) {
 		
 		this.toRemoteNetwork = handler;
 		this.fromWebSock = web;
+		this.toWebSock = webOut;
 		this.controller = controller;
 	}
 

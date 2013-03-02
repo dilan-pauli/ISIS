@@ -34,9 +34,8 @@ public class Thread1 implements Runnable {
 	
 	public void sendToClients(RemoteData dataPacket)
 	{
-		//Convert the pkt to JSON and have the dst be 
-		//null so that it ends up being a broadcast.
-		JSONObject obj = controller.convertPacketToJSON(dataPacket, null);
+		//Convert the pkt to JSON and have the dst be null so that it ends up being a broadcast.
+		JSONObject obj = controller.convertPacketToJSON(dataPacket, Controller.buttonEventStr); //null,
 		
 		//Send the packet out to the world.
 		toWebSocket.putItemOnOutgoingQueue(obj);

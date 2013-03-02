@@ -81,11 +81,11 @@ public class ISISServerApplication extends WebSocketApplication {
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
 				"Created outgoing queue for the WebSocket server component");
 
+		// TODO COMMENT BACK IN IF XBEE IS CONNECTED TO MACHINE
 		/*// Create XBee Handler
 		try {
 			this.handler = new XBeeHandler();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// Log message
@@ -149,7 +149,7 @@ public class ISISServerApplication extends WebSocketApplication {
 		 * the incoming request in one that they are interested in (Grizzly calls this)
 		 */
 		// ISISServerApplication ???
-		/*if(request.requestURI().toString().endsWith("/ISIS")) {
+		/*if(request.requestURI().toString().endsWith("/ISISServer")) {
 			return true;
 		}
 		else {
