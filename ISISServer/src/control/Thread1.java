@@ -55,7 +55,8 @@ public class Thread1 implements Runnable {
 			{
 				//Remove the packet
 				RemoteData packet = this.FromXBeeNetworkQ.getRemoteMessage();
-				System.out.println("Time: " + new java.util.Date() + ", Thread1: Received a message from a remote:" + packet.getControllerID());
+				System.out.println("Time: " + new java.util.Date() + ", Thread1: Received a " +
+						"message from a remote:" + packet.getControllerID());
 				
 				//update the state list with the packets information.
 				controller.addState(packet);

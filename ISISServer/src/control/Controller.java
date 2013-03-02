@@ -2,7 +2,9 @@ package control;
 
 import java.util.HashMap;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
 import remoteInterface.FromRemoteInterface;
 import remoteInterface.RemoteData;
@@ -22,9 +24,13 @@ public class Controller {
 	 * Handlers (XBee network and WebSocket network)
 	 */
 
-	@SuppressWarnings("unused")
 	private XBeeHandler handler;
 	private ISISServerApplication isisServerApp;
+
+	/**
+	 * Run in helper-function test mode (true) or not (false)
+	 */
+	private final boolean isHelperFunctionTest;	// SWITCH BACK TO FALSE TO DISABLE TEST (TRUE DISABLES THREADS)
 
 
 	/**
@@ -54,7 +60,7 @@ public class Controller {
 	public static final String ioCodeStr = "IO_CODE";
 	public static final String diagCodeStr = "DIAG_CODE";
 	public static final String initCodeStr = "INIT_CODE";
-
+	
 
 	/**
 	 * WebSocket client response strings and codes
@@ -113,7 +119,7 @@ public class Controller {
 	 * @param handler
 	 * @param serverApp
 	 */
-	public Controller(XBeeHandler handler, ISISServerApplication serverApp)
+	public Controller(XBeeHandler handler, ISISServerApplication serverApp, boolean isHelperTest)
 	{
 		/*
 		 * Set the handlers for XBee and WebSocket
@@ -121,6 +127,11 @@ public class Controller {
 		this.handler = handler;
 		this.isisServerApp = serverApp;
 		System.out.println("Time: " + new java.util.Date() + ", Initialized the XBee and WebSocket Handlers");
+
+		this.isHelperFunctionTest = isHelperTest;
+		if(this.isHelperFunctionTest) {
+			System.out.println("Time: " + new java.util.Date() + ", Controller run in Helper Test Mode");
+		}
 
 		/*
 		 * Create the Controller lists
@@ -140,29 +151,31 @@ public class Controller {
 		//this.controllerAddressMap.put(key, value);
 		//System.out.println("Time: " + new java.util.Date() + ", Filled the logical->physical address map");
 
-		/* 
-		 * Create the Controller threads
-		 */
-		this.remoteToWeb = new Thread(new Thread1((FromRemoteInterface)handler,
-				(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
-				this));
+		if(!this.isHelperFunctionTest) {
+			/* 
+			 * Create the Controller threads
+			 */
+			this.remoteToWeb = new Thread(new Thread1((FromRemoteInterface)handler,
+					(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
+					this));
 
-		this.webToRemote = new Thread(new Thread2((ToRemoteInterface) handler, 
-				(WebSocketIncomingQueueInterface) isisServerApp.getIncomingMsgQueue(),
-				(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
-				this));
+			this.webToRemote = new Thread(new Thread2((ToRemoteInterface) handler, 
+					(WebSocketIncomingQueueInterface) isisServerApp.getIncomingMsgQueue(),
+					(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
+					this));
 
-		this.timer = new Thread (new Timer()); //TODO: Add parameters
+			this.timer = new Thread (new Timer(this.handler)); //TODO: Added parameter(s) for Timer Thread
 
-		System.out.println("Time: " + new java.util.Date() + ", Created Controller Threads");
+			System.out.println("Time: " + new java.util.Date() + ", Created Controller Threads");
 
-		/*
-		 * Run the Controller threads
-		 */
-		this.remoteToWeb.start();
-		this.webToRemote.start();
-		this.timer.start();
-		System.out.println("Time: " + new java.util.Date() + ", Started Controller Threads");
+			/*
+			 * Run the Controller threads
+			 */
+			this.remoteToWeb.start();
+			this.webToRemote.start();
+			this.timer.start();
+			System.out.println("Time: " + new java.util.Date() + ", Started Controller Threads");
+		}
 	}
 
 
@@ -180,7 +193,7 @@ public class Controller {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	static JSONObject convertPacketToJSON(RemoteData pkt, String responseTypeToCreate) { //ISISWebSocket destination,
+	JSONObject convertPacketToJSON(RemoteData pkt, String responseTypeToCreate) { //ISISWebSocket destination,
 		// JSONObject to return
 		JSONObject obj = new JSONObject();
 		// Parameter object
@@ -188,40 +201,56 @@ public class Controller {
 
 		// What type of response is required?
 		if(responseTypeToCreate.equals(Controller.buttonEventStr)) {
-			paramObj.put(Controller.buttonEventControllerAddressStr, pkt.getControllerID());
-			paramObj.put(Controller.buttonEventDataArrayStr, pkt.getButtonIOStates());
+			paramObj.put(Controller.buttonEventControllerAddressStr, this.physicalToLogical(pkt.getControllerID()));
+			JSONArray jsonArray = new JSONArray();
+			for(int i = 0; i < pkt.getButtonIOStates().length; i++) {
+				jsonArray.add(i, pkt.getButtonIOStates()[i]);
+			}
+			paramObj.put(Controller.buttonEventDataArrayStr, jsonArray);
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.buttonEventStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
 		else if(responseTypeToCreate.equals(Controller.ioResponseStr)) {
-			paramObj.put(Controller.ioControllerAddressStr, pkt.getControllerID());
-			paramObj.put(Controller.ioDataArrayStr, pkt.getButtonIOStates());
+			paramObj.put(Controller.ioControllerAddressStr, this.physicalToLogical(pkt.getControllerID()));
+			JSONArray jsonArray = new JSONArray();
+			for(int i = 0; i < pkt.getButtonIOStates().length; i++) {
+				jsonArray.add(i, pkt.getButtonIOStates()[i]);
+			}
+			paramObj.put(Controller.ioDataArrayStr, jsonArray);
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.ioResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
 		else if(responseTypeToCreate.equals(Controller.diagResponseStr)) {
-			paramObj.put(Controller.diagControllerAddressStr, pkt.getControllerID()); // TODO COULD ADD MORE LATER
-			paramObj.put(Controller.diagDataArrayStr, pkt.getButtonIOStates());
+			paramObj.put(Controller.diagControllerAddressStr, this.physicalToLogical(pkt.getControllerID())); // TODO COULD ADD MORE LATER
+			JSONArray jsonArray1 = new JSONArray();
+			for(int i = 0; i < pkt.getButtonIOStates().length; i++) {
+				jsonArray1.add(i, pkt.getButtonIOStates()[i]);
+			}
+			paramObj.put(Controller.diagDataArrayStr, jsonArray1);
 			paramObj.put(Controller.diagIsOnStr, pkt.isOn());
-			paramObj.put(Controller.diagPinVoltageArrayStr, pkt.getButtonPinVoltages());
+			JSONArray jsonArray2 = new JSONArray();
+			for(int i = 0; i < pkt.getButtonPinVoltages().length; i++) {
+				jsonArray2.add(i, pkt.getButtonPinVoltages()[i]);
+			}
+			paramObj.put(Controller.diagPinVoltageArrayStr, jsonArray2);
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.diagResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
 		else if(responseTypeToCreate.equals(Controller.initResponseStr)) {
-			paramObj.put(Controller.initFieldStr, "");
+			paramObj.put(Controller.initFieldStr, "");	// TODO CHANGE "" TO ALL
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.initResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
 		else if(responseTypeToCreate.equals(Controller.errorResponseStr)) {
-			paramObj.put(Controller.errorMessageStr, ""); // TODO RemoteData: ERROR MSG SET AND GET CAPABILITY
+			paramObj.put(Controller.errorMessageStr, ""); // TODO RemoteData: ERROR MSG SET AND GET CAPABILITY??
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.errorResponseStr);
@@ -253,11 +282,10 @@ public class Controller {
 		String controllerIdToSet = "";
 
 		// Figure out what kind of client request (json) it is
-		if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.initCodeStr)) {
+		if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.ioCodeStr)) {
 			try {
 				pkt = new XBeePacket();
-				logicalControllerId = Integer.parseInt(
-						(String) jsonObj.get(Controller.jsonRequestArgumentFieldStr));
+				logicalControllerId = (int) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
 				controllerIdToSet = logicalToPhysicalAddress(logicalControllerId);
 				pkt.setControllerID(controllerIdToSet);
 			} catch (Exception e) {
@@ -267,8 +295,7 @@ public class Controller {
 		else if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.diagCodeStr)) {
 			try {
 				pkt = new XBeePacket();
-				logicalControllerId = Integer.parseInt(
-						(String) jsonObj.get(Controller.jsonRequestArgumentFieldStr));
+				logicalControllerId = (int) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
 				controllerIdToSet = logicalToPhysicalAddress(logicalControllerId);
 				pkt.setControllerID(controllerIdToSet);
 			} catch (Exception e) {
@@ -291,7 +318,7 @@ public class Controller {
 
 	/**
 	 * @param id
-	 * @return The state of the XBee controller with the given logical ID
+	 * @return The state of the XBee controller with the given physical ID
 	 */
 	RemoteData getStateForController(String id) {
 		return this.remoteStateList.get(id);
@@ -308,15 +335,16 @@ public class Controller {
 	synchronized void addState(RemoteData state) {
 		this.remoteStateList.put(state.getControllerID(), state);
 	}
+	
 	/**
-	 * Remove the XBee state for the controller with the given logical id from the list of XBee states
+	 * Remove the XBee state for the controller with the given physical id from the list of XBee states
 	 * @param id
 	 */
 	synchronized void removeStateForController(String id) {
 		this.remoteStateList.remove(id);
 	}
 
-	
+
 	// Translator functions for XBee devices
 
 	/**
@@ -373,7 +401,7 @@ public class Controller {
 	 * @param clientId
 	 * @return The WebSocket object for the client with the given ID
 	 */
-	ISISWebSocket getWebSocketForClient(String clientId) {
+	synchronized ISISWebSocket getWebSocketForClient(String clientId) {
 		return this.webSocketClientList.get(clientId);
 	}
 
@@ -398,17 +426,135 @@ public class Controller {
 	 * Regression test for controller
 	 * @param args
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) { // TODO: MAIN FUNCTION
-		// Create a new Xbee handler
-		//XBeeHandler handler = new XBeeHandler();
+		// Create a new Controller to test helper functions (no need to pass in legit handlers)
+		Controller ctrl = new Controller(null, null, true);
+		System.out.println("\n\n");
 
-		// Create a new controller to test
-		//Controller ctrl = new Controller(XBeeHandler handler, ISISServerApplication serverApp);
+		// Add test physical to logical address mappings to the Controller (new physical address causes new logical
+		// address to be assigned)
+		// Logical addresses now go from 0 - 2 as a result of this insertion
+		ctrl.physicalToLogical("A1234567890");
+		ctrl.physicalToLogical("B1234567890");
+		ctrl.physicalToLogical("C1234567890");
 
-		// Test the controller conversion function:
-		// JSONObj convertPacketToJSON(RemoteData pkt, String responseTypeToCreate)
+		// Test the physical to logical address conversion (to check that the physical addresses were created)
+		if(ctrl.physicalToLogical("A1234567890") != 0) {
+			System.out.println("Error in physicalToAddress(): Incorrect Logical address returned");
+		}
+		if(ctrl.physicalToLogical("B1234567890") != 1) {
+			System.out.println("Error in physicalToAddress(): Incorrect Logical address returned");
+		}
+		if(ctrl.physicalToLogical("C1234567890") != 2) {
+			System.out.println("Error in physicalToLogicalAddress(): Incorrect Logical address returned");
+		}
+
+		// Test the logical to physical address conversion (valid logical addresses)
+		try {
+			if(!ctrl.logicalToPhysicalAddress(0).equals("A1234567890")) {
+				System.out.println("Error in logicalToPhysicalAddress(): Incorrect Physical address returned");
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			if(!ctrl.logicalToPhysicalAddress(1).equals("B1234567890")) {
+				System.out.println("Error in logicalToPhysicalAddress(): Incorrect Physical address returned");
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			if(!ctrl.logicalToPhysicalAddress(2).equals("C1234567890")) {
+				System.out.println("Error in logicalToPhysicalAddress(): Incorrect Physical address returned");
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		// Test (invalid) logical address and catch expected exceptions
+		try {
+			ctrl.logicalToPhysicalAddress(3);
+			System.out.println("Error in logicalToPhysicalAdress(). Exception should have been thrown");
+		}
+		catch(Exception e) {
+			// Expect exception to be caught for this
+		}
+		try {
+			ctrl.logicalToPhysicalAddress(4);
+			System.out.println("Error in logicalToPhysicalAdress(). Exception should have been thrown");
+		}
+		catch(Exception e) {
+			// Expect exception to be caught for this
+		}
 		
-		// Test the controller conversion function:
-		// RemoteData convertJSONToPacket(JSONObject jsonObj)
+		// Print out the test map (physical and logical so they can be compared to the printed maps' contents)
+		// And also print rint out the contents of both (actual) maps
+		System.out.println("Test physical ID map (Key,Value):\n{0=A1234567890; 1=B1234567890; 2=C1234567890}");
+		System.out.println("Contents of actual physical ID map:\n" + ctrl.physicalIDMap);
+		System.out.println("");
+		System.out.println("Test logical ID map (Key,Value):\n{A1234567890=0; B1234567890=1; C1234567890=2}");
+		System.out.println("Contents of actual logical ID map:\n" + ctrl.logicalIDMap);
+
+
+		System.out.println("\n\n");
+
+
+		// Create a Test RemoteData packet
+		RemoteData pkt = new XBeePacket();
+		pkt.setControllerID("0");
+		pkt.setOnState(true);
+		boolean[] pktIOStates = {true, false, false, false, false};
+		pkt.setButtonIOStates(pktIOStates);
+		double[] pktButtonPinVoltages = {3.3, 0.0, 0.0, 0.0, 0.0};
+		pkt.setButtonPinVoltages(pktButtonPinVoltages);
+
+		// Test the controller XBeePacket -> JSONObjectconversion function (test converting to various forms) 
+		System.out.println("\nTest XBeePacket: \n" + pkt.toString());
+		System.out.println("\nTest XBeePacket JSON-converted forms: ");
+		System.out.println(JSONValue.toJSONString(ctrl.convertPacketToJSON(pkt, Controller.buttonEventStr)));
+		System.out.println(JSONValue.toJSONString(ctrl.convertPacketToJSON(pkt, Controller.ioResponseStr)));
+		System.out.println(JSONValue.toJSONString(ctrl.convertPacketToJSON(pkt, Controller.diagResponseStr)));
+		System.out.println(JSONValue.toJSONString(ctrl.convertPacketToJSON(pkt, Controller.initResponseStr)));
+		System.out.println(JSONValue.toJSONString(ctrl.convertPacketToJSON(pkt, Controller.errorResponseStr)));
+
+
+		System.out.println("\n\n");
+
+
+		// Create test JSONObjects
+		JSONObject myJSONObj1 = new JSONObject();
+		JSONObject myJSONObj2 = new JSONObject();
+		JSONObject myJSONObj3 = new JSONObject();
+
+		// Fill in the fields of the test JSONObjects (test creating each type of request)
+		myJSONObj1.put(Controller.jsonCommandFieldStr, Controller.ioCodeStr);
+		myJSONObj1.put(Controller.jsonRequestArgumentFieldStr, 0);
+		//
+		myJSONObj2.put(Controller.jsonCommandFieldStr, Controller.diagCodeStr);
+		myJSONObj2.put(Controller.jsonRequestArgumentFieldStr, 0);
+		//
+		myJSONObj3.put(Controller.jsonCommandFieldStr, Controller.initCodeStr);
+		myJSONObj3.put(Controller.jsonRequestArgumentFieldStr, Controller.initControllerParam);
+
+		// Test the controller JSONObject -> XBeePacket conversion function
+		System.out.println("Test JSONObject1:" + JSONValue.toJSONString(myJSONObj1));
+		System.out.println("Test JSONObject1 XBeePacket-converted form: ");
+		System.out.println(ctrl.convertJSONToPacket(myJSONObj1) + "\n");
+
+		System.out.println("Test JSONObject2:" + JSONValue.toJSONString(myJSONObj2));
+		System.out.println("Test JSONObject2 XBeePacket-converted form: ");
+		System.out.println(ctrl.convertJSONToPacket(myJSONObj2) + "\n");
+
+		System.out.println("Test JSONObject3:" + JSONValue.toJSONString(myJSONObj3));
+		System.out.println("Test JSONObject3 XBeePacket-converted form: ");
+		System.out.println(ctrl.convertJSONToPacket(myJSONObj3) + "\n");
+
+
+		System.out.println("\n\nEnd of Controller Helper Test");
 	}
 }

@@ -19,6 +19,7 @@ public class Thread2 implements Runnable {
 	@SuppressWarnings("unused")
 	private WebSocketIncomingQueueInterface fromWebSock;
 	
+	@SuppressWarnings("unused")
 	private WebSocketOutgoingQueueInterface toWebSock;
 	
 	private ToRemoteInterface toRemoteNetwork;

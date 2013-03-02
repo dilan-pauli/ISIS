@@ -261,7 +261,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		DIO[4] = !packet.isD12On();
 		
 		//Add the analog voltage info
-		int[] analog = new int[3];
+		double[] analog = new double[3];
 		analog[0] = packet.getAnalog0();
 		
 		XBeePacket pack = new XBeePacket();

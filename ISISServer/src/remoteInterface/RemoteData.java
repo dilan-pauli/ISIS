@@ -10,21 +10,48 @@ package remoteInterface;
  */
 public interface RemoteData {
 	
-	public int[] getButtonPinVoltages();
+	/**
+	 * Obtain the button pin voltages
+	 */
+	public double[] getButtonPinVoltages();
 	
+	/**
+	 * Obtain the state of the button IO pins (UP,DOWN,LEFT,RIGHT,CENTER) => true means pressed
+	 */
 	public boolean[] getButtonIOStates();
 	
+	/**
+	 * Obtain the ON state of the device
+	 */
 	public boolean isOn();
 	
+	/**
+	 * Obtain the device ID (physical address)
+	 */
 	public String getControllerID();
 	
+	/**
+	 * Set the controller ID (physical address) for the device
+	 */
 	public void setControllerID(String id);
 	
+	/**
+	 * Set the on state of the device (true if the device is on)
+	 */
 	public void setOnState(boolean newOnState);
 	
+	/**
+	 * Set the state of the button IO pins (pressed or not pressed?)
+	 * IO pins: (UP,DOWN,LEFT,RIGHT,CENTER) => true means pressed
+	 * @return true if operation succeeded
+	 */
 	public boolean setButtonIOStates(boolean[] newIOStates);
 	
-	public boolean setButtonPinVoltages(int[] newPinVoltages);
+	/**
+	 * Set the button pin voltages
+	 * @return true if operation succeeded
+	 */
+	public boolean setButtonPinVoltages(double[] newPinVoltages);
 	
 	
 

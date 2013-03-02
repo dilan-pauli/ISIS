@@ -3,9 +3,9 @@ package webSock;
 import java.io.IOException;
 import java.util.logging.Level;
 
-import org.json.simple.JSONObject;
+/*import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import org.json.simple.parser.ParseException;*/
 
 import control.Controller;
 import xbee.XBeeHandler;
@@ -38,12 +38,13 @@ public class ISISServerApplication extends WebSocketApplication {
 	/**
 	 * Receiver to handle incoming messages
 	 */
+	@SuppressWarnings("unused")
 	private Receiver msgReceiver;
 
 	/**
 	 * Sender thread to send outgoing messages
 	 */
-	private Sender senderThread;
+	private Thread senderThread;
 
 	
 	
@@ -56,6 +57,7 @@ public class ISISServerApplication extends WebSocketApplication {
 	/**
 	 * Controller for ISIS Server Application
 	 */
+	@SuppressWarnings("unused")
 	private Controller controller;
 	
 	
@@ -82,7 +84,7 @@ public class ISISServerApplication extends WebSocketApplication {
 				"Created outgoing queue for the WebSocket server component");
 
 		// TODO COMMENT BACK IN IF XBEE IS CONNECTED TO MACHINE
-		/*// Create XBee Handler
+		/**/ // Create XBee Handler
 		try {
 			this.handler = new XBeeHandler();
 		} catch (IOException e) {
@@ -93,12 +95,12 @@ public class ISISServerApplication extends WebSocketApplication {
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
 				"Created XBeeHandler for the ISIS Server Application");
 
-		// Create Controller
-		this.controller = new Controller(this.handler, this);
+		// Create Controller (not in Helper Test mode)
+		this.controller = new Controller(this.handler, this, false);
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-				"Created controller for the ISIS Server Application");*/
+				"Created controller for the ISIS Server Application"); /**/
 
 		// Create message Receiver
 		this.msgReceiver = new Receiver(this.getIncomingMsgQueue());
@@ -108,14 +110,14 @@ public class ISISServerApplication extends WebSocketApplication {
 				"Created ISISServerApplication message Receiver");
 
 		// Create Sender Thread
-		this.senderThread = new Sender(this.getOutgoingMsgQueue(), this);
+		this.senderThread = new Thread(new Sender(this.getOutgoingMsgQueue(), this));
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
 				"Created ISISServerApplication Sender thread");
 
 		// Start Sender Thread
-		//this.senderThread.start();//TODO: START THIS THREAD (COMMENT BACK IN)
+		this.senderThread.start(); //TODO: START THIS THREAD (COMMENT BACK IN)
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
@@ -123,8 +125,8 @@ public class ISISServerApplication extends WebSocketApplication {
 	}
 
 
-
-
+	
+	
 	/**
 	 * 
 	 */

@@ -22,7 +22,7 @@ public class XBeePacket implements RemoteData{
 	private boolean deviceIsOn;
 	
 	// (UP,DOWN,LEFT,RIGHT,CENTER) => 0 volts (low) to 3.3 volts (high)
-	private int buttonPinVoltages[];
+	private double buttonPinVoltages[];
 	
 	// TODO: COULD ADD MORE STORED INFO HERE (int powerRemaining, int wirelessStrength, int errorRate)
 
@@ -32,76 +32,55 @@ public class XBeePacket implements RemoteData{
 	 */
 	public XBeePacket() {
 		
-		// Initalize private fields
+		// Initialize private fields
 		this.deviceID = "";
 		this.deviceIsOn = false;
 		
 		this.buttonData = new boolean[this.NUM_IO_PINS];
-		this.buttonPinVoltages = new int[this.NUM_IO_PINS];
+		this.buttonPinVoltages = new double[this.NUM_IO_PINS];
 		for(int i = 0; i < this.NUM_IO_PINS; i++) {
 			this.buttonData[i] = false;
-			this.buttonPinVoltages[i] = 0;
+			this.buttonPinVoltages[i] = 0.0;
 		}
 	}
 
 	
 	// ACCESSOR FUNCTIONS
 	
-	/**
-	 * Obtain the device ID
-	 */
+	@Override
 	public String getControllerID() {
 		return this.deviceID;
 	}
 
-	/**
-	 * Obtain the ON state of the device
-	 */
+	@Override
 	public boolean isOn() {
 		return this.deviceIsOn;
 	}
 
-	/**
-	 * Obtain the state of the button IO pins (UP,DOWN,LEFT,RIGHT,CENTER) => true means pressed
-	 */
+	@Override
 	public boolean[] getButtonIOStates() {
 		return this.buttonData;
 	}
 
-	/**
-	 * Obtain the button pin voltages
-	 */
-	public int[] getButtonPinVoltages() {
+	@Override
+	public double[] getButtonPinVoltages() {
 		return this.buttonPinVoltages;
 	}
 
 	
 	// MUTATOR FUNCTIONS
 	
-	/**
-	 * Set the controller ID for the device whose state this is
-	 * DIO corresponds with the following:
-	 * 0 = UP
-	 * 1 = LEFT
- 	 * 2 = RIGHT
- 	 * 3 = DOWN
- 	 * 4 = CENTER
-	 */
+	@Override
 	public void setControllerID(String id) {
 		this.deviceID = id;
 	}
 
-	/**
-	 * Set the on state of the device (true if the device is on)
-	 */
+	@Override
 	public void setOnState(boolean newOnState) {
 		this.deviceIsOn = newOnState;
 	}
 
-	/**
-	 * Set the state of the button IO pins (pressed or not pressed?)
-	 * @return true if operation succeeded
-	 */
+	@Override
 	public boolean setButtonIOStates(boolean[] newIOStates) {
 		if(newIOStates.length != 5) {
 			return false;
@@ -113,12 +92,9 @@ public class XBeePacket implements RemoteData{
 		
 		return true;
 	}
-
-	/**
-	 * Set the button pin voltages
-	 * @return true if operation succeeded
-	 */
-	public boolean setButtonPinVoltages(int[] newPinVoltages) {
+	
+	@Override
+	public boolean setButtonPinVoltages(double[] newPinVoltages) {
 		if(newPinVoltages.length != 5) {
 			return false;
 		}
@@ -128,5 +104,19 @@ public class XBeePacket implements RemoteData{
 		}
 		
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		String strToReturn = "Device ID: " + this.deviceID + "\n" + "Device is on?: " + this.deviceIsOn + "\n" + 
+								"Button data (UP,DN,LT,RT,CNTR): ";
+		for(int i = 0; i < this.buttonData.length; i++) {
+			strToReturn = strToReturn + this.buttonData[i] + " ";
+		}
+		strToReturn = strToReturn + "\n" + "Button pin voltages (UP,DN,LT,RT,CNTR): ";
+		for(int i = 0; i < this.buttonPinVoltages.length; i++) {
+			strToReturn = strToReturn + this.buttonPinVoltages[i] + " ";
+		}
+		return strToReturn;
 	}
 }
