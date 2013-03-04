@@ -1,0 +1,302 @@
+[2013-03-04 14:35:50,515] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-03-04 14:35:50,533] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-03-04 14:35:50,564] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:35:50,566] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-03-04 14:35:50,568] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-03-04 14:35:50,568] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-03-04 14:35:50,568] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-03-04 14:35:50,597] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:35:50,598] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-03-04 14:35:50,598] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-03-04 14:35:50,598] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-03-04 14:35:50,598] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-03-04 14:35:50,613] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:35:50,629] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-03-04 14:35:50,630] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-03-04 14:35:50,758] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=IS,value=null,remoteAddr64=0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,remoteAddr16=0xff,0xfe,applyChanges=false 
+[2013-03-04 14:35:50,758] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x0f,0x17,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xfe,0x00,0x49,0x53,0x50 
+[2013-03-04 14:35:51,029] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:35:51,045] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x03,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x16,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:35:51,046] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:35:51,047] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:35:51,047] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:35:51,077] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x0b,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x12,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x96,0x37 
+[2013-03-04 14:35:51,089] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:35:51,089] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:36:23,965] [Thread-0] [INFO] [com.rapplogic.xbee.api.XBee] ShutdownHook is closing connection 
+[2013-03-04 14:36:23,981] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Packet parser thread was interrupted.  This occurs when close() is called 
+[2013-03-04 14:36:45,329] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-03-04 14:36:45,333] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-03-04 14:36:45,371] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:36:45,373] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-03-04 14:36:45,376] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-03-04 14:36:45,376] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-03-04 14:36:45,376] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-03-04 14:36:45,403] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:36:45,403] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-03-04 14:36:45,403] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-03-04 14:36:45,403] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-03-04 14:36:45,404] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-03-04 14:36:45,424] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:36:45,435] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-03-04 14:36:45,435] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-03-04 14:36:45,539] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=IS,value=null,remoteAddr64=0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,remoteAddr16=0xff,0xfe,applyChanges=false 
+[2013-03-04 14:36:45,540] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x0f,0x17,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xfe,0x00,0x49,0x53,0x50 
+[2013-03-04 14:36:45,722] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:36:45,754] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x10,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x09,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:36:45,756] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:36:45,757] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:36:45,770] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:36:45,787] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x0b,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x12,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x96,0x37 
+[2013-03-04 14:36:45,787] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:36:45,787] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:39:28,272] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-03-04 14:39:28,279] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-03-04 14:39:28,311] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:39:28,314] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-03-04 14:39:28,316] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-03-04 14:39:28,316] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-03-04 14:39:28,316] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-03-04 14:39:28,345] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:39:28,345] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-03-04 14:39:28,346] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-03-04 14:39:28,346] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-03-04 14:39:28,346] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-03-04 14:39:28,361] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:39:28,377] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-03-04 14:39:28,378] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-03-04 14:39:28,482] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=IS,value=null,remoteAddr64=0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,remoteAddr16=0xff,0xfe,applyChanges=false 
+[2013-03-04 14:39:28,482] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x0f,0x17,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xfe,0x00,0x49,0x53,0x50 
+[2013-03-04 14:39:28,601] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:39:28,633] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x10,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x0d,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x96,0x37 
+[2013-03-04 14:39:28,635] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:39:28,635] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:39:28,792] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:39:28,809] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x05,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x14,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:39:28,809] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:39:28,809] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:39:45,503] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:39:45,520] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:39:45,521] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x7f,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=low,digital[2]=high,digital[3]=high,digital[4]=low,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:39:45,521] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:39:45,522] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:39:45,528] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.NullPointerException
+	at xbee.XBeeHandler.createXBeePacket(XBeeHandler.java:266)
+	at xbee.XBeeHandler.access$4(XBeeHandler.java:249)
+	at xbee.XBeeHandler$XBeeListener.processResponse(XBeeHandler.java:158)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[2013-03-04 14:39:45,791] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:39:45,807] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:39:45,983] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:39:45,999] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:39:46,015] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x6d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[4]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:39:46,015] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:39:46,016] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:39:46,016] [pool-1-thread-1] [WARN] [com.rapplogic.xbee.api.InputStreamThread] Exception in packet listener 
+java.lang.NullPointerException
+	at xbee.XBeeHandler.createXBeePacket(XBeeHandler.java:266)
+	at xbee.XBeeHandler.access$4(XBeeHandler.java:249)
+	at xbee.XBeeHandler$XBeeListener.processResponse(XBeeHandler.java:158)
+	at com.rapplogic.xbee.api.InputStreamThread$1.run(InputStreamThread.java:111)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:722)
+[2013-03-04 14:39:46,023] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:39:46,024] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:39:46,143] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:39:46,159] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:39:46,175] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:39:46,191] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:39:46,517] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:39:46,517] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:39:46,623] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:39:46,639] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:44,933] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=AP,value=null 
+[2013-03-04 14:43:44,950] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x41,0x50,0x65 
+[2013-03-04 14:43:44,986] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:43:44,988] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=AP,status=OK,value=0x02,apiId=AT_RESPONSE (0x88),length=6,checksum=0xe3,error=false,frameId=0x01 
+[2013-03-04 14:43:44,990] [main] [INFO] [com.rapplogic.xbee.api.XBee] Radio is in correct AP mode (AP=2) 
+[2013-03-04 14:43:44,991] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=HV,value=null 
+[2013-03-04 14:43:44,991] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x48,0x56,0x58 
+[2013-03-04 14:43:45,018] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:43:45,018] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=HV,status=OK,value=0x19,0x4a,apiId=AT_RESPONSE (0x88),length=7,checksum=0x75,error=false,frameId=0x01 
+[2013-03-04 14:43:45,019] [main] [INFO] [com.rapplogic.xbee.api.XBee] XBee radio is Series 2 
+[2013-03-04 14:43:45,019] [main] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=AT_COMMAND (0x08),frameId=1,command=VR,value=null 
+[2013-03-04 14:43:45,019] [main] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x04,0x08,0x01,0x56,0x52,0x4e 
+[2013-03-04 14:43:45,039] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: AT_RESPONSE (0x88) 
+[2013-03-04 14:43:45,050] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=VR,status=OK,value=0x21,0xa7,apiId=AT_RESPONSE (0x88),length=7,checksum=0x06,error=false,frameId=0x01 
+[2013-03-04 14:43:45,050] [main] [INFO] [com.rapplogic.xbee.api.XBee] Firmware version is 0x21,0xa7 
+[2013-03-04 14:43:45,154] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=IS,value=null,remoteAddr64=0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,remoteAddr16=0xff,0xfe,applyChanges=false 
+[2013-03-04 14:43:45,154] [Thread-4] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x0f,0x17,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0xff,0xff,0xff,0xfe,0x00,0x49,0x53,0x50 
+[2013-03-04 14:43:45,322] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:45,354] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x1e,0x01,0x1c,0x0e,0x02,0x0d,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x10,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x79,0xb4,0x57,remoteAddress16=0x96,0x37 
+[2013-03-04 14:43:45,356] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:45,356] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:43:45,375] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:45,386] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=IS,status=OK,value=0x01,0x1c,0x0e,0x01,0x1c,0x0e,0x02,0x09,apiId=REMOTE_AT_RESPONSE (0x97),length=23,checksum=0x20,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:45,386] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:45,386] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains analog[0] 
+[2013-03-04 14:43:49,623] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:43:49,639] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:49,639] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x91,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=low,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:43:49,640] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:49,640] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:43:49,640] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:43:49,655] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:49,655] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:43:49,656] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:49,656] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:43:49,671] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:43:49,687] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:49,687] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x91,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=low,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:43:49,688] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:49,688] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:43:49,751] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:49,767] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:49,783] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:49,799] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:49,831] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:49,847] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:50,142] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:50,142] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:43:50,157] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:50,157] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:43:50,188] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:50,189] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:43:50,279] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:50,295] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:50,311] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:50,327] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:50,343] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:50,359] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:51,574] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:43:51,590] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:51,606] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:43:51,606] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:51,606] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:43:51,686] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:51,702] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:52,108] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:52,108] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:43:52,230] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:52,246] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:57,635] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:43:57,651] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:43:57,651] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8f,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=low,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:43:57,651] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:57,651] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:43:57,922] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:57,938] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:43:58,153] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:43:58,153] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:43:58,258] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:43:58,274] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:06,557] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:06,574] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:06,589] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:44:06,589] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:06,590] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:06,845] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:06,861] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:07,090] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:07,090] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:07,197] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:07,213] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:12,026] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:12,042] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:12,043] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x9d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=low 
+[2013-03-04 14:44:12,043] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:12,043] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:12,346] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:12,362] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:12,363] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:44:12,363] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:12,363] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:12,363] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:12,379] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:12,506] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:12,522] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:12,544] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:12,544] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:12,682] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:12,698] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:12,863] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:12,864] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:12,938] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:12,954] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:22,036] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:22,052] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:22,053] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x9d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=low 
+[2013-03-04 14:44:22,053] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:22,053] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:22,308] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:22,325] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:22,554] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:22,554] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:22,660] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:22,676] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:26,130] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:26,146] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:26,146] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:44:26,147] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:26,147] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:26,242] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:26,258] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:26,648] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:26,649] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:26,706] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:26,722] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:29,712] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:29,728] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:29,728] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x9d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=low 
+[2013-03-04 14:44:29,729] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:29,729] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:29,824] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:29,840] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:30,230] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:30,230] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:30,368] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:30,384] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:32,431] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:32,447] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:32,462] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x9f,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=low,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=low 
+[2013-03-04 14:44:32,463] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:32,463] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:32,574] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:32,591] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:32,964] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:32,964] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:33,038] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:33,054] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:34,909] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:34,925] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:34,925] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x9d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=low 
+[2013-03-04 14:44:34,925] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:34,925] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: ZNET_IO_SAMPLE_RESPONSE (0x92) 
+[2013-03-04 14:44:34,926] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:34,941] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.zigbee.ZNetRxIoSampleResponse] response contains digital data 
+[2013-03-04 14:44:34,957] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: apiId=ZNET_IO_SAMPLE_RESPONSE (0x92),length=18,checksum=0x8d,error=false,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38,option=null,digital[1]=high,digital[2]=high,digital[3]=high,digital[10]=high,digital[11]=high,digital[12]=high 
+[2013-03-04 14:44:34,957] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x05,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:34,958] [pool-1-thread-1] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x05,0x31 
+[2013-03-04 14:44:35,069] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:35,085] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:35,101] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:35,117] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:35,427] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:35,428] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:35,458] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] Sending request to XBee: apiId=REMOTE_AT_REQUEST (0x17),frameId=1,command=D4,value=0x00,remoteAddr64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddr16=0xff,0xfe,applyChanges=true 
+[2013-03-04 14:44:35,459] [Timer-0] [INFO] [com.rapplogic.xbee.api.XBee] sending packet to XBee 0x7e,0x00,0x10,0x17,0x01,0x00,0x7d,0x33,0xa2,0x00,0x40,0x8b,0x42,0x78,0xff,0xfe,0x02,0x44,0x34,0x00,0x36 
+[2013-03-04 14:44:35,548] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:35,564] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 
+[2013-03-04 14:44:35,565] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.PacketParser] Handling ApiId: REMOTE_AT_RESPONSE (0x97) 
+[2013-03-04 14:44:35,581] [InputStreamThread] [INFO] [com.rapplogic.xbee.api.InputStreamThread] Received packet from XBee: command=D4,status=OK,value=,apiId=REMOTE_AT_RESPONSE (0x97),length=15,checksum=0xa5,error=false,frameId=0x01,remoteAddress64=0x00,0x13,0xa2,0x00,0x40,0x8b,0x42,0x78,remoteAddress16=0xd8,0x38 

@@ -1,6 +1,9 @@
 package control;
 
+import java.util.logging.Level;
+
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
 import remoteInterface.FromRemoteInterface;
 import remoteInterface.RemoteData;
@@ -17,26 +20,29 @@ import control.Controller;
  *  client browsers and the remote state data structure will be updated.
  */
 public class Thread1 implements Runnable {
-	
+
 	private FromRemoteInterface FromXBeeNetworkQ;
-	
+
 	private WebSocketOutgoingQueueInterface toWebSocket;
-	
+
 	private Controller controller;
-	
-	
+
+
 	public Thread1(FromRemoteInterface xbee, WebSocketOutgoingQueueInterface web, Controller ctrl) 
 	{
 		this.toWebSocket = web;
 		this.FromXBeeNetworkQ = xbee;
 		this.controller = ctrl;
 	}
-	
+
 	public void sendToClients(RemoteData dataPacket)
 	{
 		//Convert the pkt to JSON and have the dst be null so that it ends up being a broadcast.
 		JSONObject obj = controller.convertPacketToJSON(dataPacket, Controller.buttonEventStr); //null,
-		
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", Thread1: Converted packet to JSON -> " + 
+						JSONValue.toJSONString(obj));
+
 		//Send the packet out to the world.
 		toWebSocket.putItemOnOutgoingQueue(obj);
 	}
@@ -55,20 +61,27 @@ public class Thread1 implements Runnable {
 			{
 				//Remove the packet
 				RemoteData packet = this.FromXBeeNetworkQ.getRemoteMessage();
-				System.out.println("Time: " + new java.util.Date() + ", Thread1: Received a " +
-						"message from a remote:" + packet.getControllerID());
-				
+				java.util.logging.Logger.getAnonymousLogger().log(
+						Level.INFO, "Time: " + new java.util.Date() + ", Thread1: Received a " +
+								"message from a remote:" + packet.getControllerID());
+
 				//update the state list with the packets information.
 				controller.addState(packet);
-				
+				java.util.logging.Logger.getAnonymousLogger().log(
+						Level.INFO, "Time: " + new java.util.Date() + ", Thread1: added state to XBee " +
+								"States list:" + packet.getControllerID());
+
 				//Send to all clients
-				sendToClients(packet);				
+				sendToClients(packet);	
+				java.util.logging.Logger.getAnonymousLogger().log(
+						Level.INFO, "Time: " + new java.util.Date() + ", Thread1: Called function to " +
+								"update client info" + packet.getControllerID());
 			}
 			//Else sleep for a bit
 			else			
 			{
 				try {
-					Thread.sleep(10*1000);
+					Thread.sleep(20);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

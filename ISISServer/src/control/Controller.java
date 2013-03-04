@@ -1,6 +1,7 @@
 package control;
 
 import java.util.HashMap;
+import java.util.logging.Level;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -60,7 +61,7 @@ public class Controller {
 	public static final String ioCodeStr = "IO_CODE";
 	public static final String diagCodeStr = "DIAG_CODE";
 	public static final String initCodeStr = "INIT_CODE";
-	
+
 
 	/**
 	 * WebSocket client response strings and codes
@@ -126,11 +127,13 @@ public class Controller {
 		 */
 		this.handler = handler;
 		this.isisServerApp = serverApp;
-		System.out.println("Time: " + new java.util.Date() + ", Initialized the XBee and WebSocket Handlers");
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", Initialized the XBee and WebSocket Handlers");
 
 		this.isHelperFunctionTest = isHelperTest;
 		if(this.isHelperFunctionTest) {
-			System.out.println("Time: " + new java.util.Date() + ", Controller run in Helper Test Mode");
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", Controller run in Helper Test Mode");
 		}
 
 		/*
@@ -140,7 +143,8 @@ public class Controller {
 		this.webSocketClientList = new HashMap<String, ISISWebSocket>();
 		this.physicalIDMap = new HashMap<Integer, String>();
 		this.logicalIDMap = new HashMap<String, Integer>();
-		System.out.println("Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
 				"and Controller address mapping lists");
 
 		/*
@@ -166,15 +170,17 @@ public class Controller {
 
 			this.timer = new Thread (new Timer(this.handler)); //TODO: Added parameter(s) for Timer Thread
 
-			System.out.println("Time: " + new java.util.Date() + ", Created Controller Threads");
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", Created Controller Threads");
 
 			/*
 			 * Run the Controller threads
 			 */
 			this.remoteToWeb.start();
-			this.webToRemote.start();
+			//this.webToRemote.start(); // TODO: COMMENT BACK IN TO RUN THREAD2
 			this.timer.start();
-			System.out.println("Time: " + new java.util.Date() + ", Started Controller Threads");
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", Started Controller Threads");
 		}
 	}
 
@@ -335,7 +341,7 @@ public class Controller {
 	synchronized void addState(RemoteData state) {
 		this.remoteStateList.put(state.getControllerID(), state);
 	}
-	
+
 	/**
 	 * Remove the XBee state for the controller with the given physical id from the list of XBee states
 	 * @param id
@@ -491,7 +497,7 @@ public class Controller {
 		catch(Exception e) {
 			// Expect exception to be caught for this
 		}
-		
+
 		// Print out the test map (physical and logical so they can be compared to the printed maps' contents)
 		// And also print rint out the contents of both (actual) maps
 		System.out.println("Test physical ID map (Key,Value):\n{0=A1234567890; 1=B1234567890; 2=C1234567890}");

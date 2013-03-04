@@ -1,6 +1,7 @@
 package webSock;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -53,6 +54,13 @@ public class Sender implements Runnable {
 			if(!this.wsOutQueue.isEmpty()) {
 				sendMessage();
 			}
+			else {
+				try {
+					Thread.sleep(20);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		/*while(!this.wsOutQueue.isEmpty()) {
 			sendMessage();
@@ -71,6 +79,9 @@ public class Sender implements Runnable {
 			removedItem = this.wsOutQueue.removeNextItemFromOutgoingQueue();
 			strToSend = JSONValue.toJSONString(removedItem);
 			this.isisApp.broadcast(strToSend);
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", WebSocket Sender: " +
+							"Broadcast message to clients: " + strToSend);;
 		}
 		catch(Exception e) {
 			// Broadcast should occur

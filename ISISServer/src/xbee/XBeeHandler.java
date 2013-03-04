@@ -44,14 +44,14 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 {
 	private final static Logger log = Logger.getLogger(RemoteAtExample.class);
 	private final int feedBackDelay = 500; //One half second.
-	
+
 	private Queue<XBeeCommand> toNetwork;
 	private Queue<XBeePacket> fromNetwork;
-	
+
 	private XBee coordinator;
 	private Thread sendingThread;
 	private Timer feedBackTmr;
-	
+
 	/**
 	 *	This is the constructor class for the XBEE communication system.
 	 *	It will create the queues that the XBee uses for communication and 
@@ -64,28 +64,29 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		fromNetwork = new LinkedList<XBeePacket>();
 		coordinator = new XBee();
 		feedBackTmr = new Timer();
-		
+
 		//Ask the user what COM port to read the coordinator.
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter the com port that the Coordinator is residing on. E.g 'COM3'");
-		String com = br.readLine();
-		
+		String com = br.readLine();*/
+		String com = "/dev/tty.usbserial-A1011ES9";	// TODO: CHANGE THIS AS REQUIRED
+
 		//Open the connection to the XBee device.
 		try {
 			coordinator.open(com, 9600);
-		} catch (XBeeException e) {
+		} catch (XBeeException e) { 
 			System.out.println("Error: Opening XBee coordinator connection on specified serial port...");
 			e.printStackTrace();
 		}
-		
+
 		//Add the custom Listener to the XBee
 		coordinator.addPacketListener(new XBeeListener());
-		
+
 		//Create and start the sending Thread
 		sendingThread = new Thread(new sendingThread());
 		sendingThread.start();
 	}
-	
+
 
 	/**
 	 * This method will be called when a packet is received it will blink the
@@ -111,7 +112,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		//Set timer to call the command to turn off the feedback light after a half second.
 		this.feedBackTmr.schedule(new LightOff(addr), this.feedBackDelay);
 	}
-	
+
 	/**
 	 * This class is the action for the timer in the Light off method.
 	 * The action that it will perform is to send a command to an address to 
@@ -121,9 +122,9 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	private class LightOff extends TimerTask
 	{
 		private XBeeAddress64 addr;
-		
+
 		public LightOff(XBeeAddress64 addr){	this.addr = addr;	}
-		
+
 		//Action is to turn off the feedback light.
 		public void run()
 		{
@@ -147,14 +148,14 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	{
 		@Override
 		public void processResponse(XBeeResponse response) {
-			
+
 			if (response.getApiId() == ApiId.ZNET_IO_SAMPLE_RESPONSE) 
 			{
-		        ZNetRxIoSampleResponse ioSample = (ZNetRxIoSampleResponse) response;
-		        //Send the ack Light
-		        sendAckLight(ioSample.getRemoteAddress64());
-		        //Convert to XBeePacket & Place on the Queue
-		        fromNetwork.add(createXBeePacket(ioSample));
+				ZNetRxIoSampleResponse ioSample = (ZNetRxIoSampleResponse) response;
+				//Send the ack Light
+				sendAckLight(ioSample.getRemoteAddress64());
+				//Convert to XBeePacket & Place on the Queue
+				fromNetwork.add(createXBeePacket(ioSample));
 			}
 			//This is for other packets
 			else if(response.getApiId() == ApiId.REMOTE_AT_RESPONSE)
@@ -164,7 +165,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 				if(remoteAt.getCommand().equals("IS"))
 				{
 					ZNetRxIoSampleResponse ioSample = null;
-				
+
 					if (remoteAt.isOk())  
 					{
 						// extract the i/o sample
@@ -173,9 +174,9 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
-					
-					ioSample.setRemoteAddress64(remoteAt.getRemoteAddress64());
-			        fromNetwork.add(createXBeePacket(ioSample));
+
+						ioSample.setRemoteAddress64(remoteAt.getRemoteAddress64());
+						fromNetwork.add(createXBeePacket(ioSample));
 					} 
 					else
 						log.info("Remote AT request failed: " + response);
@@ -183,7 +184,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 			}
 		}
 	}
-	
+
 	/**
 	 * This is the class that will implement the sending Thread.
 	 * @author noquarter
@@ -211,29 +212,29 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 							log.error("XBeeSendingThread: Error in sending the Force sample");
 						}
 						break;
-						
-			// FUTURE STUF TO BE ADDED 
-						
-					//This means that we want to set states.
+
+						// FUTURE STUF TO BE ADDED 
+
+						//This means that we want to set states.
 					case 1:
-						 //TODO - Future add a way to manually change IO States.
-		
-					//THis means that we want to build a structure of nodes.
+						//TODO - Future add a way to manually change IO States.
+
+						//THis means that we want to build a structure of nodes.
 					case 2:
 						//TODO - Node discovery...
 					default:
 						throw new InvalidParameterException("Switch Error: code is out of range...");
 					}
 				}
-				
+
 				//Sleep because this thread does not need to run all the time.
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
-			//Loop back around.
+
+				//Loop back around.
 			}
 		}
 	}
@@ -259,17 +260,20 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		DIO[3] = !packet.isD3On();
 		//CENTER
 		DIO[4] = !packet.isD12On();
-		
-		//Add the analog voltage info
-		double[] analog = new double[3];
-		analog[0] = packet.getAnalog0();
-		
+
 		XBeePacket pack = new XBeePacket();
-		
+
+		//Add the analog voltage info
+		if(packet.containsAnalog())
+		{
+			double[] analog = new double[3];
+			analog[0] = packet.getAnalog0();
+			pack.setButtonPinVoltages(analog);
+		}
+
 		pack.setButtonIOStates(DIO);
-		pack.setButtonPinVoltages(analog);
 		pack.setControllerID(packet.getRemoteAddress64().toString());
-		
+
 		return pack;
 	}
 
@@ -307,10 +311,10 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		XBeeCommand msgToAdd = (XBeeCommand) msg;
 		if(msgToAdd.address == null || msgToAdd.getCommandCode() < 0 || msgToAdd.getCommandCode() > 3)
 			throw new InvalidParameterException("RemoteCode parameters are invaild...");
-		
+
 		toNetwork.add((XBeeCommand) msg);
 	}
-	
+
 	/**
 	 * This is the xbee test method that will be used to test the functionality of 
 	 * this class to pick up IO packets and place them on the queue. It will also see if
@@ -326,16 +330,23 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		FromRemoteInterface from = handle;
 		//Send a reference to the toInterface. This allows the send remote data method.
 		ToRemoteInterface to = handle;
-		
+
 		//Init a broadcast command to fill the queue with IO requests from all of the remote.
 		RemoteCommand discover = new XBeeCommand(XBeeAddress64.BROADCAST, 0);
-		
+
 		//Put the command on the queue.
 		to.sendDataToRemote(discover);
-		
+
 		//Wait for the queue to fill. When it does get the packets.
 		while (true)
 		{
+			try {
+				Thread.sleep(100);
+			}
+			catch(InterruptedException e) {
+				e.printStackTrace();
+			}
+
 			if(from.hasMessages())
 			{
 				System.out.println("--------------------Received a message-----------------");

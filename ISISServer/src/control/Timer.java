@@ -1,5 +1,7 @@
 package control;
 
+import java.util.logging.Level;
+
 import com.rapplogic.xbee.api.XBeeAddress64;
 
 import remoteInterface.RemoteCommand;
@@ -33,14 +35,15 @@ public class Timer implements Runnable {
 		
 		while(true) {
 			// TODO WRITE THE TASK RUN BY THE THREAD (LOOP AS LONG AS THE PROGRAM HAS NOT EXITED)
-			System.out.println("Time: " + new java.util.Date() + ", TIMER THREAD");
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", TIMER THREAD");
 			
 			// Create command to send to XBee network
 			discover = new XBeeCommand(XBeeAddress64.BROADCAST, 0);
 			this.toXBeeNetworkQ.sendDataToRemote(discover);
 			
 			try {
-				Thread.sleep(20*1000);
+				Thread.sleep(30*1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
