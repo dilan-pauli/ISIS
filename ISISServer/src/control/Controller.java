@@ -280,6 +280,10 @@ public class Controller {
 	 */
 	RemoteData convertJSONToPacket(JSONObject jsonObj) {
 		if(jsonObj.get(Controller.jsonCommandFieldStr) == null) {
+			// Create log message
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", convertJSONToPacket(): No command code detected " +
+							"in JSON object so null packet is returned");
 			return null;
 		}
 
@@ -292,7 +296,8 @@ public class Controller {
 		if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.ioCodeStr)) {
 			try {
 				pkt = new XBeePacket();
-				logicalControllerId = (int) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
+				//Exception long can not be cast to int??
+				logicalControllerId = (Integer) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
 				controllerIdToSet = logicalToPhysicalAddress(logicalControllerId);
 				pkt.setControllerID(controllerIdToSet);
 			} catch (Exception e) {
@@ -319,8 +324,8 @@ public class Controller {
 
 		return pkt;
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * @param requestType
