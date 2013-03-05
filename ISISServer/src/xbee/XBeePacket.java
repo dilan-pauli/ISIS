@@ -95,13 +95,8 @@ public class XBeePacket implements RemoteData{
 	
 	@Override
 	public boolean setButtonPinVoltages(double[] newPinVoltages) {
-		if(newPinVoltages.length != 5) {
-			return false;
-		}
 		
-		for(int i = 0; i < this.NUM_IO_PINS; i++) {
-			this.buttonPinVoltages[i] = newPinVoltages[i];
-		}
+		this.buttonPinVoltages = newPinVoltages;
 		
 		return true;
 	}
