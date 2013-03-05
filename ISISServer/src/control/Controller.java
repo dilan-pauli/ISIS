@@ -177,7 +177,7 @@ public class Controller {
 			 * Run the Controller threads
 			 */
 			this.remoteToWeb.start();
-			//this.webToRemote.start(); // TODO: COMMENT BACK IN LATER TO RUN THREAD2
+			this.webToRemote.start(); // TODO: COMMENT BACK IN LATER TO RUN THREAD2
 			this.timer.start();
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", Started Controller Threads");

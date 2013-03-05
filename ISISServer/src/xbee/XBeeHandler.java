@@ -69,7 +69,9 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter the com port that the Coordinator is residing on. E.g 'COM3'");
 		String com = br.readLine();*/
-		String com = "COM3";	// TODO: CHANGE THIS AS REQUIRED
+		
+		//String com = "COM3";	// TODO: CHANGE THIS AS REQUIRED
+		String com = "/dev/tty.usbserial-A1011ES9";
 
 		//Open the connection to the XBee device.
 		try {
@@ -353,11 +355,11 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 				XBeePacket msg = (XBeePacket) from.getRemoteMessage();
 				boolean[] states = msg.getButtonIOStates();
 				System.out.println("Package from: " + msg.getControllerID());
-				System.out.println("Sates UP:" + states[0]);
-				System.out.println("Sates LEFT:" + states[1]);
-				System.out.println("Sates RIGHT:" + states[2]);
-				System.out.println("Sates DOWN:" + states[3]);
-				System.out.println("Sates CENTER:" + states[4]);
+				System.out.println("States UP:" + states[0]);
+				System.out.println("States LEFT:" + states[1]);
+				System.out.println("States RIGHT:" + states[2]);
+				System.out.println("States DOWN:" + states[3]);
+				System.out.println("States CENTER:" + states[4]);
 				double[] analog = msg.getButtonPinVoltages();
 				System.out.println("ADC Voltage level: " + analog[0]);
 			}

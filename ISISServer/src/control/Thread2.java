@@ -39,23 +39,28 @@ public class Thread2 implements Runnable {
 	public void run() {
 		while(true) {
 			if(!this.fromWebSock.isEmpty()) {
-				// Remove incoming message from WebSocket incoming message queue
-				JSONObject msgIn = this.fromWebSock.removeNextIncomingWebSocketMsg();
-				// Extract the type of request this message is (to be used later when creating JSON response)
-				String msgInReqType = (String) msgIn.get(Controller.jsonCommandFieldStr);
-				
-				// Convert the incoming JSON message to XBee packet
-				RemoteData pkt = this.controller.convertJSONToPacket(msgIn);
+				try {
+					// Remove incoming message from WebSocket incoming message queue
+					JSONObject msgIn = this.fromWebSock.removeNextIncomingWebSocketMsg();
+					// Extract the type of request this message is (to be used later when creating JSON response)
+					String msgInReqType = (String) msgIn.get(Controller.jsonCommandFieldStr);
 
-				// Access the XBee state list to look up required information (as requested via JSON)
-				pkt = this.controller.getStateForController(pkt.getControllerID());
+					// Convert the incoming JSON message to XBee packet
+					RemoteData pkt = this.controller.convertJSONToPacket(msgIn);
 
-				// Create the appropriate JSON response for the incoming message (using earlier saved request type)
-				JSONObject msgOut = this.controller.convertPacketToJSON(pkt, 
-						this.controller.getAppropriateResponseType(msgInReqType));
-				
-				// Place the response on the outgoing WebSocket queue
-				this.toWebSock.putItemOnOutgoingQueue(msgOut);
+					// Access the XBee state list to look up required information (as requested via JSON)
+					pkt = this.controller.getStateForController(pkt.getControllerID());
+
+					// Create the appropriate JSON response for the incoming message (using earlier saved request type)
+					JSONObject msgOut = this.controller.convertPacketToJSON(pkt, 
+							this.controller.getAppropriateResponseType(msgInReqType));
+
+					// Place the response on the outgoing WebSocket queue
+					this.toWebSock.putItemOnOutgoingQueue(msgOut);
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
 			}
 			else
 			{

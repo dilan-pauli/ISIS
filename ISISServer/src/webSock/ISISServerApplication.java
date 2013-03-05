@@ -3,9 +3,9 @@ package webSock;
 import java.io.IOException;
 import java.util.logging.Level;
 
-/*import org.json.simple.JSONObject;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;*/
+import org.json.simple.parser.ParseException;
 
 import control.Controller;
 import xbee.XBeeHandler;
@@ -177,13 +177,13 @@ public class ISISServerApplication extends WebSocketApplication {
 		super.onMessage(socket, text);
 
 		// Send the received message back to the client from which it originated
-		socket.send("Hello Client " + socket.toString() + ". I received the " +
-				"following message from you: " + text + "\n");
+		/**socket.send("Hello Client " + socket.toString() + ". I received the " +
+				"following message from you: " + text + "\n");*/
 		/*socket.send("<br />Hello Client " + socket.toString() + ". <br/>I received the " +
 				"following message from you:<br />" + text);*/
 
 		// TODO: LET THIS BE THE SOLE RESPONSE TO AN INCOMING MESSAGE LATER (COMMENT IN LATER)
-		/*// Check whether client
+		// Check whether client
 		// Create JSON object
 		JSONParser parser = new JSONParser();
 		// Convert the received string to JSON
@@ -194,7 +194,7 @@ public class ISISServerApplication extends WebSocketApplication {
 			this.msgReceiver.handleIncomingMessage(jsonObj);
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}*/
+		}/**/
 		
 		// Log the received message
 		java.util.logging.Logger.getAnonymousLogger().log(
