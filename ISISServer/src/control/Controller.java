@@ -31,7 +31,7 @@ public class Controller {
 	/**
 	 * Run in helper-function test mode (true) or not (false)
 	 */
-	private final boolean isHelperFunctionTest;	// SWITCH BACK TO FALSE TO DISABLE TEST (TRUE DISABLES THREADS)
+	private final boolean isHelperFunctionTest;
 
 
 	/**
@@ -140,7 +140,7 @@ public class Controller {
 		 * Create the Controller lists
 		 */
 		this.remoteStateList = new HashMap<String, RemoteData>();
-		this.webSocketClientList = new HashMap<String, ISISWebSocket>();
+		this.webSocketClientList = new HashMap<String, ISISWebSocket>(); // TODO: WHERE DO WE EVER USE THIS??
 		this.physicalIDMap = new HashMap<Integer, String>();
 		this.logicalIDMap = new HashMap<String, Integer>();
 		java.util.logging.Logger.getAnonymousLogger().log(
@@ -168,7 +168,7 @@ public class Controller {
 					(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
 					this));
 
-			this.timer = new Thread (new Timer(this.handler)); //TODO: Added parameter(s) for Timer Thread
+			this.timer = new Thread (new Timer(this.handler));
 
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", Created Controller Threads");
@@ -177,7 +177,7 @@ public class Controller {
 			 * Run the Controller threads
 			 */
 			this.remoteToWeb.start();
-			//this.webToRemote.start(); // TODO: COMMENT BACK IN TO RUN THREAD2
+			//this.webToRemote.start(); // TODO: COMMENT BACK IN LATER TO RUN THREAD2
 			this.timer.start();
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", Started Controller Threads");
@@ -231,7 +231,8 @@ public class Controller {
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
 		else if(responseTypeToCreate.equals(Controller.diagResponseStr)) {
-			paramObj.put(Controller.diagControllerAddressStr, this.physicalToLogical(pkt.getControllerID())); // TODO COULD ADD MORE LATER
+			// TODO COULD ADD MORE LATER
+			paramObj.put(Controller.diagControllerAddressStr, this.physicalToLogical(pkt.getControllerID()));
 			JSONArray jsonArray1 = new JSONArray();
 			for(int i = 0; i < pkt.getButtonIOStates().length; i++) {
 				jsonArray1.add(i, pkt.getButtonIOStates()[i]);
@@ -317,6 +318,28 @@ public class Controller {
 		}
 
 		return pkt;
+	}
+	
+	
+	/**
+	 * 
+	 * @param requestType
+	 * @return The response type expected for the given request (null if no mapping was found)
+	 */
+	String getAppropriateResponseType(String requestType) {
+		// TODO: ADD TEST FOR THIS
+		if(requestType.equals(Controller.ioCodeStr)) {
+			return Controller.ioResponseStr;
+		}
+		else if(requestType.equals(Controller.diagCodeStr)) {
+			return Controller.diagResponseStr;
+		}
+		else if(requestType.equals(Controller.initCodeStr)) {
+			return Controller.initResponseStr;
+		}
+		else {
+			return Controller.errorResponseStr;
+		}
 	}
 
 

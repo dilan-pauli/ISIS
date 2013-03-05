@@ -38,7 +38,6 @@ public class ISISServerApplication extends WebSocketApplication {
 	/**
 	 * Receiver to handle incoming messages
 	 */
-	@SuppressWarnings("unused")
 	private Receiver msgReceiver;
 
 	/**
@@ -69,8 +68,13 @@ public class ISISServerApplication extends WebSocketApplication {
 	public ISISServerApplication() {
 		super();
 		
-		System.out.println("Starting ISIS WebSocket Application");
-		System.out.println("-----------------------------------");
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", Starting ISIS Application");
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", -----------------------------------");
+		
+		/*System.out.println("Starting ISIS WebSocket Application");
+		System.out.println("-----------------------------------");*/
 
 		// Create Incoming Queue
 		this.inQueue = new WebSocketIncomingQueue();
@@ -103,21 +107,21 @@ public class ISISServerApplication extends WebSocketApplication {
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-				"Created ISISServerApplication message Receiver");
+				"Created ISIS Server Application message Receiver");
 
 		// Create Sender Thread
 		this.senderThread = new Thread(new Sender(this.getOutgoingMsgQueue(), this));
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-				"Created ISISServerApplication Sender thread");
+				"Created ISIS Server Application Sender thread");
 
 		// Start Sender Thread
-		this.senderThread.start(); //TODO: START THIS THREAD (COMMENT BACK IN)
+		this.senderThread.start();
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-				"Started ISISServerApplication Sender thread");
+				"Started ISIS Server Application Sender thread");
 
 		// Create Controller (not in Helper Test mode)
 		this.controller = new Controller(this.handler, this, false);
@@ -173,11 +177,14 @@ public class ISISServerApplication extends WebSocketApplication {
 		super.onMessage(socket, text);
 
 		// Send the received message back to the client from which it originated
-		socket.send("<br />Hello Client " + socket.toString() + ". <br/>I received the " +
-				"following message from you:<br />" + text);
+		socket.send("Hello Client " + socket.toString() + ". I received the " +
+				"following message from you: " + text + "\n");
+		/*socket.send("<br />Hello Client " + socket.toString() + ". <br/>I received the " +
+				"following message from you:<br />" + text);*/
 
 		// TODO: LET THIS BE THE SOLE RESPONSE TO AN INCOMING MESSAGE LATER (COMMENT IN LATER)
-		/*// Create JSON object
+		/*// Check whether client
+		// Create JSON object
 		JSONParser parser = new JSONParser();
 		// Convert the received string to JSON
 		JSONObject jsonObj = null;
@@ -188,7 +195,7 @@ public class ISISServerApplication extends WebSocketApplication {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}*/
-
+		
 		// Log the received message
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", " + 

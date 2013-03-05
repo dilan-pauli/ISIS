@@ -1,8 +1,8 @@
 package xbee;
 
-import java.io.BufferedReader;
+//import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+//import java.io.InputStreamReader;
 import java.security.InvalidParameterException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -353,11 +353,11 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 				XBeePacket msg = (XBeePacket) from.getRemoteMessage();
 				boolean[] states = msg.getButtonIOStates();
 				System.out.println("Package from: " + msg.getControllerID());
-				System.out.println("Sates UP:" + states[0]);
-				System.out.println("Sates LEFT:" + states[1]);
-				System.out.println("Sates RIGHT:" + states[2]);
-				System.out.println("Sates DOWN:" + states[3]);
-				System.out.println("Sates CENTER:" + states[4]);
+				System.out.println("States UP:" + states[0]);
+				System.out.println("States LEFT:" + states[1]);
+				System.out.println("States RIGHT:" + states[2]);
+				System.out.println("States DOWN:" + states[3]);
+				System.out.println("States CENTER:" + states[4]);
 			}
 		}
 	}

@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Hello ISIS World!</h1>
-	<textarea id="output" rows="50" cols="150"></textarea>
+	<textarea id="output" rows="50" cols="150" readonly></textarea>
 	<br />
 	<input name="usermsg" type="text" id="message" size="63"
 		value="Enter your message here" />
@@ -60,43 +60,47 @@
 			if (websocket == null) {
 				/*writeToScrn('<span style="color:red;">NEED TO CONNECT TO WEBSOCKET ' + 
 				'SERVER BEFORE MESSAGES CAN BE SENT</span>');*/
-				writeToScrn('WARNING: NEED TO CONNECT TO WEBSOCKET SERVER BEFORE MESSAGES CAN BE SENT');
+				writeToScrn('Time: ' + new Date().toString + 
+						' WARNING: NEED TO CONNECT TO WEBSOCKET SERVER BEFORE MESSAGES CAN BE SENT');
 				return;
 			}
 
 			msg = document.getElementById('message').value;
 			//writeToScrn('<span style="color:green;">SENT MESSAGE TO WEBSOCKET SERVER</span>');
-			writeToScrn('SENT MESSAGE TO WEBSOCKET SERVER');
 			websocket.send(msg);
+			writeToScrn('Time: ' + new Date().toString + ' SENT MESSAGE TO WEBSOCKET SERVER');
 		}
 
 		function writeToScrn(message) {
 			var elem = document.getElementById('output');
 			//elem.innerHTML = message;
 			//elem.innerHTML = elem.innerHTML + message + "<br/>";
-			elem.innerHTML = elem.innerHTML + message + "\n";
+			elem.innerHTML = 'Time: ' + new Date().toString + ' ' + elem.innerHTML + message + "\n";
 		}
 
 		function onOpen(event) {
 			//writeToScrn('<span style="color:green;">CONNECTED TO WEBSOCKET SERVER</span>');
-			writeToScrn('INFO: CONNECTED TO WEBSOCKET SERVER');
+			writeToScrn('Time: ' + new Date().toString
+					+ ' INFO: CONNECTED TO WEBSOCKET SERVER');
 		}
 
 		function onClose(event) {
 			//writeToScrn('<span style="color:red;">DISCONNECTED FROM WEBSOCKET SERVER</span>');
-			writeToScrn('INFO: DISCONNECTED FROM WEBSOCKET SERVER');
+			writeToScrn('Time: ' + new Date().toString
+					+ ' INFO: DISCONNECTED FROM WEBSOCKET SERVER');
 			websocket = null;
 		}
 
 		function onError(event) {
 			//writeToScrn('<span style="color:red;">ERROR:</span>' + event.data);
-			writeToScrn('INFO: ERROR: ' + event.data);
+			writeToScrn('Time: ' + new Date().toString + ' ERROR: ' + event.data);
 		}
 
 		function onMessage(event) {
 			/*writeToScrn('<span style="color:blue;">SERVER RESPONSE: '
 			+ event.data + '</span>');*/
-			writeToScrn('INFO: SERVER RESPONSE: ' + event.data);
+			writeToScrn('Time: ' + new Date().toString
+					+ ' INFO: SERVER RESPONSE: ' + event.data);
 		}
 	</script>
 </body>
