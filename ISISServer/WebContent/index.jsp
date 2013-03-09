@@ -68,7 +68,7 @@
 			msg = document.getElementById('message').value;
 			//writeToScrn('<span style="color:green;">SENT MESSAGE TO WEBSOCKET SERVER</span>');
 			websocket.send(msg);
-			writeToScrn('Time: ' + new Date().toString() + ' SENT MESSAGE TO WEBSOCKET SERVER');
+			writeToScrn('Time: ' + new Date().toString() + ' SENT MESSAGE ' + msg + ' TO WEBSOCKET SERVER');
 		}
 
 		function writeToScrn(message) {

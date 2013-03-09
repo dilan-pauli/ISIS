@@ -215,7 +215,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 						}
 						break;
 
-						// FUTURE STUF TO BE ADDED 
+						// FUTURE STUFF TO BE ADDED 
 
 						//This means that we want to set states.
 					case 1:

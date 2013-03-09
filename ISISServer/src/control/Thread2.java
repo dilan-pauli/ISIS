@@ -66,7 +66,7 @@ public class Thread2 implements Runnable {
 					if(pkt == null) {
 						// For null returned packet, send back an error response
 						JSONObject outMsg = this.controller.convertPacketToJSON(pkt, Controller.errorResponseStr);
-						
+
 						// TODO: SET ERROR MESSAGE?? REQUEST MUST HAVE BEEN INVALID
 						//JSONObject paramObj = new JSONObject();
 						//paramObj.put(Controller.errorMessageStr, "Server could not process invalid request");
@@ -97,7 +97,18 @@ public class Thread2 implements Runnable {
 					}
 				}
 				catch(Exception e) {
+					java.util.logging.Logger.getAnonymousLogger().log(
+							Level.INFO, "Time: " + new java.util.Date() + ", Thread2 exception");
 					e.printStackTrace();
+
+					// Create server error message to send back
+					JSONObject errMsg = this.controller.convertPacketToJSON(null, Controller.errorResponseStr);
+
+					// Place the response on the outgoing WebSocket queue
+					this.toWebSock.putItemOnOutgoingQueue(errMsg);
+					java.util.logging.Logger.getAnonymousLogger().log(
+							Level.INFO, "Time: " + new java.util.Date() + ", Placed error response on WebSocket " +
+							"outgoing queue");
 				}
 			}
 			else

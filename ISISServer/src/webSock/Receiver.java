@@ -1,5 +1,7 @@
 package webSock;
 
+import java.util.logging.Level;
+
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
@@ -21,6 +23,10 @@ public class Receiver {
 
 	protected void handleIncomingMessage(JSONObject item) {
 		this.wsInQueue.putItemOnIncomingQueue(item);
+		// Log the received message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", Receiver added message " + 
+						item.toString() + " to WebSocket incoming queue");
 	}
 
 	@SuppressWarnings("unchecked")

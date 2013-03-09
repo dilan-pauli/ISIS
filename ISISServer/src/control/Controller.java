@@ -140,7 +140,7 @@ public class Controller {
 		 * Create the Controller lists
 		 */
 		this.remoteStateList = new HashMap<String, RemoteData>();
-		this.webSocketClientList = new HashMap<String, ISISWebSocket>(); // TODO: WHERE DO WE EVER USE THIS??
+		this.webSocketClientList = new HashMap<String, ISISWebSocket>(); //TODO:WHERE DO WE USE THIS? LATER (NON-BROADCAST)
 		this.physicalIDMap = new HashMap<Long, String>();
 		this.logicalIDMap = new HashMap<String, Long>();
 		java.util.logging.Logger.getAnonymousLogger().log(
@@ -177,7 +177,7 @@ public class Controller {
 			 * Run the Controller threads
 			 */
 			this.remoteToWeb.start();
-			this.webToRemote.start(); // TODO: COMMENT BACK IN LATER TO RUN THREAD2
+			this.webToRemote.start();
 			this.timer.start();
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", Started Controller Threads");
@@ -298,7 +298,7 @@ public class Controller {
 			try {
 				pkt = new XBeePacket();
 				//Exception long can not be cast to int??
-				logicalControllerId = (long) jsonObj.get(Controller.jsonRequestArgumentFieldStr);//TODO: ??????????????????
+				logicalControllerId = (long) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
 				controllerIdToSet = logicalToPhysicalAddress(logicalControllerId);
 				pkt.setControllerID(controllerIdToSet);
 				return pkt;
@@ -338,7 +338,7 @@ public class Controller {
 	 * @return The response type expected for the given request (null if no mapping was found)
 	 */
 	String getAppropriateResponseType(String requestType) {
-		// TODO: ADD TEST FOR THIS
+		
 		if(requestType.equals(Controller.ioCodeStr)) {
 			return Controller.ioResponseStr;
 		}

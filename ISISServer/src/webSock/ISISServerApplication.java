@@ -182,7 +182,6 @@ public class ISISServerApplication extends WebSocketApplication {
 		/*socket.send("<br />Hello Client " + socket.toString() + ". <br/>I received the " +
 				"following message from you:<br />" + text);*/
 
-		// TODO: LET THIS BE THE SOLE RESPONSE TO AN INCOMING MESSAGE LATER (COMMENT IN LATER)
 		// Check whether client
 		// Create JSON object
 		JSONParser parser = new JSONParser();
