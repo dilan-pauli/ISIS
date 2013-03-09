@@ -82,7 +82,7 @@ public class Thread2 implements Runnable {
 						RemoteData returnPkt = this.controller.getStateForController(pkt.getControllerID());
 						java.util.logging.Logger.getAnonymousLogger().log(
 								Level.INFO, "Time: " + new java.util.Date() + ", Corresponding packet obtained from XBee " +
-										"states list: " + pkt);
+										"states list: " + returnPkt);
 
 						// Create the appropriate JSON response for the incoming message (using earlier saved request type)
 						JSONObject msgOut = this.controller.convertPacketToJSON(returnPkt, 

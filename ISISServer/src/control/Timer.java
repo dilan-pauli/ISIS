@@ -56,16 +56,18 @@ public class Timer implements Runnable {
 			//Check if any of the devices is off
 			for(RemoteData data : remoteList.values())
 			{
-				//If the device hasn't reported any information in the last 30 sec it is
+				//If the device hasn't reported any information in the last 15 sec it is
 				//considered to be OFF.
-				if(data.getTimeStamp().getTime() < new java.util.Date().getTime() - 30*1000)
+				if(data.getTimeStamp().getTime() < new java.util.Date().getTime() - 15*1000)
 				{
 					data.setOnState(false);
+					double[] newButtonVoltages = {0, 0, 0, 0, 0};
+					data.setButtonPinVoltages(newButtonVoltages);
 				}
 			}
 			
 			try {
-				Thread.sleep(30*1000);
+				Thread.sleep(15*1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

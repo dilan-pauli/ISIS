@@ -67,12 +67,12 @@ public class ISISServerApplication extends WebSocketApplication {
 	 */
 	public ISISServerApplication() {
 		super();
-		
+
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", Starting ISIS Application");
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", -----------------------------------");
-		
+
 		/*System.out.println("Starting ISIS WebSocket Application");
 		System.out.println("-----------------------------------");*/
 
@@ -176,6 +176,12 @@ public class ISISServerApplication extends WebSocketApplication {
 	public void onMessage(WebSocket socket, String text) {
 		super.onMessage(socket, text);
 
+		// Log the received message
+		java.util.logging.Logger.getAnonymousLogger().log(
+				Level.INFO, "Time: " + new java.util.Date() + ", " + 
+						"Application received request from client " + socket.toString() + 
+						". Msg: " + text);
+
 		// Send the received message back to the client from which it originated
 		/**socket.send("Hello Client " + socket.toString() + ". I received the " +
 				"following message from you: " + text + "\n");*/
@@ -194,12 +200,6 @@ public class ISISServerApplication extends WebSocketApplication {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}/**/
-		
-		// Log the received message
-		java.util.logging.Logger.getAnonymousLogger().log(
-				Level.INFO, "Time: " + new java.util.Date() + ", " + 
-						"Application received request from client " + socket.toString() + 
-						". Msg: " + text);
 	}
 
 	/**

@@ -202,7 +202,7 @@ public class Controller {
 	 */
 	@SuppressWarnings("unchecked")
 	JSONObject convertPacketToJSON(RemoteData pkt, String responseTypeToCreate) { //ISISWebSocket destination,
-		
+
 		// JSONObject to return
 		JSONObject obj = new JSONObject();
 		// Parameter object
@@ -252,8 +252,35 @@ public class Controller {
 			obj.put(Controller.jsonResponseFieldStr, Controller.diagResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
-		else if(responseTypeToCreate.equals(Controller.initResponseStr) && (pkt != null)) {
-			paramObj.put(Controller.initFieldStr, "");//TODO LATER CHANGE "" TO ALL OR ARRAY OF ALL PACKAGED REMOTE STATES
+		else if(responseTypeToCreate.equals(Controller.initResponseStr)) {
+			// Diagnostics for a single remote
+			JSONObject singleRemoteDiag = new JSONObject();
+			// Diagnostics for all remotes
+			JSONArray remoteStatesJSON = new JSONArray();
+			// Index of remote states
+			int i = 0;
+			
+			// Collect the Diagnostics of all the remotes in the system
+			for(RemoteData data : this.remoteStateList.values())
+			{
+				singleRemoteDiag.put(Controller.diagControllerAddressStr, this.physicalToLogical(data.getControllerID()));
+				JSONArray jsonArray1 = new JSONArray();
+				for(int j = 0; j < data.getButtonIOStates().length; j++) {
+					jsonArray1.add(j, data.getButtonIOStates()[j]);
+				}
+				singleRemoteDiag.put(Controller.diagDataArrayStr, jsonArray1);
+				singleRemoteDiag.put(Controller.diagIsOnStr, data.isOn());
+				JSONArray jsonArray2 = new JSONArray();
+				for(int k = 0; k < data.getButtonPinVoltages().length; k++) {
+					jsonArray2.add(k, data.getButtonPinVoltages()[k]);
+				}
+				singleRemoteDiag.put(Controller.diagPinVoltageArrayStr, jsonArray2);
+
+				remoteStatesJSON.add(i, singleRemoteDiag);
+				i++;
+			}/**/			
+
+			paramObj.put(Controller.initFieldStr, remoteStatesJSON);//TODO LATER CHANGE "" TO ALL OR ARRAY OF ALL PACKAGED REMOTE STATES
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.initResponseStr);
@@ -286,7 +313,7 @@ public class Controller {
 			// Create log message
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", convertJSONToPacket(): No command code detected " +
-							"in JSON object so null packet is returned");
+					"in JSON object so null packet is returned");
 			return null;
 		}
 
@@ -307,6 +334,7 @@ public class Controller {
 			} catch (Exception e) {
 				e.printStackTrace();
 				pkt = null;
+				return pkt;
 			} 
 		}
 		else if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.diagCodeStr)) {
@@ -319,6 +347,7 @@ public class Controller {
 			} catch (Exception e) {
 				e.printStackTrace();
 				pkt = null;
+				return pkt;
 			}
 		}
 		else if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.initCodeStr)) {
@@ -328,9 +357,8 @@ public class Controller {
 		}
 		else {
 			pkt = null;
+			return pkt;
 		}
-
-		return pkt;
 	}
 
 
@@ -340,7 +368,7 @@ public class Controller {
 	 * @return The response type expected for the given request (null if no mapping was found)
 	 */
 	String getAppropriateResponseType(String requestType) {
-		
+
 		if(requestType.equals(Controller.ioCodeStr)) {
 			return Controller.ioResponseStr;
 		}
@@ -376,9 +404,9 @@ public class Controller {
 	 */
 	synchronized void addState(RemoteData state) {
 		//if the device is entering the state list is it assumed to be on
-		
+
 		state.setOnState(true);
-		
+
 		this.remoteStateList.put(state.getControllerID(), state);
 	}
 
