@@ -45,8 +45,8 @@ public class Controller {
 	protected HashMap<String, ISISWebSocket> webSocketClientList; // Key, Value => String(WebSocketClientID),ISISWebSocket
 
 	// List to store logical address / physical address pairs
-	protected HashMap<Integer, String> physicalIDMap;
-	protected HashMap<String, Integer> logicalIDMap;
+	protected HashMap<Long, String> physicalIDMap;
+	protected HashMap<String, Long> logicalIDMap;
 
 
 	/**
@@ -141,8 +141,8 @@ public class Controller {
 		 */
 		this.remoteStateList = new HashMap<String, RemoteData>();
 		this.webSocketClientList = new HashMap<String, ISISWebSocket>(); // TODO: WHERE DO WE EVER USE THIS??
-		this.physicalIDMap = new HashMap<Integer, String>();
-		this.logicalIDMap = new HashMap<String, Integer>();
+		this.physicalIDMap = new HashMap<Long, String>();
+		this.logicalIDMap = new HashMap<String, Long>();
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", Created XBee state list, WebSocket client list, " +
 				"and Controller address mapping lists");
@@ -200,13 +200,14 @@ public class Controller {
 	 */
 	@SuppressWarnings("unchecked")
 	JSONObject convertPacketToJSON(RemoteData pkt, String responseTypeToCreate) { //ISISWebSocket destination,
+		
 		// JSONObject to return
 		JSONObject obj = new JSONObject();
 		// Parameter object
 		JSONObject paramObj = new JSONObject();
 
 		// What type of response is required?
-		if(responseTypeToCreate.equals(Controller.buttonEventStr)) {
+		if(responseTypeToCreate.equals(Controller.buttonEventStr) && (pkt != null)) {
 			paramObj.put(Controller.buttonEventControllerAddressStr, this.physicalToLogical(pkt.getControllerID()));
 			JSONArray jsonArray = new JSONArray();
 			for(int i = 0; i < pkt.getButtonIOStates().length; i++) {
@@ -218,7 +219,7 @@ public class Controller {
 			obj.put(Controller.jsonResponseFieldStr, Controller.buttonEventStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
-		else if(responseTypeToCreate.equals(Controller.ioResponseStr)) {
+		else if(responseTypeToCreate.equals(Controller.ioResponseStr) && (pkt != null)) {
 			paramObj.put(Controller.ioControllerAddressStr, this.physicalToLogical(pkt.getControllerID()));
 			JSONArray jsonArray = new JSONArray();
 			for(int i = 0; i < pkt.getButtonIOStates().length; i++) {
@@ -230,7 +231,7 @@ public class Controller {
 			obj.put(Controller.jsonResponseFieldStr, Controller.ioResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
-		else if(responseTypeToCreate.equals(Controller.diagResponseStr)) {
+		else if(responseTypeToCreate.equals(Controller.diagResponseStr) && (pkt != null)) {
 			// TODO COULD ADD MORE LATER
 			paramObj.put(Controller.diagControllerAddressStr, this.physicalToLogical(pkt.getControllerID()));
 			JSONArray jsonArray1 = new JSONArray();
@@ -249,15 +250,15 @@ public class Controller {
 			obj.put(Controller.jsonResponseFieldStr, Controller.diagResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
-		else if(responseTypeToCreate.equals(Controller.initResponseStr)) {
-			paramObj.put(Controller.initFieldStr, "");	// TODO CHANGE "" TO ALL
+		else if(responseTypeToCreate.equals(Controller.initResponseStr) && (pkt != null)) {
+			paramObj.put(Controller.initFieldStr, "");//TODO LATER CHANGE "" TO ALL OR ARRAY OF ALL PACKAGED REMOTE STATES
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.initResponseStr);
 			obj.put(Controller.jsonResponseArgumentFieldStr, paramObj);
 		}
 		else if(responseTypeToCreate.equals(Controller.errorResponseStr)) {
-			paramObj.put(Controller.errorMessageStr, ""); // TODO RemoteData: ERROR MSG SET AND GET CAPABILITY??
+			paramObj.put(Controller.errorMessageStr, "Server could not process invalid request"); // TODO RemoteData: ERROR MSG SET AND GET CAPABILITY??
 
 			// Fill in the fields of the JSONObject to return
 			obj.put(Controller.jsonResponseFieldStr, Controller.errorResponseStr);
@@ -275,11 +276,11 @@ public class Controller {
 	 * Will be calling the logical to physical to get the physical address from 
 	 * the logical one given from the browser client.
 	 * 
-	 * @param jsonObj
-	 * @return
+	 * @param jsonObj, the JSON Object to convert
+	 * @return The packet form of the JSON or null for invalid JSON formatted items
 	 */
 	RemoteData convertJSONToPacket(JSONObject jsonObj) {
-		if(jsonObj.get(Controller.jsonCommandFieldStr) == null) {
+		if((jsonObj.get(Controller.jsonCommandFieldStr) == null) || (jsonObj == null)) {
 			// Create log message
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", convertJSONToPacket(): No command code detected " +
@@ -289,7 +290,7 @@ public class Controller {
 
 		// Create new packet
 		RemoteData pkt = null;
-		int logicalControllerId;
+		long logicalControllerId;
 		String controllerIdToSet = "";
 
 		// Figure out what kind of client request (json) it is
@@ -297,26 +298,31 @@ public class Controller {
 			try {
 				pkt = new XBeePacket();
 				//Exception long can not be cast to int??
-				logicalControllerId = (Integer) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
+				logicalControllerId = (long) jsonObj.get(Controller.jsonRequestArgumentFieldStr);//TODO: ??????????????????
 				controllerIdToSet = logicalToPhysicalAddress(logicalControllerId);
 				pkt.setControllerID(controllerIdToSet);
+				return pkt;
 			} catch (Exception e) {
 				e.printStackTrace();
+				pkt = null;
 			} 
 		}
 		else if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.diagCodeStr)) {
 			try {
 				pkt = new XBeePacket();
-				logicalControllerId = (int) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
+				logicalControllerId = (long) jsonObj.get(Controller.jsonRequestArgumentFieldStr);
 				controllerIdToSet = logicalToPhysicalAddress(logicalControllerId);
 				pkt.setControllerID(controllerIdToSet);
+				return pkt;
 			} catch (Exception e) {
 				e.printStackTrace();
+				pkt = null;
 			}
 		}
 		else if(jsonObj.get(Controller.jsonCommandFieldStr).equals(Controller.initCodeStr)) {
 			pkt = new XBeePacket();
 			pkt.setControllerID(Controller.initControllerParam);
+			return pkt;
 		}
 		else {
 			pkt = null;
@@ -388,7 +394,7 @@ public class Controller {
 	 * 
 	 * This function is the function that inits the maps.
 	 */
-	synchronized int physicalToLogical(String physical)
+	synchronized long physicalToLogical(String physical)
 	{
 		// The physical is already in the system return the logical.
 		if(this.physicalIDMap.containsValue(physical) && this.logicalIDMap.containsKey(physical))
@@ -398,7 +404,7 @@ public class Controller {
 		// This is an init case if the physical address is not yet associated to a logical ID.
 		else
 		{
-			int newLogicalId = physicalIDMap.size();
+			long newLogicalId = physicalIDMap.size();
 			this.physicalIDMap.put(newLogicalId, physical);
 			this.logicalIDMap.put(physical, newLogicalId);
 			return newLogicalId;
@@ -413,7 +419,7 @@ public class Controller {
 	 * @return the corresponding physical address for a logical controller address
 	 * @throws Exception 
 	 */
-	synchronized String logicalToPhysicalAddress(int logicalAddr) throws Exception 
+	synchronized String logicalToPhysicalAddress(long logicalAddr) throws Exception 
 	{
 		// Make sure that both maps know about the logical address.
 		if(this.physicalIDMap.containsKey(logicalAddr) && 

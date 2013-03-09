@@ -34,7 +34,6 @@ public class Timer implements Runnable {
 		RemoteCommand discover;
 		
 		while(true) {
-			// TODO WRITE THE TASK RUN BY THE THREAD (LOOP AS LONG AS THE PROGRAM HAS NOT EXITED)
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", TIMER THREAD");
 			
