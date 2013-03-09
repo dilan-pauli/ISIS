@@ -25,6 +25,7 @@ public class Controller {
 	 * Handlers (XBee network and WebSocket network)
 	 */
 
+	@SuppressWarnings("unused")
 	private XBeeHandler handler;
 	private ISISServerApplication isisServerApp;
 
@@ -168,7 +169,8 @@ public class Controller {
 					(WebSocketOutgoingQueueInterface) isisServerApp.getOutgoingMsgQueue(),
 					this));
 
-			this.timer = new Thread (new Timer(this.handler));
+			this.timer = new Thread (new Timer((ToRemoteInterface)handler,
+					remoteStateList));
 
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", Created Controller Threads");
@@ -373,6 +375,10 @@ public class Controller {
 	 * @param state
 	 */
 	synchronized void addState(RemoteData state) {
+		//if the device is entering the state list is it assumed to be on
+		
+		state.setOnState(true);
+		
 		this.remoteStateList.put(state.getControllerID(), state);
 	}
 

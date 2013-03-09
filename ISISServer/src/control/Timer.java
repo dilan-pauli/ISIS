@@ -1,10 +1,12 @@
 package control;
 
+import java.util.HashMap;
 import java.util.logging.Level;
 
 import com.rapplogic.xbee.api.XBeeAddress64;
 
 import remoteInterface.RemoteCommand;
+import remoteInterface.RemoteData;
 import remoteInterface.ToRemoteInterface;
 import xbee.XBeeCommand;
 
@@ -21,10 +23,13 @@ import xbee.XBeeCommand;
 public class Timer implements Runnable {
 	
 	private ToRemoteInterface toXBeeNetworkQ;
+	
+	private HashMap<String, RemoteData> remoteList;
 	//private Controller controller;
 	
-	public Timer(ToRemoteInterface xbee) { //, Controller ctrl) {
+	public Timer(ToRemoteInterface xbee, HashMap<String, RemoteData> remoteStateList) { //, Controller ctrl) {
 		this.toXBeeNetworkQ = xbee;
+		remoteList = remoteStateList;
 		//this.controller = ctrl;
 	}
 
@@ -40,6 +45,24 @@ public class Timer implements Runnable {
 			// Create command to send to XBee network
 			discover = new XBeeCommand(XBeeAddress64.BROADCAST, 0);
 			this.toXBeeNetworkQ.sendDataToRemote(discover);
+			
+			//Wait for the devices to check in...
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			
+			//Check if any of the devices is off
+			for(RemoteData data : remoteList.values())
+			{
+				//If the device hasn't reported any information in the last 30 sec it is
+				//considered to be OFF.
+				if(data.getTimeStamp().getTime() < new java.util.Date().getTime() - 30*1000)
+				{
+					data.setOnState(false);
+				}
+			}
 			
 			try {
 				Thread.sleep(30*1000);

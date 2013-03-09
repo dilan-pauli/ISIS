@@ -1,4 +1,7 @@
 package remoteInterface;
+
+import java.util.Date;
+
 /**
  *  This is the interface that will be used to handle data on the controller and thread side.
  *  It is set up so that even though the XBee network maybe swapped out or a new network added 
@@ -52,6 +55,18 @@ public interface RemoteData {
 	 * @return true if operation succeeded
 	 */
 	public boolean setButtonPinVoltages(double[] newPinVoltages);
+	
+	/**
+	 * Set the time at which the packet arrived...
+	 * 
+	 * @param time
+	 */
+	public void setTimeStamp(Date time);
+	
+	/**
+	 * Get the arrival time of the data to the system.
+	 */
+	public Date getTimeStamp();
 	
 	
 

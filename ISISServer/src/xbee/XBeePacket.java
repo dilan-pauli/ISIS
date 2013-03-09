@@ -1,5 +1,7 @@
 package xbee;
 
+import java.util.Date;
+
 import remoteInterface.RemoteData;
 
 public class XBeePacket implements RemoteData{
@@ -23,6 +25,9 @@ public class XBeePacket implements RemoteData{
 	
 	// (UP,DOWN,LEFT,RIGHT,CENTER) => 0 volts (low) to 3.3 volts (high)
 	private double buttonPinVoltages[];
+	
+	// Time Stamp for freshness check.
+	private Date timeStamp;
 	
 	// TODO: COULD ADD MORE STORED INFO HERE (int powerRemaining, int wirelessStrength, int errorRate)
 
@@ -99,6 +104,25 @@ public class XBeePacket implements RemoteData{
 		this.buttonPinVoltages = newPinVoltages;
 		
 		return true;
+	}
+	
+	/**
+	 * This is the function that will be called to set the controllers
+	 * freshness.
+	 * @param time
+	 */
+	public void setTimeStamp(Date time)
+	{
+		this.timeStamp = time;
+	}
+	
+	/**
+	 * Get the time when the controller was last updated.
+	 * @return
+	 */
+	public Date getTimeStamp()
+	{
+		return this.timeStamp;
 	}
 	
 	@Override

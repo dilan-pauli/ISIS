@@ -64,7 +64,10 @@ public class Thread1 implements Runnable {
 				java.util.logging.Logger.getAnonymousLogger().log(
 						Level.INFO, "Time: " + new java.util.Date() + ", Thread1: Received a " +
 								"message from a remote:" + packet.getControllerID());
-
+				
+				//Time stamp the packet
+				packet.setTimeStamp(new java.util.Date());
+				
 				//update the state list with the packets information.
 				controller.addState(packet);
 				java.util.logging.Logger.getAnonymousLogger().log(
