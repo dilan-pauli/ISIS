@@ -1,0 +1,156 @@
+var img = new Image();
+var img1 = new Image();
+var img2 = new Image();
+var img3 = new Image();
+var img4 = new Image();
+var img5 = new Image();
+var img6 = new Image();
+var img7 = new Image();
+var img8 = new Image();
+var img9 = new Image();
+var img10 = new Image();
+var img11 = new Image();
+var img12 = new Image();
+var img13 = new Image();
+var img14 = new Image();
+var img15 = new Image();
+var img16 = new Image();
+var img17 = new Image();
+var img18 = new Image();
+var img19 = new Image();
+var img20 = new Image();
+var img21 = new Image();
+var img22 = new Image();
+var img23 = new Image();
+var img24 = new Image();
+var img25 = new Image();
+var img26 = new Image();
+var img27 = new Image();
+var img28 = new Image();
+
+
+
+img.src = 'background/background(0).jpg';
+  img1.src = 'background/background(1).jpg';
+  img2.src = 'background/background(2).jpg';
+  img3.src = 'background/background(3).jpg';
+  img4.src = 'background/background(4).jpg';
+  img5.src = 'background/background(5).jpg';
+  img6.src = 'background/background(6).jpg';
+  img7.src = 'background/background(7).jpg';
+  img8.src = 'background/background(8).jpg';
+  img9.src = 'background/background(9).jpg';
+  img10.src = 'background/background(10).jpg';
+  img11.src = 'background/background(11).jpg';
+  img12.src = 'background/background(12).jpg';
+  img13.src = 'background/background(13).jpg';
+  img14.src = 'background/background(14).jpg';
+  img15.src = 'background/background(15).jpg';
+  img16.src = 'background/background(16).jpg';
+  img17.src = 'background/background(17).jpg';
+  img18.src = 'background/background(18).jpg';
+  img19.src = 'background/background(19).jpg';
+  img20.src = 'background/background(20).jpg';
+  img21.src = 'background/background(21).jpg';
+  img22.src = 'background/background(22).jpg';
+  img23.src = 'background/background(23).jpg';
+  img24.src = 'background/background(24).jpg';
+  img25.src = 'background/background(25).jpg';
+  img26.src = 'background/background(26).jpg';
+  img27.src = 'background/background(27).jpg';
+  img28.src = 'background/background(28).jpg';
+
+  if(count <= 10){
+      ctx.drawImage(frameArray[0], 0, 0);//Uncaught type error???
+  }
+  else if(count <= 20){
+      ctx.drawImage(img1, 0, 0);
+  }
+  else if(count <= 30){
+      ctx.drawImage(img2, 0, 0);
+  }
+  else if(count <= 40){
+      ctx.drawImage(img3, 0, 0);
+  }
+  else if(count <= 50){
+      ctx.drawImage(img4, 0, 0);
+  }
+  else if(count <= 60){
+      ctx.drawImage(img5, 0, 0);
+  }
+  else if(count <= 70){
+      ctx.drawImage(img6, 0, 0);
+  }
+  else if(count <= 80){
+      ctx.drawImage(img7, 0, 0);
+  }
+  else if(count <= 90){
+      ctx.drawImage(img8, 0, 0);
+  }
+  else if(count <= 100){
+      ctx.drawImage(img9, 0, 0);
+  }
+  else if(count <= 110){
+      ctx.drawImage(img10, 0, 0);
+  }
+  else if(count <= 120){
+      ctx.drawImage(img11, 0, 0);
+  }
+  else if(count <= 130){
+      ctx.drawImage(img12, 0, 0);
+  }
+  else if(count <= 140){
+      ctx.drawImage(img13, 0, 0);
+  }
+  else if(count <= 150){
+      ctx.drawImage(img14, 0, 0);
+  }
+  else if(count <= 160){
+      ctx.drawImage(img14, 0, 0);
+  }
+  else if(count <= 170){
+      ctx.drawImage(img15, 0, 0);
+  }
+  else if(count <= 180){
+      ctx.drawImage(img16, 0, 0);
+  }
+  else if(count <= 190){
+      ctx.drawImage(img17, 0, 0);
+  }
+  else if(count <= 200){
+      ctx.drawImage(img18, 0, 0);
+  }
+  else if(count <= 210){
+      ctx.drawImage(img19, 0, 0);
+  }
+  else if(count <= 220){
+      ctx.drawImage(img20, 0, 0);
+  }
+  else if(count <= 230){
+      ctx.drawImage(img21, 0, 0);
+  }
+  else if(count <= 240){
+      ctx.drawImage(img22, 0, 0);
+  }
+  else if(count <= 250){
+      ctx.drawImage(img23, 0, 0);
+  }
+  else if(count <= 260){
+      ctx.drawImage(img24, 0, 0);
+  }
+  else if(count <= 270){
+      ctx.drawImage(img25, 0, 0);
+  }
+  else if(count <= 280){
+      ctx.drawImage(img26, 0, 0);
+  }
+  else if(count <= 290){
+      ctx.drawImage(img27, 0, 0);
+  }
+  else if(count <= 300){
+      ctx.drawImage(img28, 0, 0);
+  }
+  else if (count<= 310){
+      count = 0;
+  }
+  count ++;
