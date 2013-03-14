@@ -12,8 +12,8 @@ var count = 0;
 var keyArray= {};
 var bulletArray = new Array();
 var frameArray = new Array();
-var MinionArray = new Array(); 
-var lifeArray = new Array();
+var MinionArray=new Array(); 
+
 //************************************Start Image Objects***************************************/
 
 /*
@@ -26,15 +26,6 @@ heli.onload = function(){
 };
 heli.src = 'helicoptersmall.png';
 
-/* 
- * Life bar sprite
- */
-var lifeRdy = false;
-var life = new Image();
-life.onload = function(){
-	lifeRdy = true;
-};
-life.src = 'HeartContainer.png';
 /*
  * Main enemy Sprite
  */
@@ -81,8 +72,8 @@ heliSprite.gun = 5;
  */
 var lifeBar = new Object();
 lifeBar.x = 0;
-lifeBar.y = 450;
-lifeBar.lives = 4;
+lifeBar.y = 0;
+lifeBar.lives = 5;
 
 /*
  * An object class to control the score
@@ -110,6 +101,8 @@ function minionShot(x,y)
 {
 	this.x = x;
 	this.y = y;
+	//////
+	this.life = 1;
 }
 /*
  * An object class to control the enemy minions
@@ -132,8 +125,10 @@ lastBoss.direction = "left";
 lastBoss.life = 100;
 lastBoss.damage = 2;
 //lastBoss.frequency = 10;
-//
-//  // Flags to mark when to disallow movement outside the game view
+
+
+
+//Flags to mark when to disallow movement outside the game view
 var disallowUp = false;
 var disallowDown = false;
 var disallowLeft = false;
@@ -185,25 +180,18 @@ function draw(){
 		ctx.drawImage(enemy, enemyMinion.x, enemyMinion.y); // first bullet always spawn in the middle
 	}
 
-	lifeBar.x = -35;
-	for(var i = 0; i <= lifeBar.lives; i++){
-		if(lifeRdy == true){
-			ctx.drawImage(lifeArray[i], lifeBar.x = lifeBar.x + 35, lifeBar.y);
-		}
-	}
-
 	ctx.font="30px Arial";
-	ctx.strokeText(score.total,900,470);
+	ctx.strokeText(score.total,950,460);
 }
 
 /*
  * A function that will move the car when a key is pressed
  */
 function moveHeli(){
-	if((40 in keyArray) && (disallowDown == false)){heliSprite.y++} //down key
-	if((38 in keyArray) && (disallowUp == false)){heliSprite.y--}//up key
-	if((39 in keyArray) && (disallowRight == false)){heliSprite.x++}//right arrow
-	if((37 in keyArray) && (disallowLeft == false)){heliSprite.x--}//left arrow
+	if((40 in keyArray) && (disallowDown == false)){heliSprite.y++; } //down key
+	if((38 in keyArray) && (disallowUp == false)){heliSprite.y--; } //up key
+	if((39 in keyArray) && (disallowRight == false)){heliSprite.x++; } //right arrow
+	if((37 in keyArray) && (disallowLeft == false)){heliSprite.x--; } //left arrow
 }
 
 
@@ -370,6 +358,8 @@ function onMessage(event) {
 /***************************************ISIS Signal Use Code***************************/
 
 
+
+
 /***************************************Bullet Code***************************/
 function createBullet(){
 
@@ -379,10 +369,10 @@ function createBullet(){
 			break;
 		}
 		//else{
-			// throw new Error("The array is full.");
+		// throw new Error("The array is full.");
 		// }  
 	}
-	bulletArray[index] = new gunShot(heliSprite.x+115, heliSprite.y+24, 5);
+	bulletArray[index] = new gunShot(heliSprite.x+115, heliSprite.y, 5);
 
 }
 
@@ -419,7 +409,7 @@ function spawnMinion(){
 
 function removeMinion()
 {
-	for (var i =0; i <= MinionArray.length; i++)
+	for (var i = 0; i <= MinionArray.length; i++)
 	{
 		if (MinionArray[i] != null && MinionArray[i].x <=0)
 		{
@@ -465,7 +455,7 @@ function randomizeMinion(){
  */
 window.onkeydown= function(event){
 	keyArray[event.keyCode] = true;
-}
+};
 
 var pew = new Audio();
 pew.src = 'pew.wav';
@@ -474,13 +464,13 @@ window.onkeypress = function(event){
 		createBullet();
 		pew.play();
 	}
-}
+};
 /*
  * Delete the key in the array once the key is lifted up
  */
 window.onkeyup= function(event){
 	delete keyArray[event.keyCode];
-}
+};
 //**************************************End Game Code*********************************/
 //***********************************Initialization Code******************************/
 
@@ -493,14 +483,10 @@ song.src = 'helicopterttroll.wav';
 function initAnim(){
 	if(animRdy == true){
 		connect(); //TODO: CONNECT TO WEBSOCKET SERVER
+
 		for(var i = 0; i <= 28; i++){
 			frameArray[i] = (new Image());
 			frameArray[i].src = 'background/background('+i+').jpg';
-		}
-
-		for(var j = 0; j <= lifeBar.lives; j++){
-			lifeArray[j] = (new Image());
-			lifeArray[j].src = 'HeartContainer.png';
 		}
 		animRdy = false;
 	}
@@ -510,6 +496,12 @@ function initAnim(){
 
 
 //***********************************End Initialization Code***************************/
+
+
+
+
+
+
 
 
 /*------------------------------COLLISION DETECTION CODE-------------------------------*/
@@ -533,7 +525,7 @@ function rectangle(leftX, rightX, topY, bottomY) {
 	this.right = rightX;
 	this.top = topY;
 	this.bottom = bottomY;
-}
+};
 
 /* Detect whether two rectangles overlap
 Return true if two rectangles overlap. Return false otherwise
@@ -585,7 +577,6 @@ function minionEnemyAndPlayerCollided() {
     }*/
 		if(minionEnemyAndPlayerBoundsCoincide(i) == true) {
 			console.log("Minion enemy and player collided");
-			MinionArray[i] = null;
 			return true;
 		}
 	}
@@ -649,8 +640,6 @@ function playerBulletAndMinionEnemyCollided() {
       }*/
 			if(playerBulletAndMinionEnemyBoundsCoincide(i, j) == true) {
 				console.log("Player bullet hit minion enemy");
-				bulletArray[i] = null;
-				MinionArray[j] = null;
 				return true;
 			}
 		}
@@ -724,7 +713,7 @@ function checkForAndHandleCollisions() {
 	if(shotMinion != null) {
 		// Weaken or kill minion enemy and increase player's score
 		shotMinion.life--;
-		score.total = score.total + 10;
+		score.total++;
 	}
 	if(minionEnemyAndPlayerCollided()) {
 		// Weaken player (let minion keep going)
