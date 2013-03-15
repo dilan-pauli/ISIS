@@ -79,6 +79,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		} catch (XBeeException e) { 
 			System.out.println("Error: Opening XBee coordinator connection on specified serial port...");
 			e.printStackTrace();
+			System.exit(0);
 		}
 
 		//Add the custom Listener to the XBee
@@ -212,6 +213,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 						} catch (XBeeException e) {
 							e.printStackTrace();
 							log.error("XBeeSendingThread: Error in sending the Force sample");
+							System.exit(0);
 						}
 						break;
 

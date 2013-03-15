@@ -96,6 +96,11 @@ public class ISISServerApplication extends WebSocketApplication {
 			this.handler = new XBeeHandler();
 		} catch (IOException e) {
 			e.printStackTrace();
+			// Log message
+			java.util.logging.Logger.getAnonymousLogger().log(
+					Level.INFO, "Time: " + new java.util.Date() + ", " + 
+					"Caught exception thrown when trying to create new XBeeHandler");
+			System.exit(0);
 		}
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
