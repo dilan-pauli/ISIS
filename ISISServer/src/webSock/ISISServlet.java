@@ -71,6 +71,7 @@ public class ISISServlet extends HttpServlet {
 						this.getServletName() + " servlet: destroyed");
 		
 		// Terminate the current JVM to ensure threads get killed
-		System.exit(0);
+		//System.exit(0);
+		app.getCntrl().killCtrlThreads(true);
 	}
 }

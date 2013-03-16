@@ -50,7 +50,7 @@ public class Sender implements Runnable {
 		/*while(!this.wsOutQueue.isEmpty()) {
 			broadcastMessage();
 		}*/
-		while(true) {
+		while(isisApp.isRunning()) {
 			if(!this.wsOutQueue.isEmpty()) {
 				sendMessage();
 			}

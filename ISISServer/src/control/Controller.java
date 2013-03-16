@@ -20,12 +20,17 @@ import xbee.XBeePacket;
 import control.Thread1;
 
 public class Controller {
+	
+	/**
+	 * Exit VAr
+	 */
+	
+	private boolean kill;
 
 	/**
 	 * Handlers (XBee network and WebSocket network)
 	 */
 
-	@SuppressWarnings("unused")
 	private XBeeHandler handler;
 	private ISISServerApplication isisServerApp;
 
@@ -123,6 +128,9 @@ public class Controller {
 	 */
 	public Controller(XBeeHandler handler, ISISServerApplication serverApp, boolean isHelperTest)
 	{
+		//Set the threads to run
+		this.killCtrlThreads(false);
+		
 		/*
 		 * Set the handlers for XBee and WebSocket
 		 */
@@ -170,7 +178,7 @@ public class Controller {
 					this));
 
 			this.timer = new Thread (new Timer((ToRemoteInterface)handler,
-					remoteStateList));
+					remoteStateList, this));
 
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", Created Controller Threads");
@@ -494,6 +502,27 @@ public class Controller {
 	 */
 	synchronized void removeWebSocketClient(String clientId) {
 		this.webSocketClientList.remove(clientId);
+	}
+	
+	/**
+	 * FUntion to kill the threads created by the controller
+	 */
+	public void killCtrlThreads(boolean state)
+	{
+		this.kill = state;
+		if(state == true)
+		{
+			this.handler.kill();
+			this.isisServerApp.setRunState(state);
+		}
+	}
+	
+	/**
+	 * Check the Kill variable
+	 */
+	synchronized boolean isKilled()
+	{
+		return kill;
 	}
 
 	/**

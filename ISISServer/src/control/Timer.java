@@ -25,12 +25,12 @@ public class Timer implements Runnable {
 	private ToRemoteInterface toXBeeNetworkQ;
 	
 	private HashMap<String, RemoteData> remoteList;
-	//private Controller controller;
+	private Controller controller;
 	
-	public Timer(ToRemoteInterface xbee, HashMap<String, RemoteData> remoteStateList) { //, Controller ctrl) {
+	public Timer(ToRemoteInterface xbee, HashMap<String, RemoteData> remoteStateList, Controller ctrl) {
 		this.toXBeeNetworkQ = xbee;
 		remoteList = remoteStateList;
-		//this.controller = ctrl;
+		this.controller = ctrl;
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class Timer implements Runnable {
 		// Data to put on XBee outgoing queue
 		RemoteCommand discover;
 		
-		while(true) {
+		while(!this.controller.isKilled()) {
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", TIMER THREAD");
 			

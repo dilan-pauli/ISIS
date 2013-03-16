@@ -56,8 +56,9 @@ public class ISISServerApplication extends WebSocketApplication {
 	/**
 	 * Controller for ISIS Server Application
 	 */
-	@SuppressWarnings("unused")
 	private Controller controller;
+	
+	private boolean running;
 
 
 
@@ -67,7 +68,7 @@ public class ISISServerApplication extends WebSocketApplication {
 	 */
 	public ISISServerApplication() {
 		super();
-
+		running = true;
 		java.util.logging.Logger.getAnonymousLogger().log(
 				Level.INFO, "Time: " + new java.util.Date() + ", Starting ISIS Application");
 		java.util.logging.Logger.getAnonymousLogger().log(
@@ -100,7 +101,6 @@ public class ISISServerApplication extends WebSocketApplication {
 			java.util.logging.Logger.getAnonymousLogger().log(
 					Level.INFO, "Time: " + new java.util.Date() + ", " + 
 					"Caught exception thrown when trying to create new XBeeHandler");
-			System.exit(0);
 		}
 		// Log message
 		java.util.logging.Logger.getAnonymousLogger().log(
@@ -277,6 +277,21 @@ public class ISISServerApplication extends WebSocketApplication {
 		 * to manipulate the queue
 		 */
 		return this.outQueue;
+	}
+	
+	public Controller getCntrl()
+	{
+		return controller;
+	}
+	
+	public void setRunState(boolean run)
+	{
+		running = run;
+	}
+	
+	public boolean isRunning()
+	{
+		return running;
 	}
 }
 

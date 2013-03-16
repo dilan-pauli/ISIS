@@ -1,8 +1,6 @@
 package xbee;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.security.InvalidParameterException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -51,6 +49,10 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	private XBee coordinator;
 	private Thread sendingThread;
 	private Timer feedBackTmr;
+	
+	private boolean running;
+	
+	private XBeeListener listener;
 
 	/**
 	 *	This is the constructor class for the XBEE communication system.
@@ -60,6 +62,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 	 */
 	public XBeeHandler() throws IOException
 	{
+		running = true;
 		toNetwork = new LinkedList<XBeeCommand>();
 		fromNetwork = new LinkedList<XBeePacket>();
 		coordinator = new XBee();
@@ -70,8 +73,8 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		System.out.println("Enter the com port that the Coordinator is residing on. E.g 'COM3'");
 		String com = br.readLine();*/
 		
-		//String com = "COM3";	// TODO: CHANGE THIS AS REQUIRED
-		String com = "/dev/tty.usbserial-A1011ES9";
+		String com = "COM3";	// TODO: CHANGE THIS AS REQUIRED
+		//String com = "/dev/tty.usbserial-A1011ES9";
 
 		//Open the connection to the XBee device.
 		try {
@@ -79,10 +82,10 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		} catch (XBeeException e) { 
 			System.out.println("Error: Opening XBee coordinator connection on specified serial port...");
 			e.printStackTrace();
-			System.exit(0);
 		}
 
 		//Add the custom Listener to the XBee
+		//this.listener = new XBeeListener();
 		coordinator.addPacketListener(new XBeeListener());
 
 		//Create and start the sending Thread
@@ -197,7 +200,7 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 		@Override
 		public void run() {
 			//Create the run order for the sending Thread.
-			while(true)
+			while(running)
 			{
 				//The network is not empty
 				if (!toNetwork.isEmpty())
@@ -213,7 +216,6 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 						} catch (XBeeException e) {
 							e.printStackTrace();
 							log.error("XBeeSendingThread: Error in sending the Force sample");
-							System.exit(0);
 						}
 						break;
 
@@ -317,6 +319,17 @@ XBeeHandler implements ToRemoteInterface, FromRemoteInterface
 			throw new InvalidParameterException("RemoteCode parameters are invaild...");
 
 		toNetwork.add((XBeeCommand) msg);
+	}
+	
+	/**
+	 * Call this function to end the sending thread.
+	 */
+	public void kill()
+	{
+		//this.coordinator.removePacketListener(this.listener);
+		
+		running = false;
+		this.coordinator.close();
 	}
 
 	/**

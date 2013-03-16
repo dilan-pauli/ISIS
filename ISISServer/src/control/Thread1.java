@@ -54,7 +54,8 @@ public class Thread1 implements Runnable {
 	@Override
 	public void run() 
 	{
-		while(true) 
+		//if the controller signals the threads to stop then stop looping
+		while(!controller.isKilled()) 
 		{
 			//If the queue has a message then get it
 			if(this.FromXBeeNetworkQ.hasMessages())
@@ -79,6 +80,7 @@ public class Thread1 implements Runnable {
 				java.util.logging.Logger.getAnonymousLogger().log(
 						Level.INFO, "Time: " + new java.util.Date() + ", Thread1: Called function to " +
 								"update client info" + packet.getControllerID());
+				;
 			}
 			//Else sleep for a bit
 			else			
