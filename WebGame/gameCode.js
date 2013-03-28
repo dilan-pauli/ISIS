@@ -152,7 +152,7 @@ heliSprite.gun = 5;
 var lifeBar = new Object();
 lifeBar.x = 0;
 lifeBar.y = 450;
-lifeBar.lives = 4;
+lifeBar.lives = 6;
 
 /*
  * An object class to control the score
@@ -267,6 +267,11 @@ var pause = function(event){
 //**************************************End Game Objects************************************/
 
 //**************************************Start Game Code************************************/
+var periodicTask;
+function setUpPeriodicTask() {
+    periodicTask = setInterval(initialize, 1);
+}
+
 function initialize(){
     troll = document.getElementById('canvas');
     ctx = troll.getContext("2d");
@@ -345,7 +350,7 @@ function draw(){
     }
 
     lifeBar.x = -35;
-    for(var i = 0; i <= lifeBar.lives; i++){
+    for(var i = 0; i < lifeBar.lives; i++){
         if(lifeRdy == true){
             ctx.drawImage(lifeArray[i], lifeBar.x = lifeBar.x + 35, lifeBar.y);
         }
@@ -853,9 +858,9 @@ function bossFireballAndPlayerBoundsCoincide(fireIndex) {
     
     // Create two rectangles
     var fireRect = new rectangle(fireArray[fireIndex].x,
-        fireArray[fireIndex].x + 250,
+        fireArray[fireIndex].x + 220,
         fireArray[fireIndex].y,
-        fireArray[fireIndex].y + 214);
+        fireArray[fireIndex].y + 84);
     var playerRect = new rectangle(heliSprite.x, heliSprite.x + 150,
         heliSprite.y, heliSprite.y + 46);
 
@@ -1191,17 +1196,19 @@ function showGameWinScenario() {
     // Draw game win graphics
     console.log("GAME WIN SCENARIO");
     ctx.drawImage(victory, 250, 150);
-    ctx.font="30px Arial";
+    ctx.font="60px Arial";
     ctx.strokeText(score.total,250,300);
-	  
+    //lastBoss = null; 
+    window.clearInterval(periodicTask); //DY
 }
 
 function showGameLoseScenario() {
     // Draw game lose graphics
     console.log("GAME LOSE SCENARIO");
     ctx.drawImage(defeated, 250, 150);
-    ctx.font="30px Arial";
+    ctx.font="60px Arial";
     ctx.strokeText(score.total,250,300);
+    window.clearInterval(periodicTask); //DY
 }
 
 function decideGameOverState() {
