@@ -13,6 +13,8 @@ var mainMenu = true;
 var optionsMenu = false;
 var helpMenu = false;
 
+var gameEnded = false;
+
 //an array that will hold the keys being pressed at that time
 var keyArray= {};
 
@@ -263,9 +265,18 @@ var pause = function(event){
         optionsMenu = false;
         helpMenu = false;
     }
+
+};
+
+var restart = function(event){
+    var x = event.pageX - elemLeft,
+    y = event.pageY - elemTop;
+    console.log(x, y);
+	//restart 
 	
-	
-	
+	if (y >400 && y < 440 && x > 400 && x < 600){
+		location.reload();		
+	}
 };
 //**************************************End Game Objects************************************/
 
@@ -296,6 +307,10 @@ function initialize(){
         initAnim();
         initHelp();
     }
+	//else if (gameEnded == true){ // gameIsOver() does the same trick.
+	//	troll.addEventListener('click', restart, false);
+	//	if()
+	//}	
     else {
         troll.removeEventListener('click', click, false);
         troll.addEventListener('click', pause, false);
@@ -1086,7 +1101,6 @@ function TimetoSpawnBoss()
     bossCounter++;
     if( bossCounter >= 3846) //46154) //2 minutes. 2.6 is major number.
     {
-	
         SpawnBoss();
     }
     if( fireCounter >= 500)
@@ -1198,6 +1212,8 @@ function playerLostGame() {
 function showGameWinScenario() {
     // Draw game win graphics
     window.clearInterval(periodicTask);  //DY 
+	troll.addEventListener('click', restart, false);
+	gameEnded = true;
 	console.log("GAME WIN SCENARIO");
 	ctx.drawImage(frameArray[index],0,0);
     ctx.drawImage(victory, 400, 150);
@@ -1205,19 +1221,20 @@ function showGameWinScenario() {
     ctx.strokeText(score.total,450,300);
 	
 	//draw the menu button
-	ctx.drawImage(btm,250,400);
+	ctx.drawImage(btm,400,400);
 }
 
 function showGameLoseScenario() {
     // Draw game lose graphics 
 	window.clearInterval(periodicTask); //DY
+	troll.addEventListener('click', restart, false);
+	gameEnded = true;
     console.log("GAME LOSE SCENARIO");
 	ctx.drawImage(frameArray[index],0,0);
     ctx.drawImage(defeated, 400, 150);
     ctx.font="60px Arial";
     ctx.strokeText(score.total,450,300);
-    ctx.drawImage(btm,250,400);
-	
+    ctx.drawImage(btm,400,400);
    }
 
 function decideGameOverState() {
