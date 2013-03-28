@@ -263,6 +263,9 @@ var pause = function(event){
         optionsMenu = false;
         helpMenu = false;
     }
+	
+	
+	
 };
 //**************************************End Game Objects************************************/
 
@@ -1194,22 +1197,28 @@ function playerLostGame() {
 
 function showGameWinScenario() {
     // Draw game win graphics
-    console.log("GAME WIN SCENARIO");
-    ctx.drawImage(victory, 250, 150);
+    window.clearInterval(periodicTask);  //DY 
+	console.log("GAME WIN SCENARIO");
+	ctx.drawImage(frameArray[index],0,0);
+    ctx.drawImage(victory, 400, 150);
     ctx.font="60px Arial";
-    ctx.strokeText(score.total,250,300);
-    //lastBoss = null; 
-    window.clearInterval(periodicTask); //DY
+    ctx.strokeText(score.total,450,300);
+	
+	//draw the menu button
+	ctx.drawImage(btm,250,400);
 }
 
 function showGameLoseScenario() {
-    // Draw game lose graphics
+    // Draw game lose graphics 
+	window.clearInterval(periodicTask); //DY
     console.log("GAME LOSE SCENARIO");
-    ctx.drawImage(defeated, 250, 150);
+	ctx.drawImage(frameArray[index],0,0);
+    ctx.drawImage(defeated, 400, 150);
     ctx.font="60px Arial";
-    ctx.strokeText(score.total,250,300);
-    window.clearInterval(periodicTask); //DY
-}
+    ctx.strokeText(score.total,450,300);
+    ctx.drawImage(btm,250,400);
+	
+   }
 
 function decideGameOverState() {
     if(playerLostGame()) {
