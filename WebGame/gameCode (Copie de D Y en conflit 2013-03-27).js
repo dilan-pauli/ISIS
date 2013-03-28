@@ -127,12 +127,6 @@ howTo.src = 'howto.png';
 var btm = new Image();
 btm.src = 'btm.png';
 
-var victory = new Image();
-victory.src = 'victory.png';
-
-var defeated = new Image();
-defeated.src = 'defeated.png';
-
 //**************************************End Image Objects***********************************/
 
 
@@ -841,40 +835,18 @@ function bossEnemyAndPlayerCollided() {
     return false;
 }
 /*---------------------------------------------------------------------------*/
-/* HELPER FUNCTION
- * Detect whether fireball bounding box coincides with that of the 
- * player's bounding box
- * Returns true if fireball and player bounds coincide
- */
-function bossFireballAndPlayerBoundsCoincide(fireIndex) {
-    if(fireArray[fireIndex] == null) {
-        return false;
-    }
-    
-    // Create two rectangles
-    var fireRect = new rectangle(fireArray[fireIndex].x,
-        fireArray[fireIndex].x + 250,
-        fireArray[fireIndex].y,
-        fireArray[fireIndex].y + 214);
-    var playerRect = new rectangle(heliSprite.x, heliSprite.x + 150,
-        heliSprite.y, heliSprite.y + 46);
-
-    if(intersectRect(fireRect, playerRect) == true) {
-        console.log("bossFireballAndPlayerBoundsCoincide function returns true");
-        return true;
-    }
-    return false;
-}
-
 /* Returns true if the boss enemy's fireball collided with the player
  */
-function bossFireballAndPlayerCollided() {    
-    for(var i = 0; i < fireArray.length; i++) {
-        if(bossFireballAndPlayerBoundsCoincide(i) == true) {
-            console.log("Boss enemy fireball hit player");
-            fireArray[i] = null;
-            return true;
-        }
+function bossFireballAndPlayerCollided() {
+    //TODO
+    // Create two rectangles
+    var fireballRect = new rectangle(xx,); // 250 x 214 (l x w)
+    var playerRect = new rectangle(heliSprite.x, heliSprite.x + 150,
+        heliSprite.y, heliSprite.y + 46);
+        
+    if((intersectRect(fireballRect, playerRect) == true) && bossSpawned) {
+        console.log("Boss enemy fireball hit player");
+        return true;
     }
     return false;
 }
@@ -990,6 +962,7 @@ function checkForAndHandleCollisions() {
     // Check for player collisions with minion enemies
     // Check for player bullet collisions with boss enemy
     // Check for player collisions with boss enemy
+    // Check for player collisions with boss enemy fireball
     //
     // Check for game boundary wall collisions
 
@@ -1014,10 +987,10 @@ function checkForAndHandleCollisions() {
         // Weaken player (let boss keep going)
         lifeBar.lives--;
     }
-    if(bossFireballAndPlayerCollided()) {
+    /*if(bossFireballAndPlayerCollided()) {
         // Weaken player (let fireball keep going)
         lifeBar.lives--;
-    }
+    }*/
     if(playerCollidedWithWall()) {
         // Disallow player movement in the specific direction(s) that
         // would take the player off screen
@@ -1122,7 +1095,7 @@ function detdir()
 /* FireCode */
 
 function createFire(){
-    for(var i = 0; i < 2; i++){
+    for(var i = 0; i <= 2; i++){
         if (fireArray[i] == null){
             var index = i;
             break;
@@ -1190,18 +1163,11 @@ function playerLostGame() {
 function showGameWinScenario() {
     // Draw game win graphics
     console.log("GAME WIN SCENARIO");
-    ctx.drawImage(victory, 250, 150);
-    ctx.font="30px Arial";
-    ctx.strokeText(score.total,250,300);
-	  
 }
 
 function showGameLoseScenario() {
     // Draw game lose graphics
     console.log("GAME LOSE SCENARIO");
-    ctx.drawImage(defeated, 250, 150);
-    ctx.font="30px Arial";
-    ctx.strokeText(score.total,250,300);
 }
 
 function decideGameOverState() {
