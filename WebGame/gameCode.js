@@ -44,8 +44,12 @@ var playerWon = false;
 
 // SOUND MUTE GLOBAL VARIABLES
 var isMute = false;
-//************************************Start Image Objects***************************************/
 
+// SHOT ACCURACY VARIABLES
+var numSuccessfulHits = 0;
+var numBulletsFired = 0;
+
+//************************************Start Image Objects***************************************/
 /*
  * Main character sprite
  */
@@ -144,10 +148,28 @@ defeated.src = 'defeated.png';
 var optionPage = new Image();
 optionPage.src = 'optionmenu.png';
 
+var ranking = new Image();
+ranking.src = 'ranking.png';
+
+var SStat = new Image();
+SStat.src = 'SStat.png';
+
+var AStat = new Image();
+AStat.src = 'AStat.png';
+
+var BStat = new Image();
+BStat.src = 'BStat.png';
+
+var CStat = new Image();
+CStat.src = 'CStat.png';
+
+var DStat = new Image();
+DStat.src = 'DStat.png';
+
+var accuracy = new Image();
+accuracy.src = 'accuracy.png';
 
 //**************************************End Image Objects***********************************/
-
-
 
 //**************************************Start Game Objects**********************************/
 /*
@@ -686,7 +708,8 @@ function createBullet(){
     // }
     }
     bulletArray[index] = new gunShot(heliSprite.x+115, heliSprite.y+24, 5);
-
+    
+    numBulletsFired++; //DY
 }
 
 function deleteBullet(){
@@ -994,6 +1017,7 @@ function playerBulletAndMinionEnemyCollided() {
       }*/
             if(playerBulletAndMinionEnemyBoundsCoincide(i, j) == true) {
                 console.log("Player bullet hit minion enemy");
+                numSuccessfulHits++; //DY
                 bulletArray[i] = null;
                 MinionArray[j] = null;
                 return true;
@@ -1041,6 +1065,7 @@ function playerBulletAndBossEnemyCollided() {
     for(var i = 0; i < bulletArray.length; i++) {
         if((playerBulletAndBossEnemyBoundsCoincide(i) == true) && bossSpawned) {
             console.log("Player bullet collided with boss enemy");
+            numSuccessfulHits++; //DY
             bulletArray[i] = null;
             return true;
         }
@@ -1270,15 +1295,20 @@ function showGameWinScenario() {
     window.clearInterval(periodicTask);  //DY 
     troll.addEventListener('click', restart, false);
     gameEnded = true;
-    console.log("GAME WIN SCENARIO");
+    console.log("GAME WIN SCENARIO: " + "Hits: " + numSuccessfulHits + "/" + numBulletsFired);
+	
     ctx.drawImage(frameArray[index],0,0);
+    
     ctx.drawImage(victory, 400, 150);
     ctx.font="60px Arial";
     ctx.strokeText(score.total,450,300);
+    
+    //ctx.font="60px Arial";
+    ctx.strokeText(numSuccessfulHits + "/" + numBulletsFired,700,300);
 	
     //draw the menu button
     ctx.drawImage(btm,400,400);
-    ranking();
+    rank();
 }
 
 function showGameLoseScenario() {
@@ -1286,13 +1316,20 @@ function showGameLoseScenario() {
     window.clearInterval(periodicTask); //DY
     troll.addEventListener('click', restart, false);
     gameEnded = true;
-    console.log("GAME LOSE SCENARIO");
+    console.log("GAME LOSE SCENARIO: " + "Hits: " + numSuccessfulHits + "/" + numBulletsFired);
+    
     ctx.drawImage(frameArray[index],0,0);
+    
     ctx.drawImage(defeated, 400, 150);
     ctx.font="60px Arial";
-    ctx.strokeText(score.total,450,300);
+    ctx.strokeText(score.total,450 ,300);
+    
+    //ctx.font="60px Arial";
+    ctx.strokeText(numSuccessfulHits + "/" + numBulletsFired,700,300);
+    
+    //draw the menu button
     ctx.drawImage(btm,400,400);
-    ranking();
+    rank();
 }
 
 function decideGameOverState() {
@@ -1308,27 +1345,34 @@ function decideGameOverState() {
 }
 /* Game over code */
 
-function ranking()
+function rank()
 {
+    ctx.drawImage(ranking, 100 ,100);
+    ctx.drawImage(accuracy, 700 , 100);
     if (score.total < 200)
     {
-    // draw ranking D
+        //draw ranking D
+        ctx.drawImage(DStat, 85, 150);
     }	
     else if (score.total >=200 && score.total < 400)
     {
-    // draw ranking C
+        // draw ranking C
+        ctx.drawImage(CStat, 85, 150);
     }
     else if (score.total >=400 && score.total < 600)
     {
-    // draw ranking B
+        // draw ranking B
+        ctx.drawImage(BStat, 85, 150);
     }
     else if (score.total >=600 && score.total < 800)
     {
-    // draw ranking A
+        // draw ranking A
+        ctx.drawImage(AStat, 85, 150);
     }
     else if (score.total >= 800)
     {
-    // draw ranking S
+        // draw ranking S
+        ctx.drawImage(SStat, 85, 150);
     }
 }
 /* These are used to change the difficulty aka how many minions are spawned. */
