@@ -8,6 +8,9 @@ var animRdy = true;
 //counter to spawn the bullet.
 var count = 0;
 
+// Difficuty setting. default to be 2;  1 (easy), 2(medium), 3(hard),4(GG)
+var multiplier = 2;
+
 //var to hold the main menu value
 var mainMenu = true;
 var optionsMenu = false;
@@ -38,6 +41,9 @@ var bossSpawned = false;
 // Variables to mark when the game should end
 var playerLost = false;
 var playerWon = false;
+
+// SOUND MUTE GLOBAL VARIABLES
+var isMute = false;
 //************************************Start Image Objects***************************************/
 
 /*
@@ -135,6 +141,10 @@ victory.src = 'victory.png';
 var defeated = new Image();
 defeated.src = 'defeated.png';
 
+var optionPage = new Image();
+optionPage.src = 'optionmenu.png';
+
+
 //**************************************End Image Objects***********************************/
 
 
@@ -196,12 +206,12 @@ function minionShot(x,y)
 /*
  * An object class to control the enemy minions
  * Starting position, direction, speed and life will need to be tracked
- */
+ */// i dont think this enemyminion is used at all. cuz they are created with minionshot. pretty sure.
 var enemyMinion = new Object();
 enemyMinion.x = 250;
 enemyMinion.y = 1000;
-enemyMinion.direction = "left";
-enemyMinion.life = 3;
+enemyMinion.direction = "left"; 
+enemyMinion.life = 3; 
 enemyMinion.damage = 1;
 
 /*
@@ -211,8 +221,8 @@ var lastBoss = new Object();
 lastBoss.x = 1000;
 lastBoss.y = 250;
 lastBoss.direction = "left";
-lastBoss.life = 10; //100;
-lastBoss.damage = 2;
+lastBoss.life = 10 * multiplier; //100;
+lastBoss.damage = 2 * multiplier;
 //lastBoss.frequency = 10;
 //
 // Flags to mark when to disallow movement outside the game view
@@ -268,15 +278,59 @@ var pause = function(event){
 
 };
 
+var optionEvent = function(event){
+    var x = event.pageX - elemLeft,
+    y = event.pageY - elemTop;
+    console.log(x, y);
+    //easy
+    if (y > 198 && y < 235 && x > 170 && x < 370){
+        setDifftoEasy();
+        alert ("Difficulty has been changed to easy");	//easy
+    }
+    //medium
+    if (y > 198 && y < 235 && x > 412 && x < 612){
+        setDifftoMed();
+        alert ("Difficulty has been changed to medium");	//medium
+    }
+    //hard
+    if (y > 198 && y < 235 && x > 640 && x < 840){
+        setDifftoHard();
+        alert ("Difficulty has been changed to hard");		//hard
+    }	
+	
+    //sound off
+    if (y > 325 && y < 365 && x > 250 && x < 450){
+        isMute = true;
+        song.muted = true;
+        console.log("Sound is now off.");
+    }	
+	
+    //sound on
+    if (y > 325 && y < 365 && x > 565 && x < 765){
+        isMute = false;
+        song.muted = false;
+        console.log("Sound is now on.");
+    }	
+	
+    //back to main
+    if (y > 440 && y < 480 && x > 400 && x < 600){
+        mainMenu = true; 
+        optionsMenu = false;
+        helpMenu = false;
+    }
+
+};
+
+
 var restart = function(event){
     var x = event.pageX - elemLeft,
     y = event.pageY - elemTop;
     console.log(x, y);
-	//restart 
+    //restart 
 	
-	if (y >400 && y < 440 && x > 400 && x < 600){
-		location.reload();		
-	}
+    if (y >400 && y < 440 && x > 400 && x < 600){
+        location.reload();		
+    }
 };
 //**************************************End Game Objects************************************/
 
@@ -294,12 +348,15 @@ function initialize(){
         
     if(mainMenu == true && optionsMenu == false && helpMenu == false){
         troll.removeEventListener('click', pause, false);
+        troll.removeEventListener('click', optionEvent, false);
         troll.addEventListener('click', click, false);
         initAnim();
         mainMenuf();
         receiveInfoFromISISQueue(); //TODO: RECEIVE INCOMING WEBSOCKET MESSAGE
     }
     else if(mainMenu == false && optionsMenu == true && helpMenu == false){
+        troll.removeEventListener('click', click, false);
+        troll.addEventListener('click', optionEvent, false);
         initAnim();
         initOptions();
     }
@@ -307,10 +364,6 @@ function initialize(){
         initAnim();
         initHelp();
     }
-	//else if (gameEnded == true){ // gameIsOver() does the same trick.
-	//	troll.addEventListener('click', restart, false);
-	//	if()
-	//}	
     else {
         troll.removeEventListener('click', click, false);
         troll.addEventListener('click', pause, false);
@@ -412,7 +465,7 @@ function initOptions(){
             index = 0;
         }
     }
-    
+    ctx.drawImage(optionPage, 50, 80);
     ctx.drawImage(optionsPic, 355, 60);
     ctx.drawImage(btm, 400, 440);   
 }
@@ -656,7 +709,7 @@ function bulletShot(){
  *	a function that will spawn the enemy bullet.
  */
 function spawnMinion(){
-    for (var i = 0; i <=5 ; i++)
+    for (var i = 0; i <=5 * multiplier ; i++)
     {
         if(MinionArray[i] == null)
         {
@@ -683,7 +736,7 @@ function removeMinion()
  */
 function TimetoSpawnMinion()
 {
-    if (count >= 250)
+    if (count >= 250 / multiplier)
     {
         spawnMinion();
         count = 0;
@@ -723,7 +776,9 @@ pew.src = 'pew.wav';
 window.onkeypress = function(event){
     if(event.keyCode == 32){
         createBullet();
-        pew.play();
+        if(isMute == false) {
+            pew.play();
+        }
     }
 }
 /*
@@ -755,8 +810,9 @@ function initAnim(){
         }
         animRdy = false;
     }
-//song.play();
-
+    if(isMute == false) {
+        song.play();
+    }
 }
 
 
@@ -1212,30 +1268,32 @@ function playerLostGame() {
 function showGameWinScenario() {
     // Draw game win graphics
     window.clearInterval(periodicTask);  //DY 
-	troll.addEventListener('click', restart, false);
-	gameEnded = true;
-	console.log("GAME WIN SCENARIO");
-	ctx.drawImage(frameArray[index],0,0);
+    troll.addEventListener('click', restart, false);
+    gameEnded = true;
+    console.log("GAME WIN SCENARIO");
+    ctx.drawImage(frameArray[index],0,0);
     ctx.drawImage(victory, 400, 150);
     ctx.font="60px Arial";
     ctx.strokeText(score.total,450,300);
 	
-	//draw the menu button
-	ctx.drawImage(btm,400,400);
+    //draw the menu button
+    ctx.drawImage(btm,400,400);
+    ranking();
 }
 
 function showGameLoseScenario() {
     // Draw game lose graphics 
-	window.clearInterval(periodicTask); //DY
-	troll.addEventListener('click', restart, false);
-	gameEnded = true;
+    window.clearInterval(periodicTask); //DY
+    troll.addEventListener('click', restart, false);
+    gameEnded = true;
     console.log("GAME LOSE SCENARIO");
-	ctx.drawImage(frameArray[index],0,0);
+    ctx.drawImage(frameArray[index],0,0);
     ctx.drawImage(defeated, 400, 150);
     ctx.font="60px Arial";
     ctx.strokeText(score.total,450,300);
     ctx.drawImage(btm,400,400);
-   }
+    ranking();
+}
 
 function decideGameOverState() {
     if(playerLostGame()) {
@@ -1249,3 +1307,42 @@ function decideGameOverState() {
     return;
 }
 /* Game over code */
+
+function ranking()
+{
+    if (score.total < 200)
+    {
+    // draw ranking D
+    }	
+    else if (score.total >=200 && score.total < 400)
+    {
+    // draw ranking C
+    }
+    else if (score.total >=400 && score.total < 600)
+    {
+    // draw ranking B
+    }
+    else if (score.total >=600 && score.total < 800)
+    {
+    // draw ranking A
+    }
+    else if (score.total >= 800)
+    {
+    // draw ranking S
+    }
+}
+/* These are used to change the difficulty aka how many minions are spawned. */
+function setDifftoEasy()
+{
+    multiplier = 1 ;
+}
+
+function setDifftoMed()
+{
+    multiplier = 2;
+}
+
+function setDifftoHard()
+{
+    multiplier = 3;
+}
